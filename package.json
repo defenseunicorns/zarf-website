@@ -14,8 +14,9 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "preinstall": "npx npm-force-resolutions",
-    "lint": "eslint --ext .js,.ts,.tsx,.jsx ./src",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,md}\" ./src"
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx,.jsx .",
+    "lint:fix": "npm run format && npm run lint --fix",
+    "format": "prettier --ignore-path .gitignore --write \"./src/**/*.{js,jsx,ts,tsx,json,md}\" ."
   },
   "dependencies": {
     "@emotion/react": "^11.8.2",
