@@ -13,7 +13,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "preinstall": "npx npx force-resolutions"
+    "preinstall": "npx npm-force-resolutions"
   },
   "dependencies": {
     "gatsby": "^4.9.3",
