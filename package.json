@@ -70,17 +70,14 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run lint:fix",
-      "git add"
+      "npm run lint:fix"
     ],
     "*.scss": [
       "prettier --write",
-      "stylelint --fix",
-      "git add"
+      "stylelint --fix"
     ],
     "{*.{json,md}}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }
