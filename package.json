@@ -7,36 +7,34 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "precommit": "husky",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "start": "gatsby develop",
+    "develop": "gatsby develop",
     "typecheck": "tsc --noEmit",
     "preinstall": "npx npm-force-resolutions",
-    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx,.jsx .",
     "lint:fix": "npm run format && npm run lint --fix",
-    "format": "prettier --ignore-path .gitignore --write \"./src/**/*.{js,jsx,ts,tsx,json,md}\" .",
-    "precommit": "husky"
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx,.jsx .",
+    "format": "prettier --ignore-path .gitignore --write \"./src/**/*.{js,jsx,ts,tsx,json,md}\" ."
   },
   "dependencies": {
     "@emotion/react": "^11.8.2",
+    "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.5.0",
     "gatsby": "^4.9.3",
     "gatsby-plugin-image": "^2.9.1",
     "gatsby-plugin-manifest": "^4.9.1",
     "gatsby-plugin-react-helmet": "^5.9.0",
-    "gatsby-plugin-sass": "^5.9.0",
     "gatsby-plugin-sharp": "^4.9.1",
     "gatsby-plugin-sitemap": "^5.9.0",
     "gatsby-source-filesystem": "^4.9.1",
-    "gatsby-theme-material-ui": "^5.1.0",
     "gatsby-transformer-sharp": "^4.9.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "sass": "^1.49.9"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
@@ -54,12 +52,12 @@
     "typescript": "^4.6.2"
   },
   "resolutions": {
+    "ws": "7.4.6",
+    "immer": "9.0.6",
     "ansi-html": "0.0.8",
+    "nth-check": "2.0.1",
     "node-fetch": "2.6.7",
     "ansi-regex": "5.0.1",
-    "nth-check": "2.0.1",
-    "immer": "9.0.6",
-    "ws": "7.4.6",
     "browserslist": "4.16.5"
   },
   "husky": {
