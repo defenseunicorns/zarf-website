@@ -17,8 +17,8 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: [
-    `gatsby-theme-material-ui`,
-    'gatsby-plugin-sass',
+    'gatsby-plugin-top-layout',
+    'gatsby-plugin-mui-emotion',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
