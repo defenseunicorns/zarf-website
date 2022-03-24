@@ -10,12 +10,16 @@ const fonts = {
   mPlusRoundedFont: '"M PLUS Rounded 1c"'
 };
 
-export const COLORS = Object.freeze({
+export const PALLETE = Object.freeze({
   primary: {
     main: '#4ADEDE',
     dark: '#44A4C2',
     light: '#B0FFFF',
     contrastText: '#000000'
+  },
+  background: {
+    default: '#10184C',
+    paper: '#10184C'
   },
   text: {
     primary: '#FFFFFF',
@@ -30,12 +34,24 @@ export const COLORS = Object.freeze({
     disabledBackground: '#FFFFFF1F',
     focus: '#FFFFFF1F'
   },
-  divider: '#FFFFFF1F',
-  MuiSnackbar: {
-    background: '#1F2F98'
+  contrastThreshold: 1,
+  divider: '#FFFFFF1F'
+});
+
+export const COMPONENTS = Object.freeze({
+  MuiSnackbarContent: {
+    styleOverrides: {
+      root: {
+        background: '#1F2F98'
+      }
+    }
   },
   MuiTextField: {
-    border: '#FFFFFF6B'
+    styleOverrides: {
+      root: {
+        borderColor: '#FFFFFF6B'
+      }
+    }
   }
 });
 
@@ -105,23 +121,8 @@ export const TYPEOGRAPHY = Object.freeze({
 
 // A custom theme for this app
 const theme: Theme = createTheme({
-  palette: { ...COLORS },
-  components: {
-    MuiSnackbarContent: {
-      styleOverrides: {
-        root: {
-          background: COLORS.MuiSnackbar.background
-        }
-      }
-    },
-    MuiTextField: {
-      styleOverrides: {
-        root: {
-          borderColor: COLORS.MuiTextField.border
-        }
-      }
-    }
-  },
+  palette: { ...PALLETE },
+  components: { ...COMPONENTS },
   typography: {
     ...TYPEOGRAPHY
   }
