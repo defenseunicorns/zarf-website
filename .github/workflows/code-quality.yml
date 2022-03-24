@@ -12,6 +12,8 @@ jobs:
           node-version: 16
       - name: Audit
         run: npm audit
+      - name: CI
+        run: npm ci
       - name: Type Check
         run: npm typecheck
       - name: Lint
