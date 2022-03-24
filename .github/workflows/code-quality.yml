@@ -15,7 +15,7 @@ jobs:
       - name: CI
         run: npm ci
       - name: Type Check
-        run: npm typecheck
+        run: npm run typecheck
       - name: Lint
         run: npm run lint
       - name: Prettier
