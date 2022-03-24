@@ -17,7 +17,6 @@
     "preinstall": "npx npm-force-resolutions",
     "lint:fix": "npm run format && npm run lint --fix",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx,.jsx .",
-    "prettier:check": "prettier --ignore-path .gitignore --check \"./src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "format": "prettier --ignore-path .gitignore --write \"./src/**/*.{js,jsx,ts,tsx,json,md}\" ."
   },
   "dependencies": {
