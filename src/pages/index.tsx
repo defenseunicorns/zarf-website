@@ -7,7 +7,56 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { Snackbar } from '@mui/material';
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Snackbar
+} from '@mui/material';
+
+function BasicSelect() {
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value as string);
+  };
+
+  return (
+    <Box
+      sx={{
+        width: 'full',
+        maxWidth: 120,
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      }}
+    >
+      <FormControl
+        variant="filled"
+        sx={{
+          minWidth: 120,
+          maxWidth: 200,
+          marginLeft: 'auto',
+          marginRight: 'auto'
+        }}
+      >
+        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          label="Age"
+          onChange={handleChange}
+        >
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+  );
+}
 
 function SimpleSnackbar() {
   const [open, setOpen] = React.useState(false);
@@ -55,15 +104,15 @@ function SimpleSnackbar() {
       <Button
         size="large"
         sx={{ mx: 'auto' }}
-        variant="outlined"
+        variant="contained"
         onClick={handleClick}
       >
         Open simple snackbar
       </Button>
       <Button
-        size="large"
+        size="small"
         sx={{ mx: 'auto' }}
-        variant="outlined"
+        variant="contained"
         onClick={handleClick}
       >
         Open simple snackbar
@@ -93,7 +142,13 @@ export default function ButtonAppBar() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Typography variant="h1" component="div" sx={{ flexGrow: 1 }}>
+              News
+            </Typography>
+            <Typography variant="h2" component="div" sx={{ flexGrow: 1 }}>
+              News
+            </Typography>
+            <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
               News
             </Typography>
             <Button color="inherit">Login</Button>
@@ -101,6 +156,7 @@ export default function ButtonAppBar() {
         </AppBar>
       </Box>
       <SimpleSnackbar />
+      <BasicSelect />
     </>
   );
 }

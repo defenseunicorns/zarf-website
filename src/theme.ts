@@ -1,19 +1,21 @@
 import { createTheme, Theme } from '@mui/material';
 
+const fontWeights = {
+  medium: 500,
+  regular: 400
+};
+
+const fonts = {
+  roboto: 'Roboto',
+  mPlusRoundedFont: '"M PLUS Rounded 1c"'
+};
+
 export const COLORS = Object.freeze({
   primary: {
     main: '#4ADEDE',
     dark: '#44A4C2',
     light: '#B0FFFF',
-    contrastText: '#000000',
-    shades: {
-      '4p': '#7BD5F514',
-      '8p': '#7BD5F529',
-      '12p': '#7BD5F51F',
-      '30p': '#7BD5F54D',
-      '50p': '#7BD5F580',
-      '100p': ''
-    }
+    contrastText: '#000000'
   },
   text: {
     primary: '#FFFFFF',
@@ -29,26 +31,99 @@ export const COLORS = Object.freeze({
     focus: '#FFFFFF1F'
   },
   divider: '#FFFFFF1F',
-  components: {
-    MuiSnackbarContent: {
-      backgroundColor: '#1F2F98'
-    }
+  MuiSnackbar: {
+    background: '#1F2F98'
+  },
+  MuiTextField: {
+    border: '#FFFFFF6B'
+  }
+});
+
+export const TYPEOGRAPHY = Object.freeze({
+  fontFamily: 'Roboto',
+  h1: {
+    fontFamily: fonts.mPlusRoundedFont,
+    fontSize: 64,
+    letterSpacing: -1.5,
+    fontWeight: fontWeights.medium
+  },
+  h2: {
+    fontFamily: fonts.mPlusRoundedFont,
+    fontSize: 48,
+    letterSpacing: -0.5,
+    fontWeight: fontWeights.medium
+  },
+  h3: {
+    fontFamily: fonts.mPlusRoundedFont,
+    fontSize: 36,
+    letterSpacing: 0,
+    fontWeigth: fontWeights.regular
+  },
+  h4: {
+    fontFamily: fonts.mPlusRoundedFont,
+    fontSize: 24,
+    letterSpacing: 0.25,
+    fontWeigth: fontWeights.regular
+  },
+  h5: {
+    fontFamily: fonts.mPlusRoundedFont,
+    fontSize: 20,
+    letterSpacing: 0.15,
+    fontWeight: fontWeights.medium
+  },
+  h6: {
+    fontFamily: fonts.mPlusRoundedFont,
+    fontSize: 20,
+    letterSpacing: 0,
+    fontWeight: fontWeights.regular
+  },
+  subtitle1: {
+    fontFamily: fonts.roboto,
+    fontSize: 18,
+    letterSpacing: 0.15,
+    fontWeights: fontWeights.regular
+  },
+  subtitle2: {
+    fontFamily: fonts.roboto,
+    fontSize: 16,
+    letterSpacing: 0.1,
+    fontWeights: fontWeights.medium
+  },
+  body1: {
+    fontFamily: fonts.roboto,
+    fontSize: 18,
+    letterSpacing: 0.15,
+    fontWeights: fontWeights.regular
+  },
+  body2: {
+    fontFamily: fonts.roboto,
+    fontSize: 16,
+    letterSpacing: 0.15,
+    fontWeights: fontWeights.regular
   }
 });
 
 // A custom theme for this app
 const theme: Theme = createTheme({
-  palette: {
-    ...COLORS
-  },
+  palette: { ...COLORS },
   components: {
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
-          background: COLORS.components.MuiSnackbarContent.backgroundColor
+          background: COLORS.MuiSnackbar.background
+        }
+      }
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          borderColor: COLORS.MuiTextField.border
         }
       }
     }
+  },
+  typography: {
+    ...TYPEOGRAPHY
   }
 });
 
