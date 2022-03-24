@@ -13,7 +13,7 @@ jobs:
       - name: Audit
         run: npm audit
       - name: Type Check
-        run: npm TypeCheck
+        run: npm typecheck
       - name: Lint
         run: npm run lint
       - name: Prettier
