@@ -25,6 +25,7 @@ jobs:
         env: 
           PATH_PREFIX: /${{ env.REPO_NAME }}
         with: 
+          deploy-branch: main
           deploy-repo: ${{ env.REPO_NAME }}
           access-token: ${{ secrets.ACCESS_TOKEN }}
           gatsby-args: --prefix-paths
