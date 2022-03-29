@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: [develop, main]
 env:
-  REPO_NAME: zarf-website-pr-${{ github.event.pull_request.node_id }}
+  REPO_NAME: zarf-website-${{ github.event.pull_request.node_id }}
 jobs:
   create-page-host:
     runs-on: ubuntu-latest
@@ -13,6 +13,16 @@ jobs:
         with:
           name: ${{ env.REPO_NAME }}
           access-token: ${{ secrets.ACCESS_TOKEN }}
+      - name: Enable Pages
+        uses: octokit/request-action@v2
+        with:
+          route: POST /repos/{owner}/{repo}/pages
+          owner: ${{ github.repository_owner }}
+          repo: ${{ env.REPO_NAME }}
+          source: |
+            branch: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
   build-deploy: 
     needs: create-page-host
     runs-on: ubuntu-latest
