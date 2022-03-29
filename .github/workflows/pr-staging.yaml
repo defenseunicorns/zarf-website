@@ -12,7 +12,6 @@ jobs:
         uses: octobay/create-repository-action@v1
         with:
           name: ${{ env.REPO_NAME }}
-          org: ${{ github.repository_owner }}
           access-token: ${{ secrets.ACCESS_TOKEN }}
   build-deploy: 
     needs: create-page-host
@@ -26,7 +25,6 @@ jobs:
         env: 
           PATH_PREFIX: /${{ env.REPO_NAME }}
         with: 
-          deploy-branch: main
           deploy-repo: ${{ env.REPO_NAME }}
           access-token: ${{ secrets.ACCESS_TOKEN }}
           gatsby-args: --prefix-paths
