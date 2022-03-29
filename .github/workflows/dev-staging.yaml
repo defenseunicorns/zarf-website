@@ -11,9 +11,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: enriikke/gatsby-gh-pages-action@v2
         env: 
-          PATH_PREFIX: /dev-zarf-website
+          PATH_PREFIX: /zarf-website-staging
         with: 
           deploy-branch: main
-          deploy-repo: dev-zarf-website
+          deploy-repo: zarf-website-staging
           access-token: ${{ secrets.ACCESS_TOKEN }}
           gatsby-args: --prefix-paths
