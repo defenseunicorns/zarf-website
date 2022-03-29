@@ -1,0 +1,19 @@
+name: Publish Dev Staging
+on:
+  push: 
+    branches: 
+      - develop
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        env: 
+          PATH_PREFIX: /dev-zarf-website
+        with: 
+          deploy-branch: main
+          deploy-repo: dev-zarf-website
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          gatsby-args: --prefix-paths
