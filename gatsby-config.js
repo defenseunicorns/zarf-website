@@ -1,5 +1,6 @@
 /** @type {import('gatsby').GatsbyConfig} */
 const path = require('path');
+
 // Get paths of Gatsby's required rules, which as of writing is located at:
 // https://github.com/gatsbyjs/gatsby/tree/fbfe3f63dec23d279a27b54b4057dd611dce74bb/packages/
 // gatsby/src/utils/eslint-rules
@@ -11,7 +12,9 @@ const gatsbyRequiredRules = path.join(
   'utils',
   'eslint-rules'
 );
+
 module.exports = {
+  pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
     title: `new`,
     siteUrl: `https://www.yourdomain.tld`
