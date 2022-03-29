@@ -1,11 +1,7 @@
 name: Delete Pull Request Deployment
 on:
   pull_request:
-    branches: [ main ]
     types: [ closed ]
-    paths-ignore:
-      - '.github/workflows/**'
-      - '**.md'
 
 env:
   REPO_NAME: zarf-website-${{ github.event.pull_request.node_id }}
