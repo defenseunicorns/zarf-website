@@ -1,7 +1,7 @@
 name: Pull Request Staging
 on:
   pull_request:
-    branches: [development, main]
+    branches: [develop, main]
 env:
   REPO_NAME: zarf-website-pr-${{ github.event.pull_request.node_id }}
 jobs:
