@@ -1,0 +1,17 @@
+name: Delete Pull Request Deployment
+on:
+  pull_request:
+    types: [ closed ]
+
+env:
+  REPO_NAME: zarf-website-${{ github.event.pull_request.node_id }}
+
+jobs:
+  delete-page-host:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete repository for temporary deployment
+        uses: octobay/delete-repository-action@v1
+        with:
+          name: ${{ github.repository_owner }}/${{ env.REPO_NAME }}
+          access-token: ${{ secrets.ACCESS_TOKEN }}
