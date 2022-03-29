@@ -1,0 +1,32 @@
+name: Pull Request Staging
+on:
+  pull_request:
+    branches: [development, main]
+env:
+  REPO_NAME: zarf-website-pr-${{ github.event.pull_request.node_id }}
+jobs:
+  create-page-host:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create new repository for Staging
+        uses: octobay/create-repository-action@v1
+        with:
+          name: ${{ env.REPO_NAME }}
+          org: ${{ github.repository_owner }}
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+  build-deploy: 
+    needs: create-page-host
+    runs-on: ubuntu-latest
+    environment: 
+      name: pr-staging
+      url: https://${{ github.repository_owner }}.github.io/${{ env.PR_REPO_NAME }}/
+    steps:
+      - uses: actions/checkout@v2
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        env: 
+          PATH_PREFIX: /${{ env.REPO_NAME }}
+        with: 
+          deploy-branch: main
+          deploy-repo: ${{ env.REPO_NAME }}
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          gatsby-args: --prefix-paths
