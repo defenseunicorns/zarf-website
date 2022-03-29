@@ -14,7 +14,7 @@ jobs:
           name: ${{ env.REPO_NAME }}
           access-token: ${{ secrets.ACCESS_TOKEN }}
       - name: Enable Pages
-        uses: octokit/request-action@v2
+        uses: octokit/request-action@v2.1.0
         with:
           route: POST /repos/{owner}/{repo}/pages
           owner: ${{ github.repository_owner }}
