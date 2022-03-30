@@ -12,6 +12,7 @@ jobs:
         uses: octobay/create-repository-action@v1
         with:
           name: ${{ env.REPO_NAME }}
+          org: ${{ secrets.ORG }}
           access-token: ${{ secrets.ACCESS_TOKEN }}
       - name: Enable Pages
         continue-on-error: true
@@ -25,18 +26,18 @@ jobs:
             branch: main
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-  build-deploy: 
+  build-deploy:
     needs: create-page-host
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: pr-staging
       url: https://${{ github.repository_owner }}.github.io/${{ env.REPO_NAME }}/
     steps:
       - uses: actions/checkout@v2
       - uses: enriikke/gatsby-gh-pages-action@v2
-        env: 
+        env:
           PATH_PREFIX: /${{ env.REPO_NAME }}
-        with: 
+        with:
           deploy-branch: main
           deploy-repo: ${{ env.REPO_NAME }}
           access-token: ${{ secrets.ACCESS_TOKEN }}
