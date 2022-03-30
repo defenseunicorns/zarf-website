@@ -5,6 +5,11 @@ export default Object.freeze({
     light: '#B0FFFF',
     contrastText: '#000000'
   },
+  secondary: {
+    main: '#787FF6',
+    dark: '#4053C2',
+    light: '#ADAEFF'
+  },
   background: {
     default: '#10184C',
     paper: '#10184C'
