@@ -1,0 +1,45 @@
+name: Publish Dev Staging
+on:
+  push:
+    branches:
+      - main
+env:
+  REPO_NAME: zarf-website-prod
+
+jobs:
+  create-page-host:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Prod Repo if non-existent
+        uses: octobay/create-repository-action@v1
+        with:
+          name: ${{ env.REPO_NAME }}
+          org: ${{ secrets.ORG }}
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+      - name: Enable Pages if not already set up.
+        continue-on-error: true
+        id: enable_pages
+        uses: octokit/request-action@v2.1.0
+        with:
+          route: POST /repos/{owner}/{repo}/pages
+          owner: ${{ github.repository_owner }}
+          repo: ${{ env.REPO_NAME }}
+          source: |
+            branch: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  deploy-production:
+    environment:
+      name: Production
+      url: https://${{ github.repository_owner }}.github.io/${{ env.REPO_NAME }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        env:
+          PATH_PREFIX: /${{ env.REPO_NAME }}
+        with:
+          deploy-branch: main
+          deploy-repo: ${{ env.REPO_NAME }}
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          gatsby-args: --prefix-paths
