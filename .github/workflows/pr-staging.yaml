@@ -13,7 +13,6 @@ jobs:
         with:
           name: ${{ env.REPO_NAME }}
           org: ${{ secrets.ORG }}
-          if: ${{ secrets.ORG != 0 }}
           access-token: ${{ secrets.ACCESS_TOKEN }}
       - name: Enable Pages
         continue-on-error: true
