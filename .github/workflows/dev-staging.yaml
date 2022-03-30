@@ -10,7 +10,7 @@ jobs:
   create-page-host:
     runs-on: ubuntu-latest
     steps:
-      - name: Create Prod Repo if non-existent
+      - name: Create Develop (staging) Repo if non-existent
         uses: octobay/create-repository-action@v1
         with:
           name: ${{ env.REPO_NAME }}
