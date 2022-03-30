@@ -1,6 +1,6 @@
-name: Node.js Package
+name: Code Quality
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   Code-Quality:
