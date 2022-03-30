@@ -2,9 +2,9 @@ name: Publish Dev Staging
 on:
   push:
     branches:
-      - develop
+      - main
 env:
-  REPO_NAME: zarf-website-staging
+  REPO_NAME: zarf-website-prod
 
 jobs:
   create-page-host:
@@ -28,9 +28,9 @@ jobs:
             branch: main
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-  deploy-staging:
+  deploy-production:
     environment:
-      name: development
+      name: Production
       url: https://${{ github.repository_owner }}.github.io/${{ env.REPO_NAME }}
     runs-on: ubuntu-latest
     steps:
