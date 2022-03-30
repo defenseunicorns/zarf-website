@@ -1,4 +1,4 @@
-name: Publish Dev Staging
+name: Deploy to Production
 on:
   push:
     branches:
