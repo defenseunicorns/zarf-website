@@ -25,14 +25,14 @@ export default Object.freeze({
   h3: {
     fontFamily: fonts.mPlusRoundedFont,
     fontSize: 36,
-    letterSpacing: 0,
-    fontWeigth: fontWeights.regular
+    letterSpacing: -0.25,
+    fontWeigth: fontWeights.medium
   },
   h4: {
     fontFamily: fonts.mPlusRoundedFont,
     fontSize: 24,
-    letterSpacing: 0.25,
-    fontWeigth: fontWeights.regular
+    letterSpacing: 0,
+    fontWeigth: fontWeights.medium
   },
   h5: {
     fontFamily: fonts.mPlusRoundedFont,
