@@ -142,7 +142,7 @@ export default function ButtonAppBar() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h1" component="div" sx={{ flexGrow: 1 }}>
-              Changed
+              News
             </Typography>
             <Typography variant="h2" component="div" sx={{ flexGrow: 1 }}>
               Changed
