@@ -67,7 +67,7 @@
 
 ### 🖐 Pull Request
 
-1. After creating an issue. Create a pull request for that issues branch.
+1. After creating an issue. Create a [Draft](https://github.blog/2019-02-14-introducing-draft-pull-requests/) pull request for that issues branch.
    - There are two branches that pull requests should be merged to.
    - The issues will be labeled with the branch name
      1. Develop
