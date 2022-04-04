@@ -1,19 +1,30 @@
 import React from 'react';
+import Box from '@mui/material/Box';
 
 // styles
 const pageStyles = {
   color: '#232129',
   padding: '96px',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif'
+  fontFamily: '-apple-system, Roboto, sans-serif, serif',
+  border: '5px solid red'
 };
 
 // markup
-const ComingSoon = () => {
+function ComingSoon() {
   return (
-    <main style={pageStyles}>
+    <Box
+      style={pageStyles}
+      sx={{
+        width: '100vw',
+        maxWidth: 120,
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      }}
+    >
       <title>Coming Soon!</title>
-    </main>
+      <h1>testasdalsdlaksdlkajslkdjasjdkas</h1>
+    </Box>
   );
-};
+}
 
 export default ComingSoon;
