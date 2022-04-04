@@ -81,6 +81,7 @@
       "prettier --write"
     ],
     "*": [
+      "bash -c tsc --noEmit --pretty",
       "npm run format",
       "git add ."
     ]
