@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { ReactElement, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -16,10 +16,10 @@ import {
   Snackbar
 } from '@mui/material';
 
-function BasicSelect() {
-  const [age, setAge] = React.useState('');
+function BasicSelect(): ReactElement {
+  const [age, setAge] = useState('');
 
-  const handleChange = (event: SelectChangeEvent) => {
+  const handleChange = (event: SelectChangeEvent): void => {
     setAge(event.target.value as string);
   };
 
@@ -58,17 +58,17 @@ function BasicSelect() {
   );
 }
 
-function SimpleSnackbar() {
-  const [open, setOpen] = React.useState(false);
+function SimpleSnackbar(): ReactElement {
+  const [open, setOpen] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     setOpen(true);
   };
 
   const handleClose = (
     _event: React.SyntheticEvent | Event,
     reason?: string
-  ) => {
+  ): void => {
     if (reason === 'clickaway') {
       return;
     }
@@ -127,7 +127,7 @@ function SimpleSnackbar() {
   );
 }
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(): ReactElement {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>

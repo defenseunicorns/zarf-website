@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Link } from 'gatsby';
 
 // styles
@@ -25,7 +25,7 @@ const codeStyles = {
 };
 
 // markup
-const NotFoundPage = () => {
+function NotFoundPage(): ReactElement {
   return (
     <main style={pageStyles}>
       <title>Not found</title>
@@ -49,6 +49,6 @@ const NotFoundPage = () => {
       </p>
     </main>
   );
-};
+}
 
 export default NotFoundPage;
