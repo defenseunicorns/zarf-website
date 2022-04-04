@@ -52,25 +52,25 @@ const typography: TypographyOptions = {
     fontFamily: fonts.roboto,
     fontSize: 18,
     letterSpacing: 0.15,
-    fontWeights: fontWeights.regular
+    fontWeight: fontWeights.regular
   },
   subtitle2: {
     fontFamily: fonts.roboto,
     fontSize: 16,
     letterSpacing: 0.1,
-    fontWeights: fontWeights.medium
+    fontWeight: fontWeights.medium
   },
   body1: {
     fontFamily: fonts.roboto,
     fontSize: 18,
     letterSpacing: 0.15,
-    fontWeights: fontWeights.regular
+    fontWeight: fontWeights.regular
   },
   body2: {
     fontFamily: fonts.roboto,
     fontSize: 16,
     letterSpacing: 0.15,
-    fontWeights: fontWeights.regular
+    fontWeight: fontWeights.regular
   }
 };
 
