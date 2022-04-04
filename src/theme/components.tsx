@@ -1,4 +1,6 @@
-export default Object.freeze({
+import { Components } from '@mui/material/styles/components';
+
+const components: Components = {
   MuiSnackbarContent: {
     styleOverrides: {
       root: {
@@ -13,4 +15,5 @@ export default Object.freeze({
       }
     }
   }
-});
+};
+export default Object.freeze(components);

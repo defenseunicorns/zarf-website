@@ -2,7 +2,11 @@
 module.exports = {
   // Specifies the ESLint parser for TypeScript
   parser: '@typescript-eslint/parser',
-  extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended'
+  ],
   settings: {
     react: {
       version: 'detect'
@@ -13,7 +17,7 @@ module.exports = {
     node: true,
     es6: true
   },
-  plugins: ['prettier', 'react', 'unused-imports'],
+  plugins: ['prettier', 'react', 'unused-imports', '@typescript-eslint'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -33,6 +37,15 @@ module.exports = {
     'prettier/interface-name-prefix': 'off',
     'prettier/no-unused-vars': 'off',
     'unused-imports/no-unused-imports': 'error',
-    'unused-imports/no-unused-vars': 'error'
-  }
+    'unused-imports/no-unused-vars': 'error',
+    '@typescript-eslint/explicit-function-return-type': 'off'
+  },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': ['error']
+      }
+    }
+  ]
 };

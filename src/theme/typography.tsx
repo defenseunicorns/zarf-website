@@ -1,3 +1,5 @@
+import { TypographyOptions } from '@mui/material/styles/createTypography';
+
 const fontWeights = {
   medium: 500,
   regular: 400
@@ -8,7 +10,7 @@ const fonts = {
   mPlusRoundedFont: '"M PLUS Rounded 1c"'
 };
 
-export default Object.freeze({
+const typography: TypographyOptions = {
   fontFamily: 'Roboto',
   h1: {
     fontFamily: fonts.mPlusRoundedFont,
@@ -25,14 +27,14 @@ export default Object.freeze({
   h3: {
     fontFamily: fonts.mPlusRoundedFont,
     fontSize: 36,
-    letterSpacing: 0,
-    fontWeigth: fontWeights.regular
+    letterSpacing: -0.25,
+    fontWeight: fontWeights.medium
   },
   h4: {
     fontFamily: fonts.mPlusRoundedFont,
     fontSize: 24,
-    letterSpacing: 0.25,
-    fontWeigth: fontWeights.regular
+    letterSpacing: 0,
+    fontWeight: fontWeights.medium
   },
   h5: {
     fontFamily: fonts.mPlusRoundedFont,
@@ -50,24 +52,26 @@ export default Object.freeze({
     fontFamily: fonts.roboto,
     fontSize: 18,
     letterSpacing: 0.15,
-    fontWeights: fontWeights.regular
+    fontWeight: fontWeights.regular
   },
   subtitle2: {
     fontFamily: fonts.roboto,
     fontSize: 16,
     letterSpacing: 0.1,
-    fontWeights: fontWeights.medium
+    fontWeight: fontWeights.medium
   },
   body1: {
     fontFamily: fonts.roboto,
     fontSize: 18,
     letterSpacing: 0.15,
-    fontWeights: fontWeights.regular
+    fontWeight: fontWeights.regular
   },
   body2: {
     fontFamily: fonts.roboto,
     fontSize: 16,
     letterSpacing: 0.15,
-    fontWeights: fontWeights.regular
+    fontWeight: fontWeights.regular
   }
-});
+};
+
+export default Object.freeze(typography);

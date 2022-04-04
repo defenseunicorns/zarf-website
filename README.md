@@ -1,54 +1,79 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://github.com/defenseunicorns/zarf-website">
+    <img alt="Gatsby" src="./src/assets/svg/zarf-dark-outline.svg" width="150" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal TypeScript starter
+  Zarf Website Contributors Guide
 </h1>
 
-## 🚀 Quick start
+## Currently Maintained by [Defense Unicorns](https://defenseunicorns.com)
 
-1.  **Create a Gatsby site.**
+## 👀 Looking for Zarf?
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+- [Zarf Repo](https://github.com/defenseunicorns/Zarf)
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+## 📚 Resources
 
-2.  **Start developing.**
+- [Staging](https://defenseunicorns.github.io/zarf-website-staging/)
+- [Project Board](https://github.com/orgs/defenseunicorns/projects/4)
+- [Figma Design](https://www.figma.com/file/FVxDm72mPiUTKmAD44ixmX/MUI-for-Figma-v5.4.0---Material-UI?node-id=8763%3A73842)
+- [Forking](./docs/forking.md)
+- [Gatsby](./docs/gatsby.md)
+- [Material UI](https://v4.mui.com/getting-started/installation/)
+- [Material UI System](https://mui.com/system/basics/)
 
-    Navigate into your new site’s directory and start it up.
+---
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+## 👩‍🎨 Design Contacts
 
-3.  **Open the code and start customizing!**
+- [Madeline Fortner](https://github.com/Madeline-UX)
 
-    Your site is now running at http://localhost:8000!
+## 👩‍💻 Developer Contacts
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+- [Mike Winberry](https://github.com/mike-winberry)
 
-4.  **Learn more**
+---
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+## 🚀 Start Developing.
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+### 📝 Notes
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+- **_All commits must be [signed](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)._**
+- **_All components should use [Material UI (emotion)](https://v4.mui.com/getting-started/installation/) or [Material UI System (emotion)](https://mui.com/system/basics/)_**
+- **_All UI issues expect responsiveness to be completed (no mobile/desktop story separation)_**
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+### 🚜 Set up Dev Environment
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+1. Install [Node.js LTS](https://nodejs.org/en/download/) or use [nvm](https://github.com/nvm-sh/nvm)
+2. [Clone](https://github.com/defenseunicorns/zarf-website) (🦄 Unicorns) or [Fork](docs/forking.md) (🐙 Contributors)
+3. Install dependencies w/ `npm ci`
+4. Run the local dev server w/ `npm run develop`
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+### ⛏ Picking an Issue
 
-## 🚀 Quick start (Gatsby Cloud)
+1. Go to [Ready To Start](https://github.com/orgs/defenseunicorns/projects/4/views/4) or [Project Board](https://github.com/orgs/defenseunicorns/projects/4/views/1) and 👀 @ Ready To Start Column.
+2. Choose an issue that has not yet been assigned.
+   - Good first issues will be labeled.
+3. [Assign yourself](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users)
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+4. Move issue to In Progress
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+<p align="left">
+    <img alt="Gatsby" src="./docs/assets/images/change-issue-status.png" width="350" />
+</p>
+
+5. [Create a branch for issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-a-branch-for-an-issue)
+
+### 🖐 Pull Request
+
+1. After creating an issue. Create a [Draft](https://github.blog/2019-02-14-introducing-draft-pull-requests/) pull request for that issues branch.
+   - There are two branches that pull requests should be merged to.
+   - The issues will be labeled with the branch name
+     1. Develop
+     2. Main
+2. Once ready for merge, move issue into "Ready For Review Column" and [request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) from [CODEOWNERS](./CODEOWNERS)
+   - Ensure all pipelines are green.
+   - Ensure issue branch is up to date with branch to merge to.
+   - All conversations must be resolved.
+   - Reviewer will merge if Approved.
