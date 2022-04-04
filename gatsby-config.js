@@ -1,4 +1,5 @@
 /** @type {import('gatsby').GatsbyConfig} */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 
 // Get paths of Gatsby's required rules, which as of writing is located at:
