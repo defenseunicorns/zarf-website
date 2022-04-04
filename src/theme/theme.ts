@@ -1,11 +1,11 @@
 import { createTheme } from '@mui/material';
-import TYPEOGRAPHY from './typography';
+import TYPOGRAPHY from './typography';
 import COMPONENTS from './components';
-import PALLETE from './pallete';
+import PALETTE from './palette';
 
 // A custom theme for this app
 export default createTheme({
-  palette: PALLETE,
+  palette: PALETTE,
   components: COMPONENTS,
-  typography: TYPEOGRAPHY
+  typography: TYPOGRAPHY
 });

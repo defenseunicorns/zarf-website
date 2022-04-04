@@ -1,4 +1,6 @@
-export default Object.freeze({
+import { PaletteOptions } from '@mui/material';
+
+const palette: PaletteOptions = {
   primary: {
     main: '#4ADEDE',
     dark: '#44A4C2',
@@ -29,4 +31,6 @@ export default Object.freeze({
   },
   contrastThreshold: 1,
   divider: '#FFFFFF1F'
-});
+};
+
+export default Object.freeze(palette);
