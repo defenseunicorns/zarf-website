@@ -71,7 +71,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run lint:fix"
+      "npm run lint:fix",
+      "npm run format"
     ],
     "*.scss": [
       "prettier --write",
@@ -82,7 +83,6 @@
     ],
     "*": [
       "bash -c tsc --noEmit --pretty",
-      "npm run format",
       "git add ."
     ]
   }
