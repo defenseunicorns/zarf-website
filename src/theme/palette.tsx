@@ -1,6 +1,10 @@
-import { PaletteOptions } from '@mui/material';
+import { PaletteOptions, SimplePaletteColorOptions } from '@mui/material';
 
-const palette: PaletteOptions = {
+interface DefaultPaletteOptions extends PaletteOptions {
+  primary?: SimplePaletteColorOptions;
+}
+
+const palette: DefaultPaletteOptions = {
   primary: {
     main: '#4ADEDE',
     dark: '#44A4C2',

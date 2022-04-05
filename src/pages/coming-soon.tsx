@@ -3,25 +3,18 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import ZarfBubbles from '../images/zarfBubbles.png';
-import ComingSoonBG from '../images/comingSoonBg.png';
+import ZarfBubbles from '../assets/images/zarfBubbles.png';
+import ComingSoonBG from '../assets/images/comingSoonBg.png';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
 
 // styles
 const pageStyles = {
   color: 'white',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
   backgroundImage: `url(${ComingSoonBG})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat'
 };
-
-const RoundedButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: theme.palette.primary,
-  borderRadius: '20px'
-}));
 
 // markup
 function ComingSoon(): ReactElement {
@@ -58,13 +51,13 @@ function ComingSoon(): ReactElement {
             >
               Coming Soon!
             </Typography>
-            <RoundedButton
-              variant="contained"
+            <Button
+              variant="rounded"
               size="medium"
               href="https://github.com/defenseunicorns/zarf"
             >
               View on Github
-            </RoundedButton>
+            </Button>
           </Grid>
           <Grid
             item
