@@ -49,14 +49,22 @@ function ComingSoon(): ReactElement {
             <Typography
               variant="h1"
               component="div"
-              sx={{ flexGrow: 1, fontSize: { xs: '48px', md: '64px' } }}
+              sx={{
+                flexGrow: 1,
+                fontSize: { xs: '48px', md: '64px' },
+                paddingTop: '20px'
+              }}
             >
               Website
             </Typography>
             <Typography
               variant="h1"
               component="div"
-              sx={{ flexGrow: 1, fontSize: { xs: '48px', md: '64px' } }}
+              sx={{
+                flexGrow: 1,
+                fontSize: { xs: '48px', md: '64px' },
+                paddingBottom: '20px'
+              }}
               gutterBottom
             >
               Coming Soon!
