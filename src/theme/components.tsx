@@ -25,7 +25,20 @@ const components: Components = {
   MuiButton: {
     variants: [
       {
-        props: { variant: 'rounded' },
+        props: { variant: 'rounded', size: 'large' },
+        style: {
+          width: '170px',
+          height: '45px',
+          borderRadius: '20px',
+          backgroundColor: PALETTE.primary?.main,
+          color: 'black',
+          '&:hover': {
+            backgroundColor: PALETTE.primary?.dark
+          }
+        }
+      },
+      {
+        props: { variant: 'rounded', size: 'medium' },
         style: {
           borderRadius: '20px',
           backgroundColor: PALETTE.primary?.main,
