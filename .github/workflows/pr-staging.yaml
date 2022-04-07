@@ -1,6 +1,6 @@
 name: Pull Request Staging
 on:
-  pull_request:
+  pull_request_target:
     branches: [develop, main]
 env:
   REPO_NAME: zarf-website-${{ github.event.pull_request.node_id }}
