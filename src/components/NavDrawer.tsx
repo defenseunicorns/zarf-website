@@ -37,11 +37,10 @@ function NavDrawer({
       >
         <CloseIcon />
       </IconButton>
-      <DrawerTabs value={0} aria-title="Navigation Tabs">
+      <DrawerTabs value={0}>
         {navLinks.map((l: NavLink, i: number) => (
           <DrawerTab
             aria-selected={true}
-            aria-title={'Go to' + l.title}
             key={l.title}
             {...createTabPropsFromNavLink(l, i)}
           />
