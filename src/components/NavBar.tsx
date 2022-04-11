@@ -5,7 +5,7 @@ import { navLinks } from '../assets/data/navLinks';
 import ZarfLogo from '../assets/png/zarf-logo.png';
 import MenuIcon from '@mui/icons-material/Menu';
 import NavLink from '../interfaces/NavLink';
-import SocialLinks from './SocialIcons';
+import SocialLinks from './SocialLinks';
 import palette from '../theme/palette';
 import NavDrawer from './NavDrawer';
 import {

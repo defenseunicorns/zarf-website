@@ -2,7 +2,7 @@ import { socialLinks } from '../assets/data/navLinks';
 import { Box, IconButton, SxProps, Theme } from '@mui/material';
 import React, { ReactElement } from 'react';
 import { GitHub } from '@mui/icons-material';
-import Slack from '../assets/png/Slack.png';
+import Slack from '../assets/png/slack.png';
 interface SocialLinksProps {
   slackSx?: SxProps<Theme>;
   githubSx?: SxProps<Theme>;
