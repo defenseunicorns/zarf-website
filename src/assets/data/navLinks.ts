@@ -8,12 +8,14 @@ export const navLinks: NavLink[] = [
   {
     url: 'https://defenseunicorns.github.io/zarf/examples',
     title: 'Examples',
-    target: '__blank'
+    target: '_blank',
+    rel: 'noopener noreferrer'
   },
   {
     url: 'https://defenseunicorns.github.io/zarf',
     title: 'Documents',
-    target: '__blank'
+    target: '_blank',
+    rel: 'noopener noreferrer'
   }
 ];
 
@@ -24,11 +26,13 @@ export const socialLinks: SocialLinks = {
   slack: {
     url: 'https://github.com/defenseunicorns/zarf/discussions',
     title: 'Slack',
-    target: '__blank'
+    target: '_blank',
+    rel: 'noopener noreferrer'
   },
   github: {
     url: 'https://github.com/defenseunicorns/zarf',
     title: 'Github',
-    target: '__blank'
+    target: '_blank',
+    rel: 'noopener noreferrer'
   }
 };

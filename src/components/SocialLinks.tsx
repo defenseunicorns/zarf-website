@@ -16,6 +16,7 @@ function SocialLinks({ slackSx, githubSx }: SocialLinksProps): ReactElement {
         href={socialLinks['slack'].url}
         title={socialLinks['slack'].title}
         target={socialLinks['slack'].target}
+        rel={socialLinks['slack'].rel}
       >
         <Box component="img" src={Slack} />
       </IconButton>
@@ -23,7 +24,8 @@ function SocialLinks({ slackSx, githubSx }: SocialLinksProps): ReactElement {
         sx={githubSx}
         href={socialLinks['github'].url}
         title={socialLinks['github'].title}
-        target={socialLinks['slack'].target}
+        target={socialLinks['github'].target}
+        rel={socialLinks['github'].rel}
       >
         <GitHub></GitHub>
       </IconButton>

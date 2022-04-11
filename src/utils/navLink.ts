@@ -6,6 +6,7 @@ interface NavLinkTabProps {
   href?: string;
   target?: string;
   id: string;
+  rel?: string;
 }
 
 export const createTabPropsFromNavLink = (
@@ -17,6 +18,7 @@ export const createTabPropsFromNavLink = (
     label: navLink.title,
     href: navLink.url,
     target: navLink.target,
-    id: navLink.title + index
+    id: navLink.title + index,
+    rel: navLink.rel
   };
 };
