@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import ZarfNav from '../components/nav-bar';
+import ZarfNav from '../components/NavBar';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import {
