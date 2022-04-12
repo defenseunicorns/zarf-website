@@ -24,23 +24,28 @@ const HoverTab = styled(Tab)`
   }
 `;
 
+const ZarfAppBar = styled(AppBar)`
+  height: 4rem;
+  max-width: 100vw;
+  transition: all 0.5s ease-in;
+`;
+
 function ZarfNav(): ReactElement {
-  const [drawerOpen, openDrawer] = useState(false);
+  const [showDrawer, setShowDrawer] = useState(false);
+  const [navColor, setNavColor] = useState<'transparent' | 'inherit'>(
+    'transparent'
+  );
 
   function toggleDrawer(state: boolean): () => void {
-    return (): void => openDrawer(state);
+    return (): void => setShowDrawer(state);
   }
+  const windowScrolled = (): void =>
+    window.scrollY <= 80 ? setNavColor('transparent') : setNavColor('inherit');
 
+  window.addEventListener('scroll', windowScrolled);
   return (
     <>
-      <AppBar
-        position="sticky"
-        sx={{
-          height: '4rem',
-          maxWidth: '100vw'
-        }}
-        color="inherit"
-      >
+      <ZarfAppBar position="sticky" color={navColor}>
         <Toolbar sx={{ flexGrow: 1, justifyContent: 'space-between' }}>
           {/* Mobile between xs and medium */}
           <IconButton
@@ -76,13 +81,13 @@ function ZarfNav(): ReactElement {
             <SocialLinks slackSx={hideSmall} />
           </Box>
         </Toolbar>
-      </AppBar>
+      </ZarfAppBar>
       <NavDrawer
         drawerProps={{
           anchor: 'left',
           variant: 'temporary',
           PaperProps: { sx: { width: { xs: '100%', sm: '65%' } } },
-          open: drawerOpen
+          open: showDrawer
         }}
         closeDrawer={toggleDrawer(false)}
         navLinks={navLinks}
