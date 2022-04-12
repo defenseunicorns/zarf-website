@@ -1,6 +1,6 @@
+import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 import { createTabPropsFromNavLink } from '../utils/navLink';
 import { hideSmall, hideLarge } from '../utils/display';
-import React, { ReactElement, useState } from 'react';
 import { navLinks } from '../assets/data/navLinks';
 import ZarfLogo from '../assets/png/zarf-logo.png';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -18,11 +18,7 @@ import {
   styled
 } from '@mui/material';
 
-const HoverTab = styled(Tab)`
-  &:hover {
-    background-color: ${palette.action?.hover};
-  }
-`;
+type ZarfAppBarColor = 'inherit' | 'transparent';
 
 const ZarfAppBar = styled(AppBar)`
   height: 4rem;
@@ -30,19 +26,35 @@ const ZarfAppBar = styled(AppBar)`
   transition: all 0.5s ease-in;
 `;
 
+const TabWithHoverState = styled(Tab)`
+  &:hover {
+    background-color: ${palette.action?.hover};
+  }
+`;
+
 function ZarfNav(): ReactElement {
-  const [showDrawer, setShowDrawer] = useState(false);
-  const [navColor, setNavColor] = useState<'transparent' | 'inherit'>(
-    'transparent'
+  const [showDrawer, setShowDrawer] = useState<boolean>(false);
+  const [navColor, setNavColor] = useState<ZarfAppBarColor>('transparent');
+
+  const toggleDrawer = useCallback(
+    (state: boolean) => (): void => setShowDrawer(state),
+    [setShowDrawer]
   );
 
-  function toggleDrawer(state: boolean): () => void {
-    return (): void => setShowDrawer(state);
-  }
-  const windowScrolled = (): void =>
-    window.scrollY <= 80 ? setNavColor('transparent') : setNavColor('inherit');
+  const windowScrolled = useCallback(
+    (): void =>
+      window.scrollY <= 80
+        ? setNavColor('transparent')
+        : setNavColor('inherit'),
+    [setNavColor]
+  );
 
-  window.addEventListener('scroll', windowScrolled);
+  useEffect(() => {
+    windowScrolled();
+    window.addEventListener('scroll', windowScrolled);
+    return () => window.removeEventListener('scroll', windowScrolled);
+  }, [windowScrolled]);
+
   return (
     <>
       <ZarfAppBar position="sticky" color={navColor}>
@@ -71,7 +83,7 @@ function ZarfNav(): ReactElement {
           >
             <Tabs value={0} aria-label="Navigation Tabs" sx={hideSmall}>
               {navLinks.map((l: NavLink, i: number) => (
-                <HoverTab
+                <TabWithHoverState
                   key={l.title}
                   {...createTabPropsFromNavLink(l, i)}
                   value={i}
