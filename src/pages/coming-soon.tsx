@@ -29,10 +29,18 @@ function ComingSoon(): ReactElement {
             display: 'flex',
             flexDirection: { xs: 'column', md: 'row' },
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            height: '80vh'
           }}
         >
-          <Box>
+          <Box
+            sx={{
+              width: { xs: '90%', sm: '55%', md: '50%' },
+              height: '50%',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}
+          >
             <Typography
               variant="h5"
               component="div"
@@ -84,11 +92,9 @@ function ComingSoon(): ReactElement {
           <Box
             sx={{
               width: { xs: '80%', md: '50%' },
-              height: '50vh',
-              marginLeft: 'auto',
-              marginRight: 'auto',
+              height: '50%',
               backgroundImage: `url(${ZarfBubbles})`,
-              backgroundSize: 'contain',
+              backgroundSize: { xs: 'contain', md: '65%' },
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
             }}
