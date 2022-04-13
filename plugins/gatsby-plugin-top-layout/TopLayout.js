@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../../src/theme/theme';
 import ZarfNav from '../../src/components/ZarfNav';
+import '../../src/assets/css/blobz.min.css';
 
 export default function TopLayout(props) {
   return (

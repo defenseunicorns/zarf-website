@@ -21,7 +21,7 @@ import {
 type ZarfAppBarColor = 'inherit' | 'transparent';
 
 const ZarfAppBar = styled(AppBar)`
-  height: 4rem;
+  height: 5rem;
   max-width: 100vw;
   transition: all 0.5s ease-in;
 `;
