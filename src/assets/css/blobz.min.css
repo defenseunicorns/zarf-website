@@ -1,14 +1,14 @@
-.tk-blob {
-  /* animation: blob-turn var(--time, 30s) linear infinite; */
+.tk-blob-rotate {
+  animation: blob-turn var(--time, 30s) linear infinite;
   fill: var(--fill, #7600f8);
   position: relative;
   transform-origin: center;
 }
-.tk-blob svg {
+.tk-blob-skew svg {
   animation: blob-skew calc(var(--skew, 30s) * 0.5) linear 0s infinite;
   transform-origin: center;
 }
-.tk-blob svg path {
+.tk-blob-scale svg path {
   animation: blob-scale calc(var(--time, 30s) * 0.5) ease-in-out 0s infinite;
   transform-origin: center;
 }
