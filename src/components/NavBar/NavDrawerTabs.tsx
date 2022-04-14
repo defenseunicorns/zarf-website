@@ -7,7 +7,7 @@ import {
 import { Link, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React, { ReactElement } from 'react';
-import palette from '../theme/palette';
+import palette from '../../theme/palette';
 
 interface DrawerTabProps extends TabUnstyledProps {
   target?: string;

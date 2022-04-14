@@ -1,9 +1,9 @@
 import { Drawer, IconButton, DrawerProps } from '@mui/material';
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { createTabPropsFromNavLink } from '../utils/navLink';
+import { createTabPropsFromNavLink } from '../../utils/navLink';
 import { DrawerTabs, DrawerTab } from './NavDrawerTabs';
 import CloseIcon from '@mui/icons-material/Close';
-import NavLink from '../interfaces/NavLink';
+import NavLink from '../../interfaces/NavLink';
 
 export interface NavDrawerProps {
   drawerProps?: DrawerProps;

@@ -1,13 +1,13 @@
 import React, { ReactElement, useCallback, useEffect, useState } from 'react';
-import { createTabPropsFromNavLink } from '../utils/navLink';
-import { hideSmall, hideLarge } from '../utils/display';
-import { navLinks } from '../assets/data/navLinks';
-import ZarfLogo from '../assets/png/zarf-logo.png';
+import { createTabPropsFromNavLink } from '../../utils/navLink';
+import { hideSmall, hideLarge } from '../../utils/display';
+import { navLinks } from '../../assets/data/navLinks';
 import MenuIcon from '@mui/icons-material/Menu';
-import NavLink from '../interfaces/NavLink';
-import SocialLinks from './SocialLinks';
-import palette from '../theme/palette';
+import NavLink from '../../interfaces/NavLink';
+import SocialLinks from '../SocialLinks';
+import palette from '../../theme/palette';
 import NavDrawer from './NavDrawer';
+import NavLogo from './NavLogo';
 import {
   AppBar,
   Box,
@@ -21,7 +21,6 @@ import {
 type ZarfAppBarColor = 'inherit' | 'transparent';
 
 const ZarfAppBar = styled(AppBar)`
-  height: 4rem;
   max-width: 100vw;
   transition: all 0.5s ease-in;
 `;
@@ -57,7 +56,11 @@ function ZarfNav(): ReactElement {
 
   return (
     <>
-      <ZarfAppBar position="sticky" color={navColor}>
+      <ZarfAppBar
+        position="sticky"
+        color={navColor}
+        sx={{ height: { xs: '4rem', md: '5rem' }, margin: 0 }}
+      >
         <Toolbar sx={{ flexGrow: 1, justifyContent: 'space-between' }}>
           {/* Mobile between xs and medium */}
           <IconButton
@@ -69,14 +72,7 @@ function ZarfNav(): ReactElement {
           >
             <MenuIcon />
           </IconButton>
-          <Box
-            component="img"
-            src={ZarfLogo}
-            sx={{
-              height: { xs: '2.5', md: '4rem' },
-              width: { xs: '7.11rem', md: '9.75rem' }
-            }}
-          />
+          <NavLogo />
           <Box
             component="div"
             sx={{ flexDirection: 'row', width: 'fit-content', display: 'flex' }}
