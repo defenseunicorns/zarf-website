@@ -38,7 +38,8 @@ function ComingSoon(): ReactElement {
               width: { xs: '90%', sm: '55%', md: '50%' },
               height: '50%',
               marginLeft: 'auto',
-              marginRight: 'auto'
+              marginRight: 'auto',
+              paddingTop: '2%'
             }}
           >
             <Typography
@@ -95,7 +96,7 @@ function ComingSoon(): ReactElement {
               height: '50%',
               backgroundImage: `url(${ZarfBubbles})`,
               backgroundSize: { xs: 'contain', md: '65%' },
-              backgroundPosition: 'center',
+              backgroundPosition: 'top',
               backgroundRepeat: 'no-repeat'
             }}
           ></Box>
