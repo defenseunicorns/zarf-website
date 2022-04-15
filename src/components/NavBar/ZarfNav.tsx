@@ -20,11 +20,12 @@ import {
 
 type ZarfAppBarColor = 'inherit' | 'transparent';
 
+const DEFAULT_ELEVATION = 1;
+const TRANSPARENT_ELEVATION = 0;
 const ZarfAppBar = styled(AppBar)`
-  max-width: 100vw;
+  width: 100vw;
   transition: all 0.5s ease-in;
 `;
-
 const TabWithHoverState = styled(Tab)`
   &:hover {
     background-color: ${palette.action?.hover};
@@ -33,6 +34,9 @@ const TabWithHoverState = styled(Tab)`
 
 function ZarfNav(): ReactElement {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
+  const [navElevation, setNavElevation] = useState<number>(
+    TRANSPARENT_ELEVATION
+  );
   const [navColor, setNavColor] = useState<ZarfAppBarColor>('transparent');
 
   const toggleDrawer = useCallback(
@@ -40,13 +44,15 @@ function ZarfNav(): ReactElement {
     [setShowDrawer]
   );
 
-  const windowScrolled = useCallback(
-    (): void =>
-      window.scrollY <= 80
-        ? setNavColor('transparent')
-        : setNavColor('inherit'),
-    [setNavColor]
-  );
+  const windowScrolled = useCallback((): void => {
+    if (window.scrollY <= 80) {
+      setNavColor('transparent');
+      setNavElevation(TRANSPARENT_ELEVATION);
+    } else {
+      setNavColor('inherit');
+      setNavElevation(DEFAULT_ELEVATION);
+    }
+  }, [setNavColor]);
 
   useEffect(() => {
     windowScrolled();
@@ -57,6 +63,7 @@ function ZarfNav(): ReactElement {
   return (
     <>
       <ZarfAppBar
+        elevation={navElevation}
         position="sticky"
         color={navColor}
         sx={{ height: { xs: '4rem', md: '5rem' }, margin: 0 }}
