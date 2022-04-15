@@ -1,108 +1,96 @@
-import React, { ReactElement } from 'react';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import ZarfBubbles from '../assets/images/zarfBubbles.png';
 import ComingSoonBG from '../assets/images/comingSoonBg.png';
+import ZarfBubbles from '../assets/images/zarfBubbles.png';
 import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import React, { ReactElement } from 'react';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material';
+import Box from '@mui/material/Box';
 
-// styles
-const backgroundStyles = {
-  backgroundImage: `url(${ComingSoonBG})`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  width: '100vw',
-  height: '100vh',
-  display: 'flex',
-  alignItems: 'center'
-};
+const ComingSoonBackground = styled(Box)`
+  background-image: url(${ComingSoonBG});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+`;
+
+const TypoRoboto = styled(Typography)`
+  font-family: 'Roboto';
+`;
 
 // markup
 function ComingSoon(): ReactElement {
   return (
-    <Box style={backgroundStyles}>
+    <ComingSoonBackground
+      sx={{
+        backgroundPositionX: { xs: '22%', sm: '15%', md: 'center' }
+      }}
+    >
       <title>Coming Soon!</title>
-      <Container maxWidth="lg">
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '80vh'
-          }}
-        >
-          <Box
+      <Container
+        sx={{
+          width: '100%',
+          height: { xs: '100vh', md: '50vh' },
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: { xs: 'center', md: 'space-around' },
+          flexDirection: { xs: 'column', md: 'row' }
+        }}
+      >
+        <Box sx={{ pb: { xs: '2.5rem', md: 0 } }}>
+          <TypoRoboto
+            sx={{ typography: { xs: 'body1', md: 'h5' } }}
+            gutterBottom
+          >
+            OPEN SOURCE PROJECT
+          </TypoRoboto>
+          <Typography
             sx={{
-              width: { xs: '90%', sm: '55%', md: '50%' },
-              height: '50%',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              paddingTop: '2%'
+              typography: { xs: 'h2', md: 'h1' },
+              pt: '20px'
             }}
           >
-            <Typography
-              variant="h5"
-              component="div"
-              sx={{
-                flexGrow: 1,
-                fontFamily: 'roboto',
-                fontSize: { xs: '18px', md: '24px' },
-                fontWeight: { xs: 'regular', md: 'medium' }
-              }}
-              gutterBottom
-            >
-              OPEN SOURCE PROJECT
-            </Typography>
-            <Typography
-              variant="h1"
-              component="div"
-              sx={{
-                flexGrow: 1,
-                fontSize: { xs: '48px', md: '64px' },
-                paddingTop: '20px'
-              }}
-            >
-              Website
-            </Typography>
-            <Typography
-              variant="h1"
-              component="div"
-              sx={{
-                flexGrow: 1,
-                fontSize: { xs: '48px', md: '64px' },
-                paddingBottom: '20px'
-              }}
-              gutterBottom
-            >
-              Coming Soon!
-            </Typography>
-            <Button
-              variant="rounded"
-              size="medium"
-              href="https://github.com/defenseunicorns/zarf"
-              sx={{
-                width: { lg: '170px' },
-                heigh: { lg: '45px' }
-              }}
-            >
-              View on Github
-            </Button>
-          </Box>
-          <Box
+            Website
+          </Typography>
+          <Typography
             sx={{
-              width: { xs: '80%', md: '50%' },
-              height: '50%',
-              backgroundImage: `url(${ZarfBubbles})`,
-              backgroundSize: { xs: 'contain', md: '65%' },
-              backgroundPosition: 'top',
-              backgroundRepeat: 'no-repeat'
+              typography: { xs: 'h2', md: 'h1' }
             }}
-          ></Box>
+            gutterBottom
+          >
+            Coming Soon!
+          </Typography>
+          <Button
+            variant="contained"
+            // size="large"
+            href="https://github.com/defenseunicorns/zarf"
+            sx={{ display: { xs: 'none', md: 'flex' }, width: '168px' }}
+          >
+            View on Github
+          </Button>
+          <Button
+            variant="contained"
+            size="medium"
+            href="https://github.com/defenseunicorns/zarf"
+            sx={{ display: { xs: 'flex', md: 'none' }, width: '147px' }}
+          >
+            View on Github
+          </Button>
         </Box>
+        <Box
+          component="img"
+          src={ZarfBubbles}
+          sx={{
+            height: { xs: '240px', md: '320px' },
+            width: { xs: '240px', md: '320px' }
+          }}
+        />
       </Container>
-    </Box>
+    </ComingSoonBackground>
   );
 }
 
