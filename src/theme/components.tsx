@@ -14,6 +14,13 @@ const components: Components = {
         borderColor: '#FFFFFF6B'
       }
     }
+  },
+  MuiButton: {
+    styleOverrides: {
+      root: {
+        borderRadius: '20px'
+      }
+    }
   }
 };
 export default Object.freeze(components);
