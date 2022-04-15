@@ -95,7 +95,7 @@ function ComingSoon(): ReactElement {
               width: { xs: '80%', md: '50%' },
               height: '50%',
               backgroundImage: `url(${ZarfBubbles})`,
-              backgroundSize: { xs: 'contain', md: '65%' },
+              backgroundSize: { xs: 'contain', md: '60%' },
               backgroundPosition: 'top',
               backgroundRepeat: 'no-repeat'
             }}
