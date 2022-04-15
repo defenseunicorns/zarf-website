@@ -66,7 +66,7 @@ function ComingSoon(): ReactElement {
           </Typography>
           <Button
             variant="contained"
-            // size="large"
+            size="large"
             href="https://github.com/defenseunicorns/zarf"
             sx={{ display: { xs: 'none', md: 'flex' }, width: '168px' }}
           >
