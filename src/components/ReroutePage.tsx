@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import { Backdrop, styled } from '@mui/material';
 import Box from '@mui/material/Box';
 
-const ComingSoonBackground = styled(Backdrop)`
+const ReroutePageBackdrop = styled(Backdrop)`
   background-image: url(${ComingSoonBG});
   background-size: cover;
 
@@ -19,16 +19,25 @@ const TypoRoboto = styled(Typography)`
   font-family: 'Roboto';
 `;
 
+export interface ReroutePageProps {
+  title: string;
+  topLine?: string;
+  middleLine?: string;
+  bottomLine?: string;
+  buttonText: string;
+  buttonLink: string;
+}
+
 // markup
-function ComingSoon(): ReactElement {
+function ReroutePage(props: ReroutePageProps): ReactElement {
   return (
-    <ComingSoonBackground
+    <ReroutePageBackdrop
       open={true}
       sx={{
         backgroundPositionX: { xs: '22%', sm: '15%', md: 'center' }
       }}
     >
-      <title>Coming Soon!</title>
+      <title>{props.title}</title>
       <Container
         sx={{
           width: '100%',
@@ -41,42 +50,47 @@ function ComingSoon(): ReactElement {
       >
         <Box sx={{ pb: { xs: '2.5rem', md: 0 } }}>
           <TypoRoboto
-            sx={{ typography: { xs: 'body1', md: 'h5' } }}
+            sx={{
+              typography: { xs: 'body1', md: 'h5' },
+              textTransform: 'uppercase'
+            }}
             gutterBottom
           >
-            OPEN SOURCE PROJECT
+            {props.topLine}
           </TypoRoboto>
           <Typography
             sx={{
               typography: { xs: 'h2', md: 'h1' },
-              pt: '20px'
+              pt: '20px',
+              textTransform: 'capitalize'
             }}
           >
-            Website
+            {props.middleLine}
           </Typography>
           <Typography
             sx={{
-              typography: { xs: 'h2', md: 'h1' }
+              typography: { xs: 'h2', md: 'h1' },
+              textTransform: 'capitalize'
             }}
             gutterBottom
           >
-            Coming Soon!
+            {props.bottomLine}
           </Typography>
           <Button
             variant="contained"
             size="large"
-            href="https://github.com/defenseunicorns/zarf"
+            href={props.buttonLink}
             sx={{ display: { xs: 'none', md: 'flex' }, width: '168px' }}
           >
-            View on Github
+            {props.buttonText}
           </Button>
           <Button
             variant="contained"
             size="medium"
-            href="https://github.com/defenseunicorns/zarf"
+            href={props.buttonLink}
             sx={{ display: { xs: 'flex', md: 'none' }, width: '147px' }}
           >
-            View on Github
+            {props.buttonText}
           </Button>
         </Box>
         <Box
@@ -88,8 +102,8 @@ function ComingSoon(): ReactElement {
           }}
         />
       </Container>
-    </ComingSoonBackground>
+    </ReroutePageBackdrop>
   );
 }
 
-export default ComingSoon;
+export default ReroutePage;
