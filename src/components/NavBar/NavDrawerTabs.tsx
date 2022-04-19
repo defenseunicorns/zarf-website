@@ -1,18 +1,25 @@
+import { isLocalLink } from '../../utils/navLink';
+import { Link, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import React, { ReactElement } from 'react';
+import { Link as LocalLink } from 'gatsby';
+import palette from '../../theme/palette';
 import {
   TabUnstyled,
   TabsUnstyled,
   tabUnstyledClasses,
   TabUnstyledProps
 } from '@mui/base';
-import { Link, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import React, { ReactElement } from 'react';
-import palette from '../../theme/palette';
 
 interface DrawerTabProps extends TabUnstyledProps {
   target?: string;
   label?: string;
+  href: string;
 }
+
+const StyledLocalLink = styled(LocalLink)`
+  all: unset;
+`;
 
 const StyledDrawerTab = styled(TabUnstyled)`
   cursor: pointer;
@@ -43,7 +50,17 @@ export const DrawerTabs = styled(TabsUnstyled)`
   background-color: inherit;
 `;
 
-export function DrawerTab(props: DrawerTabProps): ReactElement {
+export function LocalDrawerTab(props: DrawerTabProps): ReactElement {
+  return (
+    <StyledDrawerTab component={StyledLocalLink} {...props} to={props.href}>
+      <Typography variant="h5" color="inherit">
+        {props.label}
+      </Typography>
+    </StyledDrawerTab>
+  );
+}
+
+export function ExternalDrawerTab(props: DrawerTabProps): ReactElement {
   return (
     <Link
       sx={{ width: '100%' }}
@@ -59,3 +76,13 @@ export function DrawerTab(props: DrawerTabProps): ReactElement {
     </Link>
   );
 }
+
+function DrawerTab(props: DrawerTabProps): ReactElement {
+  return isLocalLink(props.href) ? (
+    <LocalDrawerTab {...props} />
+  ) : (
+    <ExternalDrawerTab {...props} />
+  );
+}
+
+export default DrawerTab;

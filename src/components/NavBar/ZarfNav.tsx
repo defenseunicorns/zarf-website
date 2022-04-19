@@ -1,3 +1,4 @@
+import { AppBar, Box, IconButton, Tabs, Toolbar, styled } from '@mui/material';
 import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 import { createTabPropsFromNavLink } from '../../utils/navLink';
 import { hideSmall, hideLarge } from '../../utils/display';
@@ -5,31 +6,22 @@ import { navLinks } from '../../assets/data/navLinks';
 import MenuIcon from '@mui/icons-material/Menu';
 import NavLink from '../../interfaces/NavLink';
 import SocialLinks from '../SocialLinks';
-import palette from '../../theme/palette';
 import NavDrawer from './NavDrawer';
 import NavLogo from './NavLogo';
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Tabs,
-  Toolbar,
-  Tab,
-  styled
-} from '@mui/material';
+import NavTab from './NavTabs';
 
-type ZarfAppBarColor = 'inherit' | 'transparent';
-
-const DEFAULT_ELEVATION = 1;
 const TRANSPARENT_ELEVATION = 0;
+const TRANSITION_HEIGHT = 65;
+const DEFAULT_ELEVATION = 1;
+
+enum ZarfAppBarColor {
+  SCROLLED = 'inherit',
+  TOP = 'transparent'
+}
+
 const ZarfAppBar = styled(AppBar)`
   width: 100vw;
   transition: all 0.5s ease-in;
-`;
-const TabWithHoverState = styled(Tab)`
-  &:hover {
-    background-color: ${palette.action?.hover};
-  }
 `;
 
 function ZarfNav(): ReactElement {
@@ -37,7 +29,9 @@ function ZarfNav(): ReactElement {
   const [navElevation, setNavElevation] = useState<number>(
     TRANSPARENT_ELEVATION
   );
-  const [navColor, setNavColor] = useState<ZarfAppBarColor>('transparent');
+  const [navColor, setNavColor] = useState<ZarfAppBarColor>(
+    ZarfAppBarColor.TOP
+  );
 
   const toggleDrawer = useCallback(
     (state: boolean) => (): void => setShowDrawer(state),
@@ -45,11 +39,11 @@ function ZarfNav(): ReactElement {
   );
 
   const windowScrolled = useCallback((): void => {
-    if (window.scrollY <= 80) {
-      setNavColor('transparent');
+    if (window.scrollY <= TRANSITION_HEIGHT) {
+      setNavColor(ZarfAppBarColor.TOP);
       setNavElevation(TRANSPARENT_ELEVATION);
     } else {
-      setNavColor('inherit');
+      setNavColor(ZarfAppBarColor.SCROLLED);
       setNavElevation(DEFAULT_ELEVATION);
     }
   }, [setNavColor]);
@@ -86,11 +80,7 @@ function ZarfNav(): ReactElement {
           >
             <Tabs value={0} aria-label="Navigation Tabs" sx={hideSmall}>
               {navLinks.map((l: NavLink, i: number) => (
-                <TabWithHoverState
-                  key={l.title}
-                  {...createTabPropsFromNavLink(l, i)}
-                  value={i}
-                />
+                <NavTab key={i} {...createTabPropsFromNavLink(l, i)} />
               ))}
             </Tabs>
             <SocialLinks slackSx={hideSmall} />
