@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../../src/theme/theme';
+import ZarfNav from '../../src/components/NavBar/ZarfNav';
 
 export default function TopLayout(props) {
   return (
@@ -24,6 +25,7 @@ export default function TopLayout(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
+        <ZarfNav />
         {props.children}
       </ThemeProvider>
     </React.Fragment>
