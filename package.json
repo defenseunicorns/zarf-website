@@ -9,6 +9,7 @@
   "scripts": {
     "precommit": "husky",
     "build": "gatsby build",
+    "build:staging": "npm run build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "start": "npm run build && npm run serve",
