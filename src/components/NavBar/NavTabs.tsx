@@ -15,7 +15,8 @@ const TabWithHoverState = styled(Tab)`
 `;
 
 // MUI Tab Components are not matching the api and are not allowing component in tab to be passed.
-// The unstyled component does not have this issue. So we are converting to the UnstyledTab return type in order to bypass this issue.
+// The unstyled component does not have this issue.
+// So we are converting to the UnstyledTab return type in order to bypass this issue.
 // https://github.com/mui/material-ui/issues/16846
 // https://mui.com/material-ui/guides/routing/#tabs
 const LocalTabWithHoverState =
@@ -29,9 +30,11 @@ function InternalNavTab(props: NavLinkTabProps): ReactElement {
     <LocalTabWithHoverState component={LocalLink} {...props} to={props.href} />
   );
 }
+
 function ExternalNavTab(props: NavLinkTabProps): ReactElement {
   return <TabWithHoverState {...props} />;
 }
+
 function NavTab(props: NavLinkTabProps): ReactElement {
   return isLocalLink(props.href) ? (
     <InternalNavTab {...props} />
