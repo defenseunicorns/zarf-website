@@ -1,19 +1,30 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import ReroutePageBackdrop, {
   ReroutePageProps
 } from '../components/ReroutePage';
 
+const defaultRerouteProps: ReroutePageProps = {
+  title: 'Not Found!',
+  topLine: 'Error 404',
+  middleLine: 'Page',
+  bottomLine: 'not found!',
+  buttonLink: '/',
+  buttonText: 'Return Home'
+};
 // markup
 function NotFoundPage(): ReactElement {
-  const path = location.pathname.replace('/', '');
-  const rerouteProps: ReroutePageProps = {
-    title: 'Not Found!',
-    topLine: 'Error 404',
-    middleLine: `${path}`,
-    bottomLine: 'not found!',
-    buttonLink: '/',
-    buttonText: 'Return Home'
-  };
+  const [rerouteProps, setRerouteProps] =
+    useState<ReroutePageProps>(defaultRerouteProps);
+
+  useEffect(() => {
+    setRerouteProps(
+      (p): ReroutePageProps => ({
+        ...p,
+        middleLine: location.pathname.replace('/', '')
+      })
+    );
+  }, [setRerouteProps]);
+
   return <ReroutePageBackdrop {...rerouteProps} />;
 }
 
