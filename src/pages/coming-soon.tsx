@@ -4,16 +4,13 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import React, { ReactElement } from 'react';
 import Button from '@mui/material/Button';
-import { styled } from '@mui/material';
+import { Backdrop, styled } from '@mui/material';
 import Box from '@mui/material/Box';
 
-const ComingSoonBackground = styled(Box)`
+const ComingSoonBackground = styled(Backdrop)`
   background-image: url(${ComingSoonBG});
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
+
   display: flex;
   align-items: center;
 `;
@@ -26,6 +23,7 @@ const TypoRoboto = styled(Typography)`
 function ComingSoon(): ReactElement {
   return (
     <ComingSoonBackground
+      open={true}
       sx={{
         backgroundPositionX: { xs: '22%', sm: '15%', md: 'center' }
       }}
