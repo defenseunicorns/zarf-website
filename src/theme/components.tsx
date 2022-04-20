@@ -1,4 +1,5 @@
 import { Components } from '@mui/material/styles/components';
+import palette from './palette';
 
 const components: Components = {
   MuiSnackbarContent: {
@@ -12,6 +13,31 @@ const components: Components = {
     styleOverrides: {
       root: {
         borderColor: '#FFFFFF6B'
+      }
+    }
+  },
+  MuiButton: {
+    styleOverrides: {
+      root: {
+        borderRadius: '20px'
+      }
+    }
+  },
+  MuiIconButton: {
+    styleOverrides: {
+      root: {
+        ':hover': {
+          backgroundColor: palette.action?.hover
+        }
+      }
+    }
+  },
+  MuiTab: {
+    styleOverrides: {
+      root: {
+        ':hover': {
+          backgroundColor: palette.action?.hover
+        }
       }
     }
   }

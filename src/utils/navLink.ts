@@ -1,13 +1,4 @@
-import NavLink from '../interfaces/NavLink';
-
-interface NavLinkTabProps {
-  value: number;
-  label: string;
-  href?: string;
-  target?: string;
-  id: string;
-  rel?: string;
-}
+import NavLink, { NavLinkTabProps } from '../interfaces/NavLink';
 
 export const createTabPropsFromNavLink = (
   navLink: NavLink,
@@ -22,3 +13,5 @@ export const createTabPropsFromNavLink = (
     rel: navLink.rel
   };
 };
+
+export const isLocalLink = (url: string): boolean => url.startsWith('/');
