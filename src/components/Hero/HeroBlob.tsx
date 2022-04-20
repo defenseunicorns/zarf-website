@@ -15,7 +15,7 @@ class BlobCalculator implements BlobDimensions {
   private aspect = 0.6318591855790229;
   BLOB_SCREEN_WIDTH_PERCENTAGE = 0.9;
   BLOB_LEFT_PERCENTAGE = -0.273;
-  BLOB_TOP_PERCENTAGE = -0.078;
+  BLOB_TOP_PERCENTAGE = -0.2;
   BLOB_MOBILE_TOP_PERCENTAGE = -0.3;
   width = 0;
   height = 0;
@@ -131,7 +131,12 @@ function HeroBlob(): ReactElement {
           },
         }}
       >
-        <HeroBlobSvg style={{ height: '100%', width: '100%' }} />
+        <HeroBlobSvg
+          style={{
+            height: '100%',
+            width: '100%',
+          }}
+        />
       </BlobContainer>
     </Box>
   );
