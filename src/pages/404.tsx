@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import ReroutePageBackdrop, {
-  ReroutePageProps
+  ReroutePageProps,
 } from '../components/ReroutePage';
 
 const defaultRerouteProps: ReroutePageProps = {
@@ -9,7 +9,7 @@ const defaultRerouteProps: ReroutePageProps = {
   middleLine: 'Page',
   bottomLine: 'not found!',
   buttonLink: '/',
-  buttonText: 'Return Home'
+  buttonText: 'Return Home',
 };
 // markup
 function NotFoundPage(): ReactElement {
@@ -20,8 +20,8 @@ function NotFoundPage(): ReactElement {
     setRerouteProps(
       (p): ReroutePageProps => ({
         ...p,
-        middleLine: location.pathname.replace('/', '')
-      })
+        middleLine: location.pathname.replace('/', ''),
+      }),
     );
   }, [setRerouteProps]);
 

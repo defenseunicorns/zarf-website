@@ -16,7 +16,7 @@ const DEFAULT_ELEVATION = 1;
 
 enum ZarfAppBarColor {
   SCROLLED = 'inherit',
-  TOP = 'transparent'
+  TOP = 'transparent',
 }
 
 const ZarfAppBar = styled(AppBar)`
@@ -27,15 +27,15 @@ const ZarfAppBar = styled(AppBar)`
 function ZarfNav(): ReactElement {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
   const [navElevation, setNavElevation] = useState<number>(
-    TRANSPARENT_ELEVATION
+    TRANSPARENT_ELEVATION,
   );
   const [navColor, setNavColor] = useState<ZarfAppBarColor>(
-    ZarfAppBarColor.TOP
+    ZarfAppBarColor.TOP,
   );
 
   const toggleDrawer = useCallback(
     (state: boolean) => (): void => setShowDrawer(state),
-    [setShowDrawer]
+    [setShowDrawer],
   );
 
   const windowScrolled = useCallback((): void => {
@@ -58,8 +58,8 @@ function ZarfNav(): ReactElement {
     <>
       <ZarfAppBar
         elevation={navElevation}
-        position="sticky"
         color={navColor}
+        position="sticky"
         sx={{ height: { xs: '4rem', md: '5rem' }, margin: 0 }}
       >
         <Toolbar sx={{ flexGrow: 1, justifyContent: 'space-between' }}>
@@ -92,7 +92,7 @@ function ZarfNav(): ReactElement {
           anchor: 'left',
           variant: 'temporary',
           PaperProps: { sx: { width: { xs: '100%', sm: '65%' } } },
-          open: showDrawer
+          open: showDrawer,
         }}
         closeDrawer={toggleDrawer(false)}
         navLinks={navLinks}
@@ -103,7 +103,7 @@ function ZarfNav(): ReactElement {
             display: 'flex',
             flexDirection: 'row',
             width: '100%',
-            justifyContent: 'center'
+            justifyContent: 'center',
           }}
         >
           <SocialLinks />

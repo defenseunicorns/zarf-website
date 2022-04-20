@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react';
-import HeroBlob from '../components/HeroBlob';
+import { heroProps } from '../assets/data/heroProps';
+import Hero from '../components/Hero/Hero';
 
 function index(): ReactElement {
-  return <HeroBlob />;
+  return <Hero {...heroProps.home} />;
 }
 
 export default index;

@@ -7,7 +7,7 @@ import getEmotionCache from './getEmotionCache';
 // Inject MUI styles first to match with the prepend: true configuration.
 export const onPreRenderHTML = ({
   getHeadComponents,
-  replaceHeadComponents
+  replaceHeadComponents,
 }) => {
   const headComponents = getHeadComponents();
   headComponents.sort((x, y) => {
@@ -25,13 +25,15 @@ export const onPreRenderHTML = ({
 export const replaceRenderer = ({
   bodyComponent,
   setHeadComponents,
-  replaceBodyHTMLString
+  replaceBodyHTMLString,
 }) => {
   const cache = getEmotionCache();
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
   const emotionStyles = extractCriticalToChunks(
-    renderToString(<CacheProvider value={cache}>{bodyComponent}</CacheProvider>)
+    renderToString(
+      <CacheProvider value={cache}>{bodyComponent}</CacheProvider>,
+    ),
   );
 
   setHeadComponents(
@@ -42,7 +44,7 @@ export const replaceRenderer = ({
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: style.css }}
       />
-    ))
+    )),
   );
 
   // render the result from `extractCritical`

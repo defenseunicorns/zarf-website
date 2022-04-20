@@ -11,14 +11,14 @@ const gatsbyRequiredRules = path.join(
   'gatsby',
   'dist',
   'utils',
-  'eslint-rules'
+  'eslint-rules',
 );
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
     title: `new`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
     'gatsby-plugin-top-layout',
@@ -50,18 +50,18 @@ module.exports = {
         // Default settings that may be ommitted or customized
         stages: ['develop'],
         extensions: ['js', 'jsx', 'ts', 'tsx'],
-        exclude: ['node_modules', 'bower_components', '.cache', 'public']
+        exclude: ['node_modules', 'bower_components', '.cache', 'public'],
         // Any additional eslint-webpack-plugin options below
         // ...
-      }
+      },
     },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /assets\/svg/
-        }
-      }
-    }
-  ]
+          include: /assets\/svg/,
+        },
+      },
+    },
+  ],
 };
