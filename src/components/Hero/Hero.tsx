@@ -19,11 +19,14 @@ function Hero(props: HeroProps): ReactElement {
       <Box
         className="wrap"
         sx={{
-          mt: '32px',
           height: { xs: '100vh', md: '75vh' },
           display: 'flex',
-          alignItems: '',
-          justifyContent: { xs: 'flex-start', md: 'space-around' },
+          alignItems: 'center',
+          mx: { xs: '32px', lg: '0px' },
+          justifyContent: {
+            xs: 'flex-start',
+            md: 'space-around',
+          },
           flexDirection: { xs: 'column', md: 'row' },
           zIndex: 1,
         }}
@@ -34,13 +37,12 @@ function Hero(props: HeroProps): ReactElement {
             display: 'flex',
             maxWidth: '492px',
             flexDirection: 'column',
-            px: '17px',
-            my: { xs: '80px', md: '' },
+            my: { xs: '80px', md: '64px' },
           }}
         >
           <Typography
             sx={{
-              typography: { xs: 'h2', md: 'h1' },
+              typography: { xs: 'h2', lg: 'h1' },
             }}
             marginBottom={'32px'}
           >

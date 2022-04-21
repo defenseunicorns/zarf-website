@@ -1,3 +1,10 @@
+html,
+body,
+header {
+  max-width: 1990px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .tk-blob-rotate {
   animation: blob-turn var(--time, 30s) linear infinite;
   fill: var(--fill, #7600f8);
