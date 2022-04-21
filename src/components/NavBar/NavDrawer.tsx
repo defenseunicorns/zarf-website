@@ -16,7 +16,7 @@ function NavDrawer({
   children,
   drawerProps,
   closeDrawer,
-  navLinks
+  navLinks,
 }: PropsWithChildren<NavDrawerProps>): ReactElement {
   // Use the closeDrawer props if no onClose method passed to drawer
   const onClose = (drawerProps && drawerProps.onClose) || closeDrawer;
@@ -31,7 +31,7 @@ function NavDrawer({
           ml: '1.813rem',
           width: '3rem',
           height: '3rem',
-          justifyContent: 'center'
+          justifyContent: 'center',
         }}
         onClick={closeDrawer}
       >

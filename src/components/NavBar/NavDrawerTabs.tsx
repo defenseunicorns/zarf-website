@@ -8,7 +8,7 @@ import {
   TabUnstyled,
   TabsUnstyled,
   tabUnstyledClasses,
-  TabUnstyledProps
+  TabUnstyledProps,
 } from '@mui/base';
 
 interface DrawerTabProps extends TabUnstyledProps {

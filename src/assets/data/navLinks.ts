@@ -3,20 +3,20 @@ import NavLink from '../../interfaces/NavLink';
 export const navLinks: NavLink[] = [
   {
     url: '/',
-    title: 'Product'
+    title: 'Product',
   },
   {
     url: 'https://defenseunicorns.github.io/zarf/examples',
     title: 'Examples',
     target: '_blank',
-    rel: 'noopener noreferrer'
+    rel: 'noopener noreferrer',
   },
   {
     url: 'https://defenseunicorns.github.io/zarf',
     title: 'Documents',
     target: '_blank',
-    rel: 'noopener noreferrer'
-  }
+    rel: 'noopener noreferrer',
+  },
 ];
 
 interface SocialLinks {
@@ -27,12 +27,12 @@ export const socialLinks: SocialLinks = {
     url: 'https://slack.k8s.io/',
     title: 'Slack',
     target: '_blank',
-    rel: 'noopener noreferrer'
+    rel: 'noopener noreferrer',
   },
   github: {
     url: 'https://github.com/defenseunicorns/zarf',
     title: 'Github',
     target: '_blank',
-    rel: 'noopener noreferrer'
-  }
+    rel: 'noopener noreferrer',
+  },
 };

@@ -1,8 +1,9 @@
-import { socialLinks } from '../assets/data/navLinks';
 import { IconButton, SxProps, Theme } from '@mui/material';
-import React, { ReactElement } from 'react';
+import { socialLinks } from '../assets/data/navLinks';
 import { GitHub } from '@mui/icons-material';
+import React, { ReactElement } from 'react';
 import Slack from '../assets/svg/slack.svg';
+
 interface SocialLinksProps {
   slackSx?: SxProps<Theme>;
   githubSx?: SxProps<Theme>;

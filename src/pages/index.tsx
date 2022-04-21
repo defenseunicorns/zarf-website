@@ -1,19 +1,9 @@
 import React, { ReactElement } from 'react';
-import ReroutePageBackdrop, {
-  ReroutePageProps
-} from '../components/ReroutePage';
-
-const rerouteProps: ReroutePageProps = {
-  title: 'Coming Soon!',
-  topLine: 'Open Source Project',
-  middleLine: 'Website',
-  bottomLine: 'Coming Soon!',
-  buttonLink: 'https://github.com/defenseunicorns/zarf',
-  buttonText: 'View On Github'
-};
+import { heroProps } from '../assets/data/heroProps';
+import Hero from '../components/Hero/Hero';
 
 function index(): ReactElement {
-  return <ReroutePageBackdrop {...rerouteProps} />;
+  return <Hero {...heroProps.home} />;
 }
 
 export default index;

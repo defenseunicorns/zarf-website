@@ -7,5 +7,5 @@ import PALETTE from './palette';
 export default createTheme({
   palette: PALETTE,
   components: COMPONENTS,
-  typography: TYPOGRAPHY
+  typography: TYPOGRAPHY,
 });

@@ -1,10 +1,11 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from '../../src/theme/theme';
 import ZarfNav from '../../src/components/NavBar/ZarfNav';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import '../../src/assets/css/blobz.min.css';
+import theme from '../../src/theme/theme';
+import { Helmet } from 'react-helmet';
+import PropTypes from 'prop-types';
+import * as React from 'react';
 
 export default function TopLayout(props) {
   return (
@@ -33,5 +34,5 @@ export default function TopLayout(props) {
 }
 
 TopLayout.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
