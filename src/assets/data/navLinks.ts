@@ -24,10 +24,8 @@ interface SocialLinks {
 }
 export const socialLinks: SocialLinks = {
   slack: {
-    url: 'https://slack.k8s.io/',
+    url: '/slack',
     title: 'Slack',
-    target: '_blank',
-    rel: 'noopener noreferrer',
   },
   github: {
     url: 'https://github.com/defenseunicorns/zarf',

@@ -51,7 +51,7 @@ function Hero(props: HeroProps): ReactElement {
           <Typography variant="h6" marginBottom={'32px'}>
             {props.body}
           </Typography>
-          <FlexButton text="VIEW ON GITHUB" url={props.buttonLink} />
+          <FlexButton text={props.buttonText} url={props.buttonLink} />
         </Box>
         <Box
           component="img"
