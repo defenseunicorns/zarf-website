@@ -75,6 +75,7 @@ function HeroBlob(): ReactElement {
         left: containerLeft,
         overflow: 'hidden',
         justifyContent: 'center',
+        zIndex: '-1',
       }}
     >
       <BlobContainer

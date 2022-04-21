@@ -19,7 +19,7 @@ function Hero(props: HeroProps): ReactElement {
       <Box
         className="wrap"
         sx={{
-          height: { xs: '100vh', md: '75vh' },
+          minHeight: '75vh',
           display: 'flex',
           alignItems: 'center',
           mx: { xs: '32px', lg: '0px' },
@@ -28,7 +28,6 @@ function Hero(props: HeroProps): ReactElement {
             md: 'space-around',
           },
           flexDirection: { xs: 'column', md: 'row' },
-          zIndex: 1,
         }}
       >
         <Box
@@ -59,7 +58,7 @@ function Hero(props: HeroProps): ReactElement {
           sx={{
             width: { xs: '360px', md: '500px' },
             height: { xs: '302.4px', md: '439.23px' },
-            zIndex: 1,
+            mt: { xs: '80px', md: '0px' },
           }}
         />
       </Box>
