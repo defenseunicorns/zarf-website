@@ -25,10 +25,10 @@ function Slack(): ReactElement {
               {heroProps.slack.buttonLink}
             </Link>
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body1">
             2. Sign in or create a slack account
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body1">
             3. Find us on the following channels{' '}
             <Link href="https://kubernetes.slack.com/archives/C03B6BJAUJ3">
               #zarf
