@@ -13,7 +13,6 @@ function Slack(): ReactElement {
           alignItems: 'center',
           flexDirection: 'column',
           my: { xs: '4.563rem', md: '5rem' },
-          pt: { xs: '40px', md: '160px' },
         }}
       >
         <Typography sx={{ typography: { xs: 'h3', md: 'h2' } }}>
