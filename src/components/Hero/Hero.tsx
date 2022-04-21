@@ -19,9 +19,10 @@ function Hero(props: HeroProps): ReactElement {
       <Box
         className="wrap"
         sx={{
+          mt: '32px',
           height: { xs: '100vh', md: '75vh' },
           display: 'flex',
-          alignItems: 'center',
+          alignItems: '',
           justifyContent: { xs: 'flex-start', md: 'space-around' },
           flexDirection: { xs: 'column', md: 'row' },
           zIndex: 1,
@@ -31,11 +32,10 @@ function Hero(props: HeroProps): ReactElement {
           sx={{
             zIndex: 1,
             display: 'flex',
-            justifyItems: 'center',
             maxWidth: '492px',
             flexDirection: 'column',
             px: '17px',
-            my: { xs: '80px', md: 0 },
+            my: { xs: '80px', md: '' },
           }}
         >
           <Typography
