@@ -24,7 +24,7 @@ const BLOB_TOP_MD_LG_OFFSET_MULTIPLIER = -0.2;
 function HeroBlob(): ReactElement {
   const [blobRef] = useState(createRef<HTMLDivElement>());
   const [blobTop, setBlobTop] = useState<number>(0);
-  const [blobLeft, setBlobLeft] = useState<number>(0);
+  const [blobLeft, setBlobLeft] = useState<number>();
   const [containerTop, setContainerTop] = useState<number | string>(0);
   const [containerLeft, setContainerLeft] = useState<number | string>(0);
   const betweenSmMd = useMediaQuery(theme.breakpoints.between('sm', 'md'));
@@ -88,12 +88,14 @@ function HeroBlob(): ReactElement {
           top: blobTop,
         }}
       >
-        <HeroBlobSvg
-          style={{
-            height: '100%',
-            width: '100%',
-          }}
-        />
+        {blobLeft && (
+          <HeroBlobSvg
+            style={{
+              height: '100%',
+              width: '100%',
+            }}
+          />
+        )}
       </BlobContainer>
     </Box>
   );
