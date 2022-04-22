@@ -1,5 +1,5 @@
 import { NavLinkTabProps } from '../../interfaces/NavLink';
-import { Link as LocalLink } from '@reach/router';
+import { Link as GatsbyLink } from 'gatsby';
 import { isLocalLink } from '../../utils/navLink';
 import React, { ReactElement } from 'react';
 import { TabUnstyled } from '@mui/base';
@@ -14,7 +14,12 @@ const LocalTabWithHoverState = Tab as typeof TabUnstyled;
 
 function InternalNavTab(props: NavLinkTabProps): ReactElement {
   return (
-    <LocalTabWithHoverState component={LocalLink} {...props} to={props.href} />
+    <LocalTabWithHoverState
+      component={GatsbyLink}
+      {...props}
+      to={props.href}
+      partiallyActive={true}
+    />
   );
 }
 

@@ -17,10 +17,6 @@ interface DrawerTabProps extends TabUnstyledProps {
   href: string;
 }
 
-const StyledLocalLink = styled(LocalLink)`
-  all: unset;
-`;
-
 const StyledDrawerTab = styled(TabUnstyled)`
   cursor: pointer;
   background-color: transparent;
@@ -42,21 +38,30 @@ const StyledDrawerTab = styled(TabUnstyled)`
 `;
 
 export const DrawerTabs = styled(TabsUnstyled)`
-  min-width: 320px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: inherit;
 `;
 
 export function LocalDrawerTab(props: DrawerTabProps): ReactElement {
   return (
-    <StyledDrawerTab component={StyledLocalLink} {...props} to={props.href}>
-      <Typography variant="h5" color="inherit">
-        {props.label}
-      </Typography>
-    </StyledDrawerTab>
+    <LocalLink
+      to={props.href}
+      style={{ textDecoration: 'none', width: '100%' }}
+    >
+      <StyledDrawerTab {...props}>
+        <Typography
+          variant="h5"
+          color="inherit"
+          width="100%"
+          textAlign="center"
+        >
+          {props.label}
+        </Typography>
+      </StyledDrawerTab>
+    </LocalLink>
   );
 }
 
@@ -69,7 +74,12 @@ export function ExternalDrawerTab(props: DrawerTabProps): ReactElement {
       target={props.target}
     >
       <StyledDrawerTab {...props}>
-        <Typography variant="h5" color="inherit">
+        <Typography
+          variant="h5"
+          color="inherit"
+          width="100%"
+          textAlign="center"
+        >
           {props.label}
         </Typography>
       </StyledDrawerTab>

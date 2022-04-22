@@ -9,6 +9,7 @@ export interface NavDrawerProps {
   drawerProps?: DrawerProps;
   closeDrawer: () => void;
   navLinks: NavLink[];
+  pathname?: string;
 }
 
 // Extends the Drawer props so that defaults may still be used.
@@ -17,6 +18,7 @@ function NavDrawer({
   drawerProps,
   closeDrawer,
   navLinks,
+  pathname,
 }: PropsWithChildren<NavDrawerProps>): ReactElement {
   // Use the closeDrawer props if no onClose method passed to drawer
   const onClose = (drawerProps && drawerProps.onClose) || closeDrawer;
@@ -37,7 +39,7 @@ function NavDrawer({
       >
         <CloseIcon />
       </IconButton>
-      <DrawerTabs value={0}>
+      <DrawerTabs value={pathname}>
         {navLinks.map((l: NavLink, i: number) => (
           <DrawerTab
             aria-selected={true}

@@ -21,7 +21,11 @@ function FlexButton(props: FlexButtonProps): ReactElement {
         variant="contained"
         size="medium"
         href={props.url}
-        sx={{ display: { xs: 'flex', md: 'none' }, width: '147px' }}
+        sx={{
+          display: { xs: 'flex', md: 'none' },
+          minWidth: '147px',
+          maxWidth: '50vw',
+        }}
       >
         {props.text}
       </Button>

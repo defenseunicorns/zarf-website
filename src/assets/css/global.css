@@ -1,0 +1,7 @@
+html,
+body,
+header {
+  max-width: 1990px;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -19,16 +19,16 @@ function Hero(props: HeroProps): ReactElement {
       <Box
         className="wrap"
         sx={{
-          height: { xs: '100vh', md: '75vh' },
+          minHeight: '75vh',
           display: 'flex',
-          alignItems: 'center',
+          alignItems: { xs: 'center', md: 'start' },
           mx: { xs: '32px', lg: '0px' },
+          pt: '32px',
           justifyContent: {
             xs: 'flex-start',
             md: 'space-around',
           },
           flexDirection: { xs: 'column', md: 'row' },
-          zIndex: 1,
         }}
       >
         <Box
@@ -48,10 +48,15 @@ function Hero(props: HeroProps): ReactElement {
           >
             {props.header}
           </Typography>
-          <Typography variant="h6" marginBottom={'32px'}>
+          <Typography
+            variant="h6"
+            fontFamily={'Roboto'}
+            color={'text.secondary'}
+            marginBottom={'32px'}
+          >
             {props.body}
           </Typography>
-          <FlexButton text="VIEW ON GITHUB" url={props.buttonLink} />
+          <FlexButton text={props.buttonText} url={props.buttonLink} />
         </Box>
         <Box
           component="img"
@@ -59,7 +64,7 @@ function Hero(props: HeroProps): ReactElement {
           sx={{
             width: { xs: '360px', md: '500px' },
             height: { xs: '302.4px', md: '439.23px' },
-            zIndex: 1,
+            mt: { xs: '80px', md: '0px' },
           }}
         />
       </Box>
