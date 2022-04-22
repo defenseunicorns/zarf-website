@@ -1,4 +1,3 @@
-import ZarfNav from '../../src/components/NavBar/ZarfNav';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import '../../src/assets/css/blobz.min.css';
@@ -26,7 +25,6 @@ export default function TopLayout(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <ZarfNav />
         {props.children}
       </ThemeProvider>
     </React.Fragment>
