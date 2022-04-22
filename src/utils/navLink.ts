@@ -2,15 +2,15 @@ import NavLink, { NavLinkTabProps } from '../interfaces/NavLink';
 
 export const createTabPropsFromNavLink = (
   navLink: NavLink,
-  index: number
+  index: number,
 ): NavLinkTabProps => {
   return {
-    value: index,
+    value: navLink.url,
     label: navLink.title,
     href: navLink.url,
     target: navLink.target,
     id: navLink.title + index,
-    rel: navLink.rel
+    rel: navLink.rel,
   };
 };
 

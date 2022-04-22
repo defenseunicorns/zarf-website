@@ -5,27 +5,27 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'plugin:prettier/recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
   ],
   settings: {
     react: {
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
   plugins: ['prettier', 'react', 'unused-imports', '@typescript-eslint'],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     // Allows for the parsing of modern ECMAScript features
     ecmaVersion: 2018,
     // Allows for the use of imports
-    sourceType: 'module'
+    sourceType: 'module',
   },
   rules: {
     // Disable prop-types as we use TypeScript for type checking
@@ -33,19 +33,20 @@ module.exports = {
     'prettier/explicit-function-return-type': 'off',
     // Enable prettier rules
     'prettier/prettier': 'error',
+    'comma-dangle': 'off',
     // interface start with capital I
     'prettier/interface-name-prefix': 'off',
     'prettier/no-unused-vars': 'off',
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': 'error',
-    '@typescript-eslint/explicit-function-return-type': 'off'
+    '@typescript-eslint/explicit-function-return-type': 'off',
   },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
       rules: {
-        '@typescript-eslint/explicit-function-return-type': ['error']
-      }
-    }
-  ]
+        '@typescript-eslint/explicit-function-return-type': ['error'],
+      },
+    },
+  ],
 };

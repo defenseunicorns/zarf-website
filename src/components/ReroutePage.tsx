@@ -1,16 +1,15 @@
 import ComingSoonBG from '../assets/images/comingSoonBg.png';
 import ZarfBubbles from '../assets/images/zarfBubbles.png';
 import Typography from '@mui/material/Typography';
+import { Backdrop, styled } from '@mui/material';
 import Container from '@mui/material/Container';
 import React, { ReactElement } from 'react';
-import Button from '@mui/material/Button';
-import { Backdrop, styled } from '@mui/material';
+import FlexButton from './FlexButton';
 import Box from '@mui/material/Box';
 
 const ReroutePageBackdrop = styled(Backdrop)`
   background-image: url(${ComingSoonBG});
   background-size: cover;
-
   display: flex;
   align-items: center;
 `;
@@ -34,7 +33,7 @@ function ReroutePage(props: ReroutePageProps): ReactElement {
     <ReroutePageBackdrop
       open={true}
       sx={{
-        backgroundPositionX: { xs: '22%', sm: '15%', md: 'center' }
+        backgroundPositionX: { xs: '22%', sm: '15%', md: 'center' },
       }}
     >
       <title>{props.title}</title>
@@ -45,14 +44,14 @@ function ReroutePage(props: ReroutePageProps): ReactElement {
           display: 'flex',
           alignItems: 'center',
           justifyContent: { xs: 'center', md: 'space-around' },
-          flexDirection: { xs: 'column', md: 'row' }
+          flexDirection: { xs: 'column', md: 'row' },
         }}
       >
         <Box sx={{ pb: { xs: '2.5rem', md: 0 } }}>
           <TypoRoboto
             sx={{
               typography: { xs: 'body1', md: 'h5' },
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
             }}
             gutterBottom
           >
@@ -62,7 +61,7 @@ function ReroutePage(props: ReroutePageProps): ReactElement {
             sx={{
               typography: { xs: 'h2', md: 'h1' },
               pt: '20px',
-              textTransform: 'capitalize'
+              textTransform: 'capitalize',
             }}
           >
             {props.middleLine}
@@ -70,35 +69,20 @@ function ReroutePage(props: ReroutePageProps): ReactElement {
           <Typography
             sx={{
               typography: { xs: 'h2', md: 'h1' },
-              textTransform: 'capitalize'
+              textTransform: 'capitalize',
             }}
             gutterBottom
           >
             {props.bottomLine}
           </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            href={props.buttonLink}
-            sx={{ display: { xs: 'none', md: 'flex' }, width: '168px' }}
-          >
-            {props.buttonText}
-          </Button>
-          <Button
-            variant="contained"
-            size="medium"
-            href={props.buttonLink}
-            sx={{ display: { xs: 'flex', md: 'none' }, width: '147px' }}
-          >
-            {props.buttonText}
-          </Button>
+          <FlexButton url={props.buttonLink} text={props.buttonText} />
         </Box>
         <Box
           component="img"
           src={ZarfBubbles}
           sx={{
             height: { xs: '240px', md: '320px' },
-            width: { xs: '240px', md: '320px' }
+            width: { xs: '240px', md: '320px' },
           }}
         />
       </Container>

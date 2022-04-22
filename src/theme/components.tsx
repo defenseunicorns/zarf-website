@@ -5,41 +5,41 @@ const components: Components = {
   MuiSnackbarContent: {
     styleOverrides: {
       root: {
-        background: '#1F2F98'
-      }
-    }
+        background: '#1F2F98',
+      },
+    },
   },
   MuiTextField: {
     styleOverrides: {
       root: {
-        borderColor: '#FFFFFF6B'
-      }
-    }
+        borderColor: '#FFFFFF6B',
+      },
+    },
   },
   MuiButton: {
     styleOverrides: {
       root: {
-        borderRadius: '20px'
-      }
-    }
+        borderRadius: '20px',
+      },
+    },
   },
   MuiIconButton: {
     styleOverrides: {
       root: {
         ':hover': {
-          backgroundColor: palette.action?.hover
-        }
-      }
-    }
+          backgroundColor: palette.action?.hover,
+        },
+      },
+    },
   },
   MuiTab: {
     styleOverrides: {
       root: {
         ':hover': {
-          backgroundColor: palette.action?.hover
-        }
-      }
-    }
-  }
+          backgroundColor: palette.action?.hover,
+        },
+      },
+    },
+  },
 };
 export default Object.freeze(components);

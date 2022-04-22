@@ -16,7 +16,7 @@ const DEFAULT_ELEVATION = 1;
 
 enum ZarfAppBarColor {
   SCROLLED = 'inherit',
-  TOP = 'transparent'
+  TOP = 'transparent',
 }
 
 const ZarfAppBar = styled(AppBar)`
@@ -27,15 +27,16 @@ const ZarfAppBar = styled(AppBar)`
 function ZarfNav(): ReactElement {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
   const [navElevation, setNavElevation] = useState<number>(
-    TRANSPARENT_ELEVATION
+    TRANSPARENT_ELEVATION,
   );
   const [navColor, setNavColor] = useState<ZarfAppBarColor>(
-    ZarfAppBarColor.TOP
+    ZarfAppBarColor.TOP,
   );
+  const [pathname, setPathname] = useState<string>();
 
   const toggleDrawer = useCallback(
     (state: boolean) => (): void => setShowDrawer(state),
-    [setShowDrawer]
+    [setShowDrawer],
   );
 
   const windowScrolled = useCallback((): void => {
@@ -50,6 +51,7 @@ function ZarfNav(): ReactElement {
 
   useEffect(() => {
     windowScrolled();
+    setPathname(window.location.pathname);
     window.addEventListener('scroll', windowScrolled);
     return () => window.removeEventListener('scroll', windowScrolled);
   }, [windowScrolled]);
@@ -58,8 +60,8 @@ function ZarfNav(): ReactElement {
     <>
       <ZarfAppBar
         elevation={navElevation}
-        position="sticky"
         color={navColor}
+        position="sticky"
         sx={{ height: { xs: '4rem', md: '5rem' }, margin: 0 }}
       >
         <Toolbar sx={{ flexGrow: 1, justifyContent: 'space-between' }}>
@@ -78,12 +80,12 @@ function ZarfNav(): ReactElement {
             component="div"
             sx={{ flexDirection: 'row', width: 'fit-content', display: 'flex' }}
           >
-            <Tabs value={0} aria-label="Navigation Tabs" sx={hideSmall}>
+            <Tabs value={pathname} aria-label="Navigation Tabs" sx={hideSmall}>
               {navLinks.map((l: NavLink, i: number) => (
                 <NavTab key={i} {...createTabPropsFromNavLink(l, i)} />
               ))}
             </Tabs>
-            <SocialLinks slackSx={hideSmall} />
+            <SocialLinks slackSx={hideSmall} pathname={pathname} />
           </Box>
         </Toolbar>
       </ZarfAppBar>
@@ -92,10 +94,11 @@ function ZarfNav(): ReactElement {
           anchor: 'left',
           variant: 'temporary',
           PaperProps: { sx: { width: { xs: '100%', sm: '65%' } } },
-          open: showDrawer
+          open: showDrawer,
         }}
         closeDrawer={toggleDrawer(false)}
         navLinks={navLinks}
+        pathname={pathname}
       >
         <Box
           component="div"
@@ -103,7 +106,7 @@ function ZarfNav(): ReactElement {
             display: 'flex',
             flexDirection: 'row',
             width: '100%',
-            justifyContent: 'center'
+            justifyContent: 'center',
           }}
         >
           <SocialLinks />
