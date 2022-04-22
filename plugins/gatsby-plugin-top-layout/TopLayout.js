@@ -1,6 +1,5 @@
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import '../../src/assets/css/blobz.min.css';
 import theme from '../../src/theme/theme';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
