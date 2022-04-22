@@ -1,5 +1,5 @@
 export interface NavLinkTabProps {
-  value: number;
+  value: string;
   label: string;
   href: string;
   target?: string;

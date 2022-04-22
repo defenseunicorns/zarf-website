@@ -32,6 +32,7 @@ function ZarfNav(): ReactElement {
   const [navColor, setNavColor] = useState<ZarfAppBarColor>(
     ZarfAppBarColor.TOP,
   );
+  const [pathname, setPathname] = useState<string>();
 
   const toggleDrawer = useCallback(
     (state: boolean) => (): void => setShowDrawer(state),
@@ -50,6 +51,7 @@ function ZarfNav(): ReactElement {
 
   useEffect(() => {
     windowScrolled();
+    setPathname(window.location.pathname);
     window.addEventListener('scroll', windowScrolled);
     return () => window.removeEventListener('scroll', windowScrolled);
   }, [windowScrolled]);
@@ -78,7 +80,7 @@ function ZarfNav(): ReactElement {
             component="div"
             sx={{ flexDirection: 'row', width: 'fit-content', display: 'flex' }}
           >
-            <Tabs value={0} aria-label="Navigation Tabs" sx={hideSmall}>
+            <Tabs value={pathname} aria-label="Navigation Tabs" sx={hideSmall}>
               {navLinks.map((l: NavLink, i: number) => (
                 <NavTab key={i} {...createTabPropsFromNavLink(l, i)} />
               ))}
@@ -96,6 +98,7 @@ function ZarfNav(): ReactElement {
         }}
         closeDrawer={toggleDrawer(false)}
         navLinks={navLinks}
+        pathname={pathname}
       >
         <Box
           component="div"

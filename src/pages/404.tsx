@@ -1,4 +1,5 @@
 import React, { ReactElement, useEffect, useState } from 'react';
+import PageLayout from '../components/PageLayout';
 import ReroutePageBackdrop, {
   ReroutePageProps,
 } from '../components/ReroutePage';
@@ -25,7 +26,11 @@ function NotFoundPage(): ReactElement {
     );
   }, [setRerouteProps]);
 
-  return <ReroutePageBackdrop {...rerouteProps} />;
+  return (
+    <PageLayout>
+      <ReroutePageBackdrop {...rerouteProps} />
+    </PageLayout>
+  );
 }
 
 export default NotFoundPage;

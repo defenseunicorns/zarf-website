@@ -2,10 +2,11 @@ import { Box, Link, Typography } from '@mui/material';
 import React, { ReactElement } from 'react';
 import { heroProps } from '../assets/data/heroProps';
 import Hero from '../components/Hero/Hero';
+import PageLayout from '../components/PageLayout';
 
 function Slack(): ReactElement {
   return (
-    <>
+    <PageLayout>
       <Hero {...heroProps.slack} />
       <Box
         sx={{
@@ -18,7 +19,7 @@ function Slack(): ReactElement {
         <Typography sx={{ typography: { xs: 'h3', md: 'h2' } }}>
           How to Join
         </Typography>
-        <Box sx={{ mx: { xs: '16px' } }}>
+        <Box color={'text.secondary'} sx={{ mx: { xs: '16px' } }}>
           <Typography variant="body1" marginTop="24px">
             1. Navigate to{' '}
             <Link href={heroProps.slack.buttonLink}>
@@ -40,7 +41,7 @@ function Slack(): ReactElement {
           </Typography>
         </Box>
       </Box>
-    </>
+    </PageLayout>
   );
 }
 

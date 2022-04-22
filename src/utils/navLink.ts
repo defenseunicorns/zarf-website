@@ -5,7 +5,7 @@ export const createTabPropsFromNavLink = (
   index: number,
 ): NavLinkTabProps => {
   return {
-    value: index,
+    value: navLink.url,
     label: navLink.title,
     href: navLink.url,
     target: navLink.target,

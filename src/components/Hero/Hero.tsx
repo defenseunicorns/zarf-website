@@ -21,8 +21,9 @@ function Hero(props: HeroProps): ReactElement {
         sx={{
           minHeight: '75vh',
           display: 'flex',
-          alignItems: 'center',
+          alignItems: { xs: 'center', md: 'start' },
           mx: { xs: '32px', lg: '0px' },
+          pt: '32px',
           justifyContent: {
             xs: 'flex-start',
             md: 'space-around',
@@ -47,7 +48,12 @@ function Hero(props: HeroProps): ReactElement {
           >
             {props.header}
           </Typography>
-          <Typography variant="h6" marginBottom={'32px'}>
+          <Typography
+            variant="h6"
+            fontFamily={'Roboto'}
+            color={'text.secondary'}
+            marginBottom={'32px'}
+          >
             {props.body}
           </Typography>
           <FlexButton text={props.buttonText} url={props.buttonLink} />
