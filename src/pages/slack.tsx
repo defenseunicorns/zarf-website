@@ -22,7 +22,11 @@ function Slack(): ReactElement {
         <Box color={'text.secondary'} sx={{ mx: { xs: '16px' } }}>
           <Typography variant="body1" marginTop="24px">
             1. Navigate to{' '}
-            <Link href={heroProps.slack.buttonLink}>
+            <Link
+              href={heroProps.slack.buttonLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {heroProps.slack.buttonLink}
             </Link>
           </Typography>
@@ -31,11 +35,19 @@ function Slack(): ReactElement {
           </Typography>
           <Typography variant="body1">
             3. Find us on the following channels{' '}
-            <Link href="https://kubernetes.slack.com/archives/C03B6BJAUJ3">
+            <Link
+              href="https://kubernetes.slack.com/archives/C03B6BJAUJ3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               #zarf
             </Link>
             ,{' '}
-            <Link href="https://kubernetes.slack.com/archives/C03BP9Z3CMA">
+            <Link
+              href="https://kubernetes.slack.com/archives/C03BP9Z3CMA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               #zarf-dev
             </Link>
           </Typography>
