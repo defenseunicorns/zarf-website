@@ -85,7 +85,7 @@ function ZarfNav(): ReactElement {
                 <NavTab key={i} {...createTabPropsFromNavLink(l, i)} />
               ))}
             </Tabs>
-            <SocialLinks slackSx={hideSmall} />
+            <SocialLinks slackSx={hideSmall} pathname={pathname} />
           </Box>
         </Toolbar>
       </ZarfAppBar>
