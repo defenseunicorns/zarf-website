@@ -16,7 +16,7 @@ export const heroProps: HeroPropsData = {
   },
   slack: {
     header: 'Making a Splash on Slack',
-    body: "Join our project channels on K8's slack",
+    body: "Join our project channels on K8's slack.",
     buttonText: 'Join Slack Now',
     buttonLink: 'https://slack.k8s.io/',
     image: PirateShip,
