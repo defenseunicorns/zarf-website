@@ -109,7 +109,7 @@ function ZarfNav(): ReactElement {
             justifyContent: 'center',
           }}
         >
-          <SocialLinks />
+          <SocialLinks pathname={pathname} />
         </Box>
       </NavDrawer>
     </>
