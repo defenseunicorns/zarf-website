@@ -23,7 +23,6 @@ function Hero(props: HeroProps): ReactElement {
           display: 'flex',
           alignItems: { xs: 'center', md: 'center' },
           mx: { xs: '32px', lg: '0px' },
-          // pt: '64px',
           justifyContent: {
             xs: 'flex-start',
             md: 'space-around',
