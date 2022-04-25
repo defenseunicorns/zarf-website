@@ -1,5 +1,7 @@
 [context.deploy-preview]
   command = "npm run build:staging"
+  SITE_URL = "https://deploy-preview.zarf.dev"
 
 [context.branch-deploy]
   command = "npm run build:staging"
+  SITE_URL = "https://develop.zarf.dev"
