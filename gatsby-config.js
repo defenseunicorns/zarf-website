@@ -17,8 +17,8 @@ const gatsbyRequiredRules = path.join(
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
-    title: `new`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Zarf`,
+    siteUrl: process.env.SITE_URL,
   },
   plugins: [
     'gatsby-plugin-top-layout',
@@ -34,14 +34,6 @@ module.exports = {
     // },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'images',
-    //     path: './src/images/'
-    //   },
-    //   __key: 'images'
-    // },
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
@@ -61,6 +53,13 @@ module.exports = {
         rule: {
           include: /assets\/svg/,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        createLinkInHead: true,
+        exclude: [`/404`],
       },
     },
   ],
