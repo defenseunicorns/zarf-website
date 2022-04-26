@@ -21,9 +21,8 @@ function Hero(props: HeroProps): ReactElement {
         sx={{
           minHeight: '75vh',
           display: 'flex',
-          alignItems: { xs: 'center', md: 'start' },
+          alignItems: { xs: 'center', md: 'center' },
           mx: { xs: '32px', lg: '0px' },
-          pt: '32px',
           justifyContent: {
             xs: 'flex-start',
             md: 'space-around',

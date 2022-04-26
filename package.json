@@ -29,6 +29,7 @@
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.5.0",
     "gatsby": "4.12.1",
+    "gatsby-plugin-advanced-sitemap": "^2.1.0",
     "gatsby-plugin-image": "^2.9.1",
     "gatsby-plugin-manifest": "^4.9.1",
     "gatsby-plugin-react-helmet": "^5.9.0",
@@ -64,6 +65,7 @@
     "node-fetch": "2.6.7",
     "ansi-regex": "5.0.1",
     "browserslist": "4.16.5",
-    "async": "3.2.3"
+    "async": "3.2.3",
+    "moment": "2.29.3"
   }
 }
