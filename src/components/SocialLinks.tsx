@@ -23,7 +23,7 @@ function SocialLinks({
         <IconButton
           size="medium"
           sx={{ ...slackSx, padding: '12px' }}
-          title={socialLinks.slack.title}
+          title={socialLinks.slack.text}
         >
           {pathname === socialLinks.slack.url ? <SlackSelected /> : <Slack />}
         </IconButton>
@@ -32,7 +32,7 @@ function SocialLinks({
         size="medium"
         sx={{ ...githubSx, padding: '12px' }}
         href={socialLinks.github.url}
-        title={socialLinks.github.title}
+        title={socialLinks.github.text}
         target={socialLinks.github.target}
         rel={socialLinks.github.rel}
       >

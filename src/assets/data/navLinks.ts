@@ -3,17 +3,17 @@ import NavLink from '../../interfaces/NavLink';
 export const navLinks: NavLink[] = [
   {
     url: '/',
-    title: 'Product',
+    text: 'Product',
   },
   {
     url: 'https://defenseunicorns.github.io/zarf/examples',
-    title: 'Examples',
+    text: 'Examples',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
   {
     url: 'https://defenseunicorns.github.io/zarf',
-    title: 'Documents',
+    text: 'Documents',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
@@ -25,11 +25,11 @@ interface SocialLinks {
 export const socialLinks: SocialLinks = {
   slack: {
     url: '/slack',
-    title: 'Slack',
+    text: 'Slack',
   },
   github: {
     url: 'https://github.com/defenseunicorns/zarf',
-    title: 'Github',
+    text: 'Github',
     target: '_blank',
     rel: 'noopener noreferrer',
   },

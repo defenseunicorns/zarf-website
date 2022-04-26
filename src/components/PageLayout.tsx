@@ -2,12 +2,23 @@ import '../assets/css/global.css';
 import '../assets/css/blobz.min.css';
 import ZarfNav from './NavBar/ZarfNav';
 import React, { ReactElement, PropsWithChildren, ReactNode } from 'react';
+import { Box } from '@mui/material';
 
 function PageLayout(props: PropsWithChildren<ReactNode>): ReactElement {
   return (
     <>
       <ZarfNav />
-      {props.children}
+      <Box
+        component="main"
+        sx={{
+          display: 'flex',
+          width: '100%',
+          flexDirection: 'column',
+          gap: '72px',
+        }}
+      >
+        {props.children}
+      </Box>
     </>
   );
 }

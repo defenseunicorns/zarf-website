@@ -43,7 +43,7 @@ function NavDrawer({
         {navLinks.map((l: NavLink, i: number) => (
           <DrawerTab
             aria-selected={true}
-            key={l.title}
+            key={l.text}
             {...createTabPropsFromNavLink(l, i)}
           />
         ))}
