@@ -14,6 +14,7 @@ function PageLayout(props: PropsWithChildren<ReactNode>): ReactElement {
           display: 'flex',
           width: '100%',
           flexDirection: 'column',
+          pb: { xs: '80px', md: '64px' },
           gap: '72px',
         }}
       >
