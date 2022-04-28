@@ -13,7 +13,7 @@ function Slack(): ReactElement {
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
-          my: { xs: '4.563rem', md: '5rem' },
+          my: { xs: '73px', md: '80px' },
         }}
       >
         <Typography sx={{ typography: { xs: 'h3', md: 'h2' } }}>
@@ -23,11 +23,11 @@ function Slack(): ReactElement {
           <Typography variant="body1" marginTop="24px">
             1. Navigate to{' '}
             <Link
-              href={heroProps.slack.buttonLink}
+              href={heroProps.slack.navLink.url}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {heroProps.slack.buttonLink}
+              {heroProps.slack.navLink.text}
             </Link>
           </Typography>
           <Typography variant="body1">

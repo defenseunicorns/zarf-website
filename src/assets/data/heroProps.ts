@@ -10,15 +10,21 @@ export const heroProps: HeroPropsData = {
   home: {
     header: 'DevSecOps for Airgap',
     body: 'A free open source tool that enables continuous software delivery on disconnected networks.',
-    buttonText: 'View on Github',
-    buttonLink: socialLinks.github.url,
+    navLink: {
+      ...socialLinks.github,
+      text: 'View on Github',
+    },
     image: ZarfEdge,
   },
   slack: {
     header: 'Making a Splash on Slack',
     body: "Join our project channels on K8's slack.",
-    buttonText: 'Join Slack Now',
-    buttonLink: 'https://slack.k8s.io/',
+    navLink: {
+      text: 'Join Slack Now',
+      url: 'https://slack.k8s.io/',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    },
     image: PirateShip,
   },
 };

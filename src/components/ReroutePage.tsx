@@ -47,7 +47,7 @@ function ReroutePage(props: ReroutePageProps): ReactElement {
           flexDirection: { xs: 'column', md: 'row' },
         }}
       >
-        <Box sx={{ pb: { xs: '2.5rem', md: 0 } }}>
+        <Box sx={{ pb: { xs: '40px', md: 0 } }}>
           <TypoRoboto
             sx={{
               typography: { xs: 'body1', md: 'h5' },
