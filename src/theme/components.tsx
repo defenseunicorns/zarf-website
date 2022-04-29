@@ -19,7 +19,7 @@ const components: Components = {
   MuiButton: {
     styleOverrides: {
       root: {
-        borderRadius: '20px',
+        borderRadius: '24px',
       },
     },
   },
