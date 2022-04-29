@@ -34,7 +34,6 @@ function Hero(props: HeroProps): ReactElement {
             display: 'flex',
             maxWidth: '492px',
             flexDirection: 'column',
-            mt: { xs: '80px', md: '64px' },
           }}
         >
           <Typography
