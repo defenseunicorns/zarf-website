@@ -46,6 +46,7 @@ function CaptionedBlob({ title, body }: CaptionedBlobProps): ReactElement {
       </Typography>
       <Typography
         variant="h6"
+        fontFamily="Roboto"
         sx={{
           mx: { xs: '5%', md: '10%', lg: '15%', xl: '20%' },
           mt: '24px',
