@@ -10,15 +10,13 @@ function HowZarfWorks(): ReactElement {
         textAlign="center"
         sx={{ mb: '48px', typography: { xs: 'h3', md: 'h2' } }}
       >
-        How Zarf Works
+        Use Zarf To
       </Typography>
       <Box
         sx={{
           display: 'flex',
-          flexGrow: 1,
           flexDirection: { xs: 'column', md: 'row' },
           justifyContent: 'center',
-          // justifyContent: { xs: 'space-around', lg: 'space-between' },
           alignItems: 'center',
           gap: { xs: '50px', sm: '25px', md: '50px' },
           width: { xs: '100%', lg: '80%', xl: '65%' },
