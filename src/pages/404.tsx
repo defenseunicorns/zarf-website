@@ -12,7 +12,7 @@ const defaultRerouteProps: ReroutePageProps = {
   buttonLink: '/',
   buttonText: 'Return Home',
 };
-// markup
+
 function NotFoundPage(): ReactElement {
   const [rerouteProps, setRerouteProps] =
     useState<ReroutePageProps>(defaultRerouteProps);
