@@ -8,7 +8,7 @@ export interface CaptionedBlobProps {
 }
 
 const CaptionedBlobContainer = styled(Box)`
-  width: 100vw;
+  width: 100%;
   min-height: 640px;
   max-height: 640px;
   position: relative;
