@@ -1,5 +1,5 @@
-import ComingSoonBG from '../assets/images/comingSoonBg.png';
-import ZarfBubbles from '../assets/images/zarfBubbles.png';
+import ComingSoonBG from '../assets/png/coming-soon-bg.png';
+import ZarfBubbles from '../assets/png/zarf-bubbles.png';
 import Typography from '@mui/material/Typography';
 import { Backdrop, styled } from '@mui/material';
 import Container from '@mui/material/Container';

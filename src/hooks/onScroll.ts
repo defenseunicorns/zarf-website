@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-function scrollListener(listener: () => void): void {
+function onScroll(listener: () => void): void {
   useEffect(() => {
     listener();
     window.addEventListener('scroll', listener);
@@ -8,4 +8,4 @@ function scrollListener(listener: () => void): void {
   });
 }
 
-export default scrollListener;
+export default onScroll;

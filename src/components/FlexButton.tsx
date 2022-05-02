@@ -1,3 +1,4 @@
+import { hideLarge, hideSmall } from '../utils/display';
 import React, { ReactElement } from 'react';
 import Button from '@mui/material/Button';
 
@@ -29,7 +30,7 @@ function FlexButton(props: FlexButtonProps): ReactElement {
         target={props.target}
         color={props.color}
         rel={props.rel}
-        sx={{ display: { xs: 'none', md: 'flex' }, width: '168px' }}
+        sx={{ ...hideSmall, width: 'fit-content' }}
       >
         {props.text}
       </Button>
@@ -41,9 +42,8 @@ function FlexButton(props: FlexButtonProps): ReactElement {
         color={props.color}
         rel={props.rel}
         sx={{
-          display: { xs: 'flex', md: 'none' },
-          minWidth: '147px',
-          maxWidth: '50vw',
+          ...hideLarge,
+          width: 'fit-content',
         }}
       >
         {props.text}
