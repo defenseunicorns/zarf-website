@@ -25,7 +25,7 @@ const StatsCardWrapper = styled(Box)`
   text-align: left;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
@@ -57,6 +57,7 @@ function StatsCard(): ReactElement {
   const [githubStats, setGithubStats] = useState<GithubStats>();
   const [cardHeight, setCardHeight] = useState<number>();
   const wrapperRef = useRef<HTMLDivElement>();
+  const prRef = useRef<HTMLDivElement>();
 
   const retrieveStats = useCallback(async () => {
     setGithubStats(await getGithubStats());
@@ -75,12 +76,17 @@ function StatsCard(): ReactElement {
 
   return (
     <Box
-      component="div"
-      sx={{ width: '100%', px: '8px', position: 'relative' }}
+      component="section"
+      sx={{
+        width: '100%',
+        px: '8px',
+        position: 'relative',
+        overflowX: 'clip',
+        overflowY: 'initial',
+      }}
     >
       <StatsCardWrapper
         ref={wrapperRef}
-        component="section"
         sx={{
           flexDirection: { xs: 'column', md: 'row' },
           width: { xs: 'fit-content', md: '100%' },
@@ -92,7 +98,7 @@ function StatsCard(): ReactElement {
           display="flex"
           flexDirection="column"
           maxWidth="418px"
-          sx={{ mb: '16px', px: '16px' }}
+          sx={{ mb: '16px', px: { xs: '16px', md: '0px' } }}
         >
           <Typography
             variant="h6"
@@ -115,33 +121,36 @@ function StatsCard(): ReactElement {
         </Box>
         <Box
           display="flex"
-          flexDirection="column"
+          sx={{
+            flexDirection: { xs: 'column', md: 'row' },
+            gap: { xs: '16px', md: '80px' },
+          }}
           justifyContent="space-evenly"
         >
           <Box
             display="flex"
             sx={{
-              flexDirection: { xs: 'column', md: 'row' },
-              gap: { xs: '16px', md: '80px' },
+              flexDirection: 'column',
+              gap: { xs: '16px', md: '40px' },
             }}
           >
             <Stat title={githubStats?.stars || ''} subtitle="Stars" />
             <Stat
-              title={githubStats?.pullRequests || ''}
-              subtitle="Pull Requests"
+              title={githubStats?.contributors || ''}
+              subtitle="Contributors"
             />
           </Box>
           <Box
             display="flex"
             sx={{
-              flexDirection: { xs: 'column', md: 'row' },
-              mt: '16px',
+              flexDirection: 'column',
               position: 'relative',
             }}
           >
             <Stat
-              title={githubStats?.contributors || ''}
-              subtitle="Contributors"
+              boxRef={prRef}
+              title={githubStats?.pullRequests || ''}
+              subtitle="Pull Requests"
             />
           </Box>
           <Box sx={{ ...hideLarge, my: '48px' }}>
@@ -151,7 +160,7 @@ function StatsCard(): ReactElement {
         <CardBackground component="img" src={StatsCardPng} sx={hideSmall} />
         <CardBackground component="img" src={StatsCardSmPng} sx={hideLarge} />
       </StatsCardWrapper>
-      <ZarfBox parentHeight={cardHeight} parentRef={wrapperRef} />
+      <ZarfBox parentHeight={cardHeight} leftAlignRef={prRef} />
     </Box>
   );
 }
