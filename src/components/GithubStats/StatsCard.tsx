@@ -110,7 +110,11 @@ function StatsCard(): ReactElement {
           <Typography variant="h2" sx={{ my: '24px' }}>
             Join Our Mission
           </Typography>
-          <Typography variant="body2" fontFamily="Roboto">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            fontFamily="Roboto"
+          >
             Zarf makes modern software capabilities a reality in disconnected
             environments. We aim to deliver secure software to the worlds most
             important environments.{' '}
