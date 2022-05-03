@@ -33,4 +33,10 @@ export const socialLinks: SocialLinks = {
     target: '_blank',
     rel: 'noopener noreferrer',
   },
+  defenseUnicorns: {
+    url: 'https://defenseunicorns.com',
+    text: 'Defense Unicorns',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
 };

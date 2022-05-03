@@ -7,6 +7,7 @@ import PageLayout from '../components/PageLayout';
 import StatsCard from '../components/GithubStats/StatsCard';
 import React, { ReactElement } from 'react';
 import Hero from '../components/Hero/Hero';
+import MaintainedBy from '../components/Sections/MaintainedBy';
 
 function index(): ReactElement {
   return (
@@ -20,6 +21,7 @@ function index(): ReactElement {
         ),
       )}
       <StatsCard />
+      <MaintainedBy />
     </PageLayout>
   );
 }
