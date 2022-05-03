@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { getGithubStats, GithubStats } from '../utils/githubApi';
 import StatsCardSmPng from '../assets/png/stats-card-sm.png';
 import ZarfBubbles from '../assets/png/zarf-bubbles.png';
@@ -87,7 +86,6 @@ function calculateCardHeight(width: number): number {
 
 function StatsCard(): ReactElement {
   const [cardHeight, setCardHeight] = useState<number>();
-  const [cardWidth, setCardWidth] = useState<number>();
   const [zarfRight, setZarfRight] = useState<number>();
   const [zarfTop, setZarfTop] = useState<number>();
   const [githubStats, setGithubStats] = useState<GithubStats>();
@@ -100,7 +98,6 @@ function StatsCard(): ReactElement {
       setZarfTop(newHeight * ZARF_TOP_MULTIPLIER);
       setZarfRight(wrapperRef.current.offsetLeft);
       setCardHeight(newHeight);
-      setCardWidth(wrapperRef.current.clientWidth);
     }, [wrapperRef.current]),
   );
 
