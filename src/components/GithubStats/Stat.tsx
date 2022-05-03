@@ -1,13 +1,14 @@
 import { Box, Typography } from '@mui/material';
-import React, { ReactElement } from 'react';
+import React, { MutableRefObject, ReactElement } from 'react';
 
 interface StatProps {
   title: string | number;
   subtitle: string;
+  boxRef?: MutableRefObject<HTMLDivElement | undefined>;
 }
-function Stat({ title, subtitle }: StatProps): ReactElement {
+function Stat({ title, subtitle, boxRef }: StatProps): ReactElement {
   return (
-    <Box textAlign={'center'} minWidth="90px">
+    <Box textAlign={'center'} minWidth="90px" ref={boxRef}>
       <Typography variant="h2">{title}</Typography>
       <Typography variant="h6" fontFamily={'Roboto'}>
         {subtitle}

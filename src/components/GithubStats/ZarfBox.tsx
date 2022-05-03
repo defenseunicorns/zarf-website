@@ -1,22 +1,27 @@
+/* eslint-disable */
 import ZarfBubbles from '../../assets/png/zarf-bubbles.png';
-import React, { ReactElement, useState } from 'react';
-import { hideSmall } from '../../utils/display';
+import React, { ReactElement, useCallback, useState } from 'react';
 import onResize from '../../hooks/onResize';
 import Box from '@mui/material/Box';
+import { hideSmall } from '../../utils/display';
 
 const ZARF_TOP_MULTIPLIER = 0.53;
 
 function ZarfBox(props: {
   parentHeight?: number;
-  parentRef: React.MutableRefObject<HTMLDivElement | undefined>;
+  leftAlignRef: React.MutableRefObject<HTMLDivElement | undefined>;
 }): ReactElement {
   const [zarfTop, setZarfTop] = useState<number>();
-  const [zarfRight, setZarfRight] = useState<number>();
+  const [zarfLeft, setZarfLeft] = useState<number>();
 
-  onResize(() => {
-    props.parentHeight && setZarfTop(ZARF_TOP_MULTIPLIER * props.parentHeight);
-    props.parentRef.current && setZarfRight(props.parentRef.current.offsetLeft);
-  });
+  onResize(
+    useCallback(() => {
+      props.parentHeight &&
+        setZarfTop(ZARF_TOP_MULTIPLIER * props.parentHeight);
+      props.leftAlignRef.current &&
+        setZarfLeft(props.leftAlignRef.current.getClientRects()[0].left);
+    }, [props.parentHeight, props.leftAlignRef.current]),
+  );
 
   return (
     <Box
@@ -28,7 +33,7 @@ function ZarfBox(props: {
         width: '262px',
         height: '260px',
         position: 'absolute',
-        right: zarfRight,
+        left: zarfLeft,
         top: zarfTop,
       }}
     />
