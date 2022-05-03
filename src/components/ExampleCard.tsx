@@ -36,6 +36,7 @@ function ExampleCard(props: ExampleCardProps): ReactElement {
       >
         <Typography variant="h3">{props.title}</Typography>
         <Typography
+          color={'text.secondary'}
           sx={{
             typography: { xs: 'body1', md: 'h6' },
             pt: '24px',

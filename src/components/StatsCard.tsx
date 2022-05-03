@@ -1,10 +1,14 @@
 /* eslint-disable */
-import StatsBackgroundSm from '../assets/svg/stats-card-sm.svg';
+import { getGithubStats, GithubStats } from '../utils/githubApi';
+import StatsCardSmPng from '../assets/png/stats-card-sm.png';
 import ZarfBubbles from '../assets/png/zarf-bubbles.png';
+import StatsCardPng from '../assets/png/stats-card.png';
 import { Box, styled, Typography } from '@mui/material';
-import StatsCardSvg from '../assets/svg/stats-card.svg';
 import { hideLarge, hideSmall } from '../utils/display';
 import { socialLinks } from '../assets/data/navLinks';
+import NavLink from '../interfaces/NavLink';
+import onResize from '../hooks/onResize';
+import FlexButton from './FlexButton';
 import React, {
   ReactElement,
   useCallback,
@@ -12,10 +16,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import NavLink from '../interfaces/NavLink';
-import FlexButton from './FlexButton';
-import onResize from '../hooks/onResize';
-import { getGithubStats, GithubStats } from '../utils/githubApi';
 
 const StatsCardWrapper = styled(Box)`
   display: flex;
@@ -29,12 +29,13 @@ const StatsCardWrapper = styled(Box)`
   overflow: hidden;
 ` as typeof Box;
 
-const SvgWrapper = styled(Box)`
+const CardBackground = styled(Box)`
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
+  border-radius: 24px;
 ` as typeof Box;
 
 const contributingProps: NavLink = {
@@ -86,6 +87,7 @@ function calculateCardHeight(width: number): number {
 
 function StatsCard(): ReactElement {
   const [cardHeight, setCardHeight] = useState<number>();
+  const [cardWidth, setCardWidth] = useState<number>();
   const [zarfRight, setZarfRight] = useState<number>();
   const [zarfTop, setZarfTop] = useState<number>();
   const [githubStats, setGithubStats] = useState<GithubStats>();
@@ -98,6 +100,7 @@ function StatsCard(): ReactElement {
       setZarfTop(newHeight * ZARF_TOP_MULTIPLIER);
       setZarfRight(wrapperRef.current.offsetLeft);
       setCardHeight(newHeight);
+      setCardWidth(wrapperRef.current.clientWidth);
     }, [wrapperRef.current]),
   );
 
@@ -185,16 +188,8 @@ function StatsCard(): ReactElement {
             </Box>
           </Box>
         </Box>
-        <SvgWrapper sx={hideSmall}>
-          <StatsCardSvg width="100%" height="100%" preserveAspectRatio="none" />
-        </SvgWrapper>
-        <SvgWrapper sx={hideLarge}>
-          <StatsBackgroundSm
-            width="100%"
-            height="100%"
-            preserveAspectRatio="none"
-          />
-        </SvgWrapper>
+        <CardBackground component="img" src={StatsCardPng} sx={hideSmall} />
+        <CardBackground component="img" src={StatsCardSmPng} sx={hideLarge} />
       </StatsCardWrapper>
       <ZarfBox top={zarfTop} right={zarfRight} />
     </Box>
