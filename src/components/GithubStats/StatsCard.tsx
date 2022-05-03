@@ -1,13 +1,14 @@
-import { getGithubStats, GithubStats } from '../utils/githubApi';
-import StatsCardSmPng from '../assets/png/stats-card-sm.png';
-import ZarfBubbles from '../assets/png/zarf-bubbles.png';
-import StatsCardPng from '../assets/png/stats-card.png';
+import { getGithubStats, GithubStats } from '../../utils/githubApi';
+import StatsCardSmPng from '../../assets/png/stats-card-sm.png';
+import StatsCardPng from '../../assets/png/stats-card.png';
+import { hideLarge, hideSmall } from '../../utils/display';
+import { socialLinks } from '../../assets/data/navLinks';
 import { Box, styled, Typography } from '@mui/material';
-import { hideLarge, hideSmall } from '../utils/display';
-import { socialLinks } from '../assets/data/navLinks';
-import NavLink from '../interfaces/NavLink';
-import onResize from '../hooks/onResize';
-import FlexButton from './FlexButton';
+import NavLink from '../../interfaces/NavLink';
+import onResize from '../../hooks/onResize';
+import FlexButton from '../FlexButton';
+import ZarfBox from './ZarfBox';
+import Stat from './Stat';
 import React, {
   ReactElement,
   useCallback,
@@ -26,6 +27,8 @@ const StatsCardWrapper = styled(Box)`
   align-items: center;
   justify-content: space-evenly;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 ` as typeof Box;
 
 const CardBackground = styled(Box)`
@@ -42,42 +45,8 @@ const contributingProps: NavLink = {
   text: 'start contributing',
 };
 
-interface StatProps {
-  title: string | number;
-  subtitle: string;
-}
-function Stat({ title, subtitle }: StatProps): ReactElement {
-  return (
-    <Box textAlign={'center'} minWidth="90px">
-      <Typography variant="h2">{title}</Typography>
-      <Typography variant="h6" fontFamily={'Roboto'}>
-        {subtitle}
-      </Typography>
-    </Box>
-  );
-}
-
-function ZarfBox(props: { top?: number; right?: number }): ReactElement {
-  return (
-    <Box
-      component="img"
-      src={ZarfBubbles}
-      alt="Zarf Bubbles"
-      sx={{
-        ...hideSmall,
-        width: '262px',
-        height: '260px',
-        position: 'absolute',
-        right: props.right,
-        top: props.top,
-      }}
-    />
-  );
-}
-
 const MIN_CARD_HEIGHT = 480;
 const CARD_HEIGHT_MULTIPLIER = 0.389;
-const ZARF_TOP_MULTIPLIER = 0.53;
 
 function calculateCardHeight(width: number): number {
   const calculated = width * CARD_HEIGHT_MULTIPLIER;
@@ -85,27 +54,24 @@ function calculateCardHeight(width: number): number {
 }
 
 function StatsCard(): ReactElement {
-  const [cardHeight, setCardHeight] = useState<number>();
-  const [zarfRight, setZarfRight] = useState<number>();
-  const [zarfTop, setZarfTop] = useState<number>();
   const [githubStats, setGithubStats] = useState<GithubStats>();
+  const [cardHeight, setCardHeight] = useState<number>();
   const wrapperRef = useRef<HTMLDivElement>();
 
-  onResize(
-    useCallback(() => {
-      if (!wrapperRef.current) return;
+  const retrieveStats = useCallback(async () => {
+    setGithubStats(await getGithubStats());
+  }, [setGithubStats]);
+
+  onResize(() => {
+    if (wrapperRef.current) {
       const newHeight = calculateCardHeight(wrapperRef.current.clientWidth);
-      setZarfTop(newHeight * ZARF_TOP_MULTIPLIER);
-      setZarfRight(wrapperRef.current.offsetLeft);
       setCardHeight(newHeight);
-    }, [wrapperRef.current]),
-  );
+    }
+  });
 
   useEffect(() => {
-    getGithubStats().then(res => {
-      setGithubStats(res);
-    });
-  }, []);
+    retrieveStats();
+  }, [retrieveStats]);
 
   return (
     <Box
@@ -117,9 +83,8 @@ function StatsCard(): ReactElement {
         component="section"
         sx={{
           flexDirection: { xs: 'column', md: 'row' },
-          gap: { xs: '16px', md: '80px' },
-          mx: 'auto',
           width: { xs: 'fit-content', md: '100%' },
+          gap: { xs: '16px', md: '80px' },
           height: { md: cardHeight },
         }}
       >
@@ -153,42 +118,40 @@ function StatsCard(): ReactElement {
           flexDirection="column"
           justifyContent="space-evenly"
         >
-          <Box>
-            <Box
-              display="flex"
-              sx={{
-                flexDirection: { xs: 'column', md: 'row' },
-                gap: { xs: '16px', md: '80px' },
-              }}
-            >
-              <Stat title={githubStats?.stars || ''} subtitle="Stars" />
-              <Stat
-                title={githubStats?.pullRequests || ''}
-                subtitle="Pull Requests"
-              />
-            </Box>
-            <Box
-              display="flex"
-              sx={{
-                flexDirection: { xs: 'column', md: 'row' },
-                mt: '16px',
-                position: 'relative',
-              }}
-            >
-              <Stat
-                title={githubStats?.contributors || ''}
-                subtitle="Contributors"
-              />
-            </Box>
-            <Box sx={{ ...hideLarge, my: '48px' }}>
-              <FlexButton {...contributingProps}></FlexButton>
-            </Box>
+          <Box
+            display="flex"
+            sx={{
+              flexDirection: { xs: 'column', md: 'row' },
+              gap: { xs: '16px', md: '80px' },
+            }}
+          >
+            <Stat title={githubStats?.stars || ''} subtitle="Stars" />
+            <Stat
+              title={githubStats?.pullRequests || ''}
+              subtitle="Pull Requests"
+            />
+          </Box>
+          <Box
+            display="flex"
+            sx={{
+              flexDirection: { xs: 'column', md: 'row' },
+              mt: '16px',
+              position: 'relative',
+            }}
+          >
+            <Stat
+              title={githubStats?.contributors || ''}
+              subtitle="Contributors"
+            />
+          </Box>
+          <Box sx={{ ...hideLarge, my: '48px' }}>
+            <FlexButton {...contributingProps}></FlexButton>
           </Box>
         </Box>
         <CardBackground component="img" src={StatsCardPng} sx={hideSmall} />
         <CardBackground component="img" src={StatsCardSmPng} sx={hideLarge} />
       </StatsCardWrapper>
-      <ZarfBox top={zarfTop} right={zarfRight} />
+      <ZarfBox parentHeight={cardHeight} parentRef={wrapperRef} />
     </Box>
   );
 }

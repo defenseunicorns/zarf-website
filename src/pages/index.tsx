@@ -4,7 +4,7 @@ import { exampleCards } from '../assets/data/cardData';
 import { heroProps } from '../assets/data/heroProps';
 import ExampleCard from '../components/ExampleCard';
 import PageLayout from '../components/PageLayout';
-import StatsCard from '../components/StatsCard';
+import StatsCard from '../components/GithubStats/StatsCard';
 import React, { ReactElement } from 'react';
 import Hero from '../components/Hero/Hero';
 
