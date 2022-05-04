@@ -8,6 +8,7 @@ import React, {
 import HeroBlobSvg from '../../assets/svg/hero-blob.svg';
 import { Box, styled, useMediaQuery } from '@mui/material';
 import theme from '../../theme/theme';
+import onResize from '../../hooks/onResize';
 
 const BlobContainer = styled(Box)`
   --time: 40s;
@@ -30,29 +31,23 @@ function HeroBlob(): ReactElement {
   const betweenMdLg = useMediaQuery(theme.breakpoints.between('md', 'lg'));
   const extraLarge = useMediaQuery(theme.breakpoints.up(MAX_BODY_WIDTH));
 
-  const repositionBlob = useCallback(() => {
-    if (blobRef.current) {
-      setBlobLeft(BLOB_LEFT_OFFSET_MULTIPLIER * blobRef.current.clientWidth);
-      setBlobTop(BLOB_TOP_OFFSET_MULTIPLIER * blobRef.current.clientHeight);
-      if (betweenSmMd) {
-        setBlobTop(
-          BLOB_TOP_SM_MD_OFFSET_MULTIPLIER * blobRef.current.clientHeight,
-        );
-      } else if (betweenMdLg) {
-        setBlobTop(
-          BLOB_TOP_MD_LG_OFFSET_MULTIPLIER * blobRef.current.clientHeight,
-        );
+  onResize(
+    useCallback(() => {
+      if (blobRef.current) {
+        setBlobLeft(BLOB_LEFT_OFFSET_MULTIPLIER * blobRef.current.clientWidth);
+        setBlobTop(BLOB_TOP_OFFSET_MULTIPLIER * blobRef.current.clientHeight);
+        if (betweenSmMd) {
+          setBlobTop(
+            BLOB_TOP_SM_MD_OFFSET_MULTIPLIER * blobRef.current.clientHeight,
+          );
+        } else if (betweenMdLg) {
+          setBlobTop(
+            BLOB_TOP_MD_LG_OFFSET_MULTIPLIER * blobRef.current.clientHeight,
+          );
+        }
       }
-    }
-  }, [blobRef.current, betweenSmMd, betweenMdLg, extraLarge]);
-
-  useEffect(() => {
-    repositionBlob();
-    window.addEventListener('resize', repositionBlob);
-    return (): void => {
-      window.removeEventListener('resize', repositionBlob);
-    };
-  }, [repositionBlob]);
+    }, [blobRef.current, betweenSmMd, betweenMdLg, extraLarge]),
+  );
 
   useEffect(() => {
     if (extraLarge) {

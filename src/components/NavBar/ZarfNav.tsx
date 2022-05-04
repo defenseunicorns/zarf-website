@@ -5,7 +5,7 @@ import SocialLinks from '../SocialLinks';
 import NavLink from '../../interfaces/NavLink';
 import MenuIcon from '@mui/icons-material/Menu';
 import { navLinks } from '../../assets/data/navLinks';
-import scrollListener from '../../hooks/scrollListener';
+import onScroll from '../../hooks/onScroll';
 import { PathRequired } from '../../interfaces/Pathname';
 import { hideSmall, hideLarge } from '../../utils/display';
 import { createTabPropsFromNavLink } from '../../utils/navLink';
@@ -40,17 +40,17 @@ function ZarfNav({ pathname }: PathRequired): ReactElement {
     [setShowDrawer],
   );
 
-  const windowScrolled = useCallback((): void => {
-    if (window.scrollY <= TRANSITION_HEIGHT) {
-      setNavColor(ZarfAppBarColor.TOP);
-      setNavElevation(TRANSPARENT_ELEVATION);
-    } else {
-      setNavColor(ZarfAppBarColor.SCROLLED);
-      setNavElevation(DEFAULT_ELEVATION);
-    }
-  }, [setNavColor]);
-
-  scrollListener(windowScrolled);
+  onScroll(
+    useCallback((): void => {
+      if (window.scrollY <= TRANSITION_HEIGHT) {
+        setNavColor(ZarfAppBarColor.TOP);
+        setNavElevation(TRANSPARENT_ELEVATION);
+      } else {
+        setNavColor(ZarfAppBarColor.SCROLLED);
+        setNavElevation(DEFAULT_ELEVATION);
+      }
+    }, [setNavColor]),
+  );
 
   return (
     <>
