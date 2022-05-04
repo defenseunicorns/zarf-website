@@ -33,4 +33,10 @@ export const socialLinks: SocialLinks = {
     target: '_blank',
     rel: 'noopener noreferrer',
   },
+  startContributing: {
+    url: 'https://github.com/defenseunicorns/zarf/blob/master/CONTRIBUTING.md',
+    text: 'start contributing',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
 };

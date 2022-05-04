@@ -4,7 +4,6 @@ import StatsCardPng from '../../assets/png/stats-card.png';
 import { hideLarge, hideSmall } from '../../utils/display';
 import { socialLinks } from '../../assets/data/navLinks';
 import { Box, styled, Typography } from '@mui/material';
-import NavLink from '../../interfaces/NavLink';
 import onResize from '../../hooks/onResize';
 import FlexButton from '../FlexButton';
 import ZarfBox from './ZarfBox';
@@ -39,11 +38,6 @@ const CardBackground = styled(Box)`
   z-index: -1;
   border-radius: 24px;
 ` as typeof Box;
-
-const contributingProps: NavLink = {
-  ...socialLinks.github,
-  text: 'start contributing',
-};
 
 const MIN_CARD_HEIGHT = 480;
 const CARD_HEIGHT_MULTIPLIER = 0.389;
@@ -116,7 +110,7 @@ function StatsCard(): ReactElement {
             important environments.{' '}
           </Typography>
           <Box sx={{ ...hideSmall, mt: '48px' }}>
-            <FlexButton {...contributingProps}></FlexButton>
+            <FlexButton {...socialLinks.startContributing}></FlexButton>
           </Box>
         </Box>
         <Box
@@ -154,7 +148,7 @@ function StatsCard(): ReactElement {
             />
           </Box>
           <Box sx={{ ...hideLarge, my: '48px' }}>
-            <FlexButton {...contributingProps}></FlexButton>
+            <FlexButton {...socialLinks.startContributing}></FlexButton>
           </Box>
         </Box>
         <CardBackground component="img" src={StatsCardPng} sx={hideSmall} />
