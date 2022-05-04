@@ -1,4 +1,3 @@
-/* eslint-disable */
 import BlobSm from '../../assets/svg/maintained-by-sm-blob.svg';
 import Blob from '../../assets/svg/maintained-by-blob.svg';
 import { Box, Link, styled, Typography } from '@mui/material';
