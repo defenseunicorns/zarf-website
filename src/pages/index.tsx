@@ -7,6 +7,7 @@ import PageLayout from '../components/PageLayout';
 import StatsCard from '../components/GithubStats/StatsCard';
 import React, { ReactElement } from 'react';
 import Hero from '../components/Hero/Hero';
+import WhyUseZarf from '../components/Sections/WhyUseZarf';
 
 function index(): ReactElement {
   return (
@@ -19,6 +20,7 @@ function index(): ReactElement {
           <ExampleCard {...c} key={i} />
         ),
       )}
+      <WhyUseZarf />
       <StatsCard />
     </PageLayout>
   );
