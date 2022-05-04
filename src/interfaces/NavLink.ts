@@ -9,7 +9,7 @@ export interface NavLinkTabProps {
 
 interface NavLink {
   url: string;
-  title: string;
+  text: string;
   target?: string;
   rel?: string;
 }

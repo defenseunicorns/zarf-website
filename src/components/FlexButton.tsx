@@ -1,9 +1,23 @@
+import { hideLarge, hideSmall } from '../utils/display';
 import React, { ReactElement } from 'react';
 import Button from '@mui/material/Button';
+
+type ButtonColor =
+  | 'inherit'
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'error'
+  | 'info'
+  | 'warning'
+  | undefined;
 
 export interface FlexButtonProps {
   text: string;
   url: string;
+  target?: string;
+  color?: ButtonColor;
+  rel?: string;
 }
 
 function FlexButton(props: FlexButtonProps): ReactElement {
@@ -13,7 +27,10 @@ function FlexButton(props: FlexButtonProps): ReactElement {
         variant="contained"
         size="large"
         href={props.url}
-        sx={{ display: { xs: 'none', md: 'flex' }, width: '168px' }}
+        target={props.target}
+        color={props.color}
+        rel={props.rel}
+        sx={{ ...hideSmall, width: 'fit-content' }}
       >
         {props.text}
       </Button>
@@ -21,10 +38,12 @@ function FlexButton(props: FlexButtonProps): ReactElement {
         variant="contained"
         size="medium"
         href={props.url}
+        target={props.target}
+        color={props.color}
+        rel={props.rel}
         sx={{
-          display: { xs: 'flex', md: 'none' },
-          minWidth: '147px',
-          maxWidth: '50vw',
+          ...hideLarge,
+          width: 'fit-content',
         }}
       >
         {props.text}

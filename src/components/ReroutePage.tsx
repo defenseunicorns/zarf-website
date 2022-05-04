@@ -1,17 +1,22 @@
-import ComingSoonBG from '../assets/images/comingSoonBg.png';
-import ZarfBubbles from '../assets/images/zarfBubbles.png';
+import ComingSoonBG from '../assets/png/coming-soon-bg.png';
+import ZarfBubbles from '../assets/png/zarf-bubbles.png';
 import Typography from '@mui/material/Typography';
-import { Backdrop, styled } from '@mui/material';
+import { styled } from '@mui/material';
 import Container from '@mui/material/Container';
 import React, { ReactElement } from 'react';
 import FlexButton from './FlexButton';
 import Box from '@mui/material/Box';
 
-const ReroutePageBackdrop = styled(Backdrop)`
+const ReroutePageBackdrop = styled(Box)`
   background-image: url(${ComingSoonBG});
   background-size: cover;
   display: flex;
   align-items: center;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100vw;
 `;
 
 const TypoRoboto = styled(Typography)`
@@ -31,7 +36,6 @@ export interface ReroutePageProps {
 function ReroutePage(props: ReroutePageProps): ReactElement {
   return (
     <ReroutePageBackdrop
-      open={true}
       sx={{
         backgroundPositionX: { xs: '22%', sm: '15%', md: 'center' },
       }}
@@ -47,7 +51,7 @@ function ReroutePage(props: ReroutePageProps): ReactElement {
           flexDirection: { xs: 'column', md: 'row' },
         }}
       >
-        <Box sx={{ pb: { xs: '2.5rem', md: 0 } }}>
+        <Box sx={{ pb: { xs: '40px', md: 0 } }}>
           <TypoRoboto
             sx={{
               typography: { xs: 'body1', md: 'h5' },

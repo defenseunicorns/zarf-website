@@ -1,14 +1,16 @@
-import { AppBar, Box, IconButton, Tabs, Toolbar, styled } from '@mui/material';
-import React, { ReactElement, useCallback, useEffect, useState } from 'react';
-import { createTabPropsFromNavLink } from '../../utils/navLink';
-import { hideSmall, hideLarge } from '../../utils/display';
-import { navLinks } from '../../assets/data/navLinks';
-import MenuIcon from '@mui/icons-material/Menu';
-import NavLink from '../../interfaces/NavLink';
-import SocialLinks from '../SocialLinks';
-import NavDrawer from './NavDrawer';
-import NavLogo from './NavLogo';
 import NavTab from './NavTabs';
+import NavLogo from './NavLogo';
+import NavDrawer from './NavDrawer';
+import SocialLinks from '../SocialLinks';
+import NavLink from '../../interfaces/NavLink';
+import MenuIcon from '@mui/icons-material/Menu';
+import { navLinks } from '../../assets/data/navLinks';
+import onScroll from '../../hooks/onScroll';
+import { PathRequired } from '../../interfaces/Pathname';
+import { hideSmall, hideLarge } from '../../utils/display';
+import { createTabPropsFromNavLink } from '../../utils/navLink';
+import React, { ReactElement, useCallback, useState } from 'react';
+import { AppBar, Box, IconButton, Tabs, Toolbar, styled } from '@mui/material';
 
 const TRANSPARENT_ELEVATION = 0;
 const TRANSITION_HEIGHT = 65;
@@ -24,7 +26,7 @@ const ZarfAppBar = styled(AppBar)`
   transition: all 0.5s ease-in;
 `;
 
-function ZarfNav(): ReactElement {
+function ZarfNav({ pathname }: PathRequired): ReactElement {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
   const [navElevation, setNavElevation] = useState<number>(
     TRANSPARENT_ELEVATION,
@@ -32,29 +34,23 @@ function ZarfNav(): ReactElement {
   const [navColor, setNavColor] = useState<ZarfAppBarColor>(
     ZarfAppBarColor.TOP,
   );
-  const [pathname, setPathname] = useState<string>();
 
   const toggleDrawer = useCallback(
     (state: boolean) => (): void => setShowDrawer(state),
     [setShowDrawer],
   );
 
-  const windowScrolled = useCallback((): void => {
-    if (window.scrollY <= TRANSITION_HEIGHT) {
-      setNavColor(ZarfAppBarColor.TOP);
-      setNavElevation(TRANSPARENT_ELEVATION);
-    } else {
-      setNavColor(ZarfAppBarColor.SCROLLED);
-      setNavElevation(DEFAULT_ELEVATION);
-    }
-  }, [setNavColor]);
-
-  useEffect(() => {
-    windowScrolled();
-    setPathname(window.location.pathname);
-    window.addEventListener('scroll', windowScrolled);
-    return () => window.removeEventListener('scroll', windowScrolled);
-  }, [windowScrolled]);
+  onScroll(
+    useCallback((): void => {
+      if (window.scrollY <= TRANSITION_HEIGHT) {
+        setNavColor(ZarfAppBarColor.TOP);
+        setNavElevation(TRANSPARENT_ELEVATION);
+      } else {
+        setNavColor(ZarfAppBarColor.SCROLLED);
+        setNavElevation(DEFAULT_ELEVATION);
+      }
+    }, [setNavColor]),
+  );
 
   return (
     <>

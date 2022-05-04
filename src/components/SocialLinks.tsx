@@ -1,15 +1,15 @@
-import { IconButton, SxProps, Theme } from '@mui/material';
-import { socialLinks } from '../assets/data/navLinks';
 import { Link as GatsbyLink } from 'gatsby';
-import { GitHub } from '@mui/icons-material';
 import React, { ReactElement } from 'react';
 import Slack from '../assets/svg/slack.svg';
+import { GitHub } from '@mui/icons-material';
+import { socialLinks } from '../assets/data/navLinks';
+import { PathOptional } from '../interfaces/Pathname';
+import { IconButton, SxProps, Theme } from '@mui/material';
 import SlackSelected from '../assets/svg/slack-selected.svg';
 
-interface SocialLinksProps {
+interface SocialLinksProps extends PathOptional {
   slackSx?: SxProps<Theme>;
   githubSx?: SxProps<Theme>;
-  pathname?: string;
 }
 
 function SocialLinks({
@@ -23,7 +23,7 @@ function SocialLinks({
         <IconButton
           size="medium"
           sx={{ ...slackSx, padding: '12px' }}
-          title={socialLinks.slack.title}
+          title={socialLinks.slack.text}
         >
           {pathname === socialLinks.slack.url ? <SlackSelected /> : <Slack />}
         </IconButton>
@@ -32,7 +32,7 @@ function SocialLinks({
         size="medium"
         sx={{ ...githubSx, padding: '12px' }}
         href={socialLinks.github.url}
-        title={socialLinks.github.title}
+        title={socialLinks.github.text}
         target={socialLinks.github.target}
         rel={socialLinks.github.rel}
       >

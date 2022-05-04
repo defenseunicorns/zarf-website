@@ -3,10 +3,10 @@ import { Typography } from '@mui/material';
 import FlexButton from '../FlexButton';
 import { Box } from '@mui/system';
 import HeroBlob from './HeroBlob';
+import NavLink from '../../interfaces/NavLink';
 
 export interface HeroProps {
-  buttonLink: string;
-  buttonText: string;
+  navLink: NavLink;
   header: string;
   image: string;
   body: string;
@@ -21,13 +21,11 @@ function Hero(props: HeroProps): ReactElement {
         sx={{
           minHeight: '75vh',
           display: 'flex',
-          alignItems: { xs: 'center', md: 'center' },
+          alignItems: 'center',
           mx: { xs: '32px', lg: '0px' },
-          justifyContent: {
-            xs: 'flex-start',
-            md: 'space-around',
-          },
+          justifyContent: 'space-around',
           flexDirection: { xs: 'column', md: 'row' },
+          gap: '80px',
         }}
       >
         <Box
@@ -36,7 +34,6 @@ function Hero(props: HeroProps): ReactElement {
             display: 'flex',
             maxWidth: '492px',
             flexDirection: 'column',
-            my: { xs: '80px', md: '64px' },
           }}
         >
           <Typography
@@ -55,7 +52,7 @@ function Hero(props: HeroProps): ReactElement {
           >
             {props.body}
           </Typography>
-          <FlexButton text={props.buttonText} url={props.buttonLink} />
+          <FlexButton {...props.navLink} />
         </Box>
         <Box
           component="img"
@@ -63,7 +60,6 @@ function Hero(props: HeroProps): ReactElement {
           sx={{
             width: { xs: '360px', md: '500px' },
             height: { xs: '302.4px', md: '439.23px' },
-            mt: { xs: '80px', md: '0px' },
           }}
         />
       </Box>
