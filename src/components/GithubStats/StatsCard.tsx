@@ -92,7 +92,7 @@ function StatsCard(): ReactElement {
           display="flex"
           flexDirection="column"
           maxWidth="418px"
-          sx={{ mb: '16px', px: { xs: '16px', md: '0px' } }}
+          sx={{ mb: '16px', px: { xs: '32px', md: '0px' } }}
         >
           <Typography
             variant="h6"
