@@ -1,10 +1,10 @@
 import BlobSm from '../../assets/svg/maintained-by-sm-blob.svg';
-import Blob from '../../assets/svg/maintained-by-blob.svg';
 import { Box, Link, styled, Typography } from '@mui/material';
-import DuLogo from '../../assets/png/full-du-logo.png';
-import React, { ReactElement } from 'react';
+import Blob from '../../assets/svg/maintained-by-blob.svg';
 import { hideLarge, hideSmall } from '../../utils/display';
 import { socialLinks } from '../../assets/data/navLinks';
+import DuLogo from '../../assets/png/full-du-logo.png';
+import React, { ReactElement } from 'react';
 
 const MaintainerSection = styled(Box)`
   display: flex;
