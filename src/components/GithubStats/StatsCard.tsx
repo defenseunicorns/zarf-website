@@ -146,9 +146,9 @@ function StatsCard(): ReactElement {
               flexDirection: 'column',
               position: 'relative',
             }}
+            ref={prRef}
           >
             <Stat
-              boxRef={prRef}
               title={githubStats?.pullRequests || ''}
               subtitle="Pull Requests"
             />
@@ -160,7 +160,7 @@ function StatsCard(): ReactElement {
         <CardBackground component="img" src={StatsCardPng} sx={hideSmall} />
         <CardBackground component="img" src={StatsCardSmPng} sx={hideLarge} />
       </StatsCardWrapper>
-      <ZarfBox parentHeight={cardHeight} leftAlignRef={prRef} />
+      <ZarfBox leftAlignRef={prRef} />
     </Box>
   );
 }
