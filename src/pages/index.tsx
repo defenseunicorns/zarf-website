@@ -8,6 +8,7 @@ import StatsCard from '../components/GithubStats/StatsCard';
 import React, { ReactElement } from 'react';
 import Hero from '../components/Hero/Hero';
 import WhyUseZarf from '../components/Sections/WhyUseZarf';
+import MaintainedBy from '../components/Sections/MaintainedBy';
 
 function index(): ReactElement {
   return (
@@ -22,6 +23,7 @@ function index(): ReactElement {
       )}
       <WhyUseZarf />
       <StatsCard />
+      <MaintainedBy />
     </PageLayout>
   );
 }

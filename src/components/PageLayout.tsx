@@ -1,12 +1,11 @@
-import Footer from './Footer';
-import '../assets/css/global.css';
-import { Box } from '@mui/material';
-import '../assets/css/blobz.min.css';
-import ZarfNav from './NavBar/ZarfNav';
 import React, { ReactElement, PropsWithChildren, ReactNode } from 'react';
 import getPathname from '../hooks/getPathname';
-import MaintainedBy from './Sections/MaintainedBy';
+import ZarfNav from './NavBar/ZarfNav';
 import SiteHelmet from './SiteHelmet';
+import '../assets/css/blobz.min.css';
+import { Box } from '@mui/material';
+import '../assets/css/global.css';
+import Footer from './Footer';
 
 function PageLayout(props: PropsWithChildren<ReactNode>): ReactElement {
   const pathname = getPathname();
@@ -24,7 +23,6 @@ function PageLayout(props: PropsWithChildren<ReactNode>): ReactElement {
         }}
       >
         {props.children}
-        <MaintainedBy />
         <Footer pathname={pathname} />
       </Box>
     </>
