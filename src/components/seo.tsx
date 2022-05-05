@@ -153,15 +153,4 @@ function Seo({
   );
 }
 
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-  title: ``,
-  url: ``,
-  img: ``,
-  author: ``,
-  route: ``,
-};
-
 export default Seo;
