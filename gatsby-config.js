@@ -1,6 +1,7 @@
 /** @type {import('gatsby').GatsbyConfig} */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const { SITE_URL, PATH_PREFIX } = require('./env.js');
 
 // Get paths of Gatsby's required rules, which as of writing is located at:
 // https://github.com/gatsbyjs/gatsby/tree/fbfe3f63dec23d279a27b54b4057dd611dce74bb/packages/
@@ -15,25 +16,40 @@ const gatsbyRequiredRules = path.join(
 );
 
 module.exports = {
-  pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
     title: `Zarf`,
-    siteUrl: process.env.SITE_URL,
+    siteUrl: SITE_URL,
+    image: `/img/social-preview.png`,
+    description: `DevSecOps for Airgap`,
+    keywords: `DevSecOps, DevOps, Airgap, Kubernetes, Cloud Native, kind, k3s, k3d`,
   },
+  pathPrefix: PATH_PREFIX,
   plugins: [
     'gatsby-plugin-top-layout',
     'gatsby-plugin-mui-emotion',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     icon: 'src/images/icon.png'
-    //   }
-    // },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: `Zarf`,
+        start_url: `/*`,
+        background_color: `#000000`,
+        theme_color_in_head: false,
+        display: `minimal-ui`,
+        icon: 'src/assets/svg/favicon.svg',
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `static-root`,
+        path: `${__dirname}/static`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
