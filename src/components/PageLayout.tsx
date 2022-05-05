@@ -6,11 +6,13 @@ import ZarfNav from './NavBar/ZarfNav';
 import React, { ReactElement, PropsWithChildren, ReactNode } from 'react';
 import getPathname from '../hooks/getPathname';
 import MaintainedBy from './Sections/MaintainedBy';
+import SiteHelmet from './SiteHelmet';
 
 function PageLayout(props: PropsWithChildren<ReactNode>): ReactElement {
   const pathname = getPathname();
   return (
     <>
+      <SiteHelmet />
       <ZarfNav pathname={pathname} />
       <Box
         component="main"
