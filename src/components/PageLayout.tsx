@@ -5,7 +5,6 @@ import '../assets/css/blobz.min.css';
 import ZarfNav from './NavBar/ZarfNav';
 import React, { ReactElement, PropsWithChildren, ReactNode } from 'react';
 import getPathname from '../hooks/getPathname';
-import MaintainedBy from './Sections/MaintainedBy';
 
 function PageLayout(props: PropsWithChildren<ReactNode>): ReactElement {
   const pathname = getPathname();
@@ -22,7 +21,6 @@ function PageLayout(props: PropsWithChildren<ReactNode>): ReactElement {
         }}
       >
         {props.children}
-        <MaintainedBy />
         <Footer pathname={pathname} />
       </Box>
     </>
