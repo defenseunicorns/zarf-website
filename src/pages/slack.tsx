@@ -27,7 +27,7 @@ function Slack(): ReactElement {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {heroProps.slack.navLink.text}
+              {heroProps.slack.navLink.url}
             </Link>
           </Typography>
           <Typography variant="body1">
