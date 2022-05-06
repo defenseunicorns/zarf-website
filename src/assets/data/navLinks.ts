@@ -12,7 +12,7 @@ export const navLinks: NavLink[] = [
     rel: 'noopener noreferrer',
   },
   {
-    url: 'https://defenseunicorns.github.io/zarf',
+    url: 'https://docs.zarf.dev/docs/zarf-background/what-is-zarf',
     text: 'Documents',
     target: '_blank',
     rel: 'noopener noreferrer',

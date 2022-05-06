@@ -1,8 +1,8 @@
 import { Box, Link, Typography } from '@mui/material';
-import React, { ReactElement } from 'react';
 import { heroProps } from '../assets/data/heroProps';
-import Hero from '../components/Hero/Hero';
 import PageLayout from '../components/PageLayout';
+import React, { ReactElement } from 'react';
+import Hero from '../components/Hero/Hero';
 
 function Slack(): ReactElement {
   return (
