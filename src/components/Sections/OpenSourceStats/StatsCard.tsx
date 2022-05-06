@@ -1,11 +1,11 @@
-import { getGithubStats, GithubStats } from '../../utils/githubApi';
-import StatsCardSmPng from '../../assets/png/stats-card-sm.png';
-import StatsCardPng from '../../assets/png/stats-card.png';
-import { hideLarge, hideSmall } from '../../utils/display';
-import { socialLinks } from '../../assets/data/navLinks';
+import { getGithubStats, GithubStats } from '../../../utils/githubApi';
+import StatsCardSmPng from '../../../assets/png/stats-card-sm.png';
+import StatsCardPng from '../../../assets/png/stats-card.png';
+import { hideLarge, hideSmall } from '../../../utils/display';
+import { socialLinks } from '../../../assets/data/navLinks';
 import { Box, styled, Typography } from '@mui/material';
-import onResize from '../../hooks/onResize';
-import FlexButton from '../FlexButton';
+import onResize from '../../../hooks/onResize';
+import FlexButton from '../../FlexButton';
 import ZarfBox from './ZarfBox';
 import Stat from './Stat';
 import React, {
@@ -47,7 +47,7 @@ function calculateCardHeight(width: number): number {
   return calculated > MIN_CARD_HEIGHT ? calculated : MIN_CARD_HEIGHT;
 }
 
-function StatsCard(): ReactElement {
+function OpenSourceStats(): ReactElement {
   const [githubStats, setGithubStats] = useState<GithubStats>();
   const [cardHeight, setCardHeight] = useState<number>();
   const wrapperRef = useRef<HTMLDivElement>();
@@ -159,4 +159,4 @@ function StatsCard(): ReactElement {
   );
 }
 
-export default StatsCard;
+export default OpenSourceStats;

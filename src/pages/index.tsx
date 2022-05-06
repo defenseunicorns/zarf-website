@@ -1,14 +1,13 @@
+import OpenSourceStats from '../components/Sections/OpenSourceStats/StatsCard';
 import HowZarfWorks from '../components/Sections/HowZarfWorks';
 import AirplaneMode from '../components/Sections/AirplaneMode';
-import { exampleCards } from '../assets/data/cardData';
+import MaintainedBy from '../components/Sections/MaintainedBy';
+import WhyUseZarf from '../components/Sections/WhyUseZarf';
+import Examples from '../components/Sections/Examples';
 import { heroProps } from '../assets/data/heroProps';
-import ExampleCard from '../components/ExampleCard';
 import PageLayout from '../components/PageLayout';
-import StatsCard from '../components/GithubStats/StatsCard';
 import React, { ReactElement } from 'react';
 import Hero from '../components/Hero/Hero';
-import WhyUseZarf from '../components/Sections/WhyUseZarf';
-import MaintainedBy from '../components/Sections/MaintainedBy';
 
 function index(): ReactElement {
   return (
@@ -16,13 +15,9 @@ function index(): ReactElement {
       <Hero {...heroProps.home} />
       <HowZarfWorks />
       <AirplaneMode />
-      {exampleCards.map(
-        (c, i): ReactElement => (
-          <ExampleCard {...c} key={i} />
-        ),
-      )}
+      <Examples />
       <WhyUseZarf />
-      <StatsCard />
+      <OpenSourceStats />
       <MaintainedBy />
     </PageLayout>
   );

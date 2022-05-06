@@ -1,8 +1,8 @@
 import { Box, Link, Typography } from '@mui/material';
-import React, { ReactElement } from 'react';
 import { heroProps } from '../assets/data/heroProps';
-import Hero from '../components/Hero/Hero';
 import PageLayout from '../components/PageLayout';
+import React, { ReactElement } from 'react';
+import Hero from '../components/Hero/Hero';
 
 function Slack(): ReactElement {
   return (
@@ -27,7 +27,7 @@ function Slack(): ReactElement {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {heroProps.slack.navLink.text}
+              {heroProps.slack.navLink.url}
             </Link>
           </Typography>
           <Typography variant="body1">

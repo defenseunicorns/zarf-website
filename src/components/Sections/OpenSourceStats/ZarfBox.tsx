@@ -1,8 +1,8 @@
-import ZarfBubbles from '../../assets/png/zarf-bubbles.png';
+import ZarfBubbles from '../../../assets/png/zarf-bubbles.png';
 import React, { ReactElement, useState } from 'react';
-import onResize from '../../hooks/onResize';
+import { hideSmall } from '../../../utils/display';
+import onResize from '../../../hooks/onResize';
 import Box from '@mui/material/Box';
-import { hideSmall } from '../../utils/display';
 
 const ZARF_PADDING = 40;
 function ZarfBox(props: {
