@@ -31,6 +31,7 @@ function Hero(props: HeroProps): ReactElement {
         <Box
           sx={{
             zIndex: 1,
+            mt: { xs: '54px', lg: '0px' },
             display: 'flex',
             maxWidth: '492px',
             flexDirection: 'column',
