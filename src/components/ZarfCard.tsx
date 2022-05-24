@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
-import React, { ReactElement } from 'react';
 import { Box, Card, SxProps, Theme, Typography } from '@mui/material';
 import CardBackground from '../assets/png/zarf-card.png';
+import React, { ReactElement } from 'react';
+import styled from '@emotion/styled';
 
 type ZarfCardVariant = 'nocard' | 'card';
 type BodyColor = 'text.primary' | 'text.secondary';
@@ -22,7 +22,7 @@ const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
   justify-items: center;
-  padding: 32px 24px 27px 24px;
+  padding: 27px 24px 27px 24px;
 `;
 
 function getVariantStyle(variant?: ZarfCardVariant): SxProps<Theme> {
@@ -52,7 +52,7 @@ function ZarfCard(props: ZarfCardProps): ReactElement {
         height={'84px'}
         sx={{ mx: 'auto' }}
       />
-      <Typography variant="h5" textAlign={'center'} marginTop={'25px'}>
+      <Typography variant="h5" textAlign={'center'} marginTop={'14px'}>
         {props.headerFirstLine}
       </Typography>
       <Typography variant="h5" textAlign={'center'} marginTop={'4px'}>
@@ -60,7 +60,7 @@ function ZarfCard(props: ZarfCardProps): ReactElement {
       </Typography>
       <Typography
         variant="body2"
-        marginTop={'16px'}
+        marginTop={'12px'}
         color={props.bodyColor || 'text.primary'}
       >
         {props.body}

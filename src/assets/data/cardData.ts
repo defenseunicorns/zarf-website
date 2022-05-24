@@ -18,7 +18,7 @@ export const howZarfWorksCards: ZarfCardProps[] = [
     topImage: WebSecurity,
     headerFirstLine: 'Securely Package Cloud',
     headerSecondLine: 'Apps & Resources',
-    body: 'Provides the ability to package a chunk of the internet and securely deliver all of the dependencies needed to run an app in a disconnected environment.',
+    body: 'Provides the ability to package a chunk of the internet and then securely deliver all of the files and dependencies needed to run an application in a disconnected environment.',
   },
   {
     topImage: WirelessCloud,
