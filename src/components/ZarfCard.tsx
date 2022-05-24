@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
-import React, { ReactElement } from 'react';
 import { Box, Card, SxProps, Theme, Typography } from '@mui/material';
 import CardBackground from '../assets/png/zarf-card.png';
+import React, { ReactElement } from 'react';
+import styled from '@emotion/styled';
 
 type ZarfCardVariant = 'nocard' | 'card';
 type BodyColor = 'text.primary' | 'text.secondary';
