@@ -75,7 +75,7 @@ module.exports = {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
         createLinkInHead: true,
-        exclude: [`/404`],
+        exclude: [`/404`, `/enterprise-support`],
       },
     },
   ],

@@ -1,46 +1,24 @@
-import BlobSm from '../../assets/svg/maintained-by-sm-blob.svg';
-import { Box, Link, styled, Typography } from '@mui/material';
-import Blob from '../../assets/svg/maintained-by-blob.svg';
-import { hideLarge, hideSmall } from '../../utils/display';
 import { socialLinks } from '../../assets/data/navLinks';
 import DuLogo from '../../assets/png/full-du-logo.png';
+import { Box, Link, Typography, Button } from '@mui/material';
 import React, { ReactElement } from 'react';
+import { Link as GatsbyLink } from 'gatsby';
+import LargeBlob from '../LargeBlob';
+interface MaintainedByProps {
+  tagLine?: string;
+}
 
-const MaintainerSection = styled(Box)`
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-` as typeof Box;
-
-const BlobWrapper = styled(Box)`
-  --time: 40s;
-  z-index: -1;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-` as typeof Box;
-
-function MaintainedBy(): ReactElement {
+function MaintainedBy(props: MaintainedByProps): ReactElement {
+  const tagLine = props.tagLine || 'Created & Maintained by';
   return (
-    <MaintainerSection
-      component="section"
-      sx={{
-        height: { xs: '520px', md: '405px' },
-        width: { xs: '100%', md: '735px' },
-      }}
-    >
+    <LargeBlob>
       <Box
         textAlign={'center'}
         flexDirection="column"
         gap={'16px'}
         display="flex"
       >
-        <Typography variant="h5">Created & Maintained by </Typography>
+        <Typography variant="h5">{tagLine}</Typography>
         <Link
           href={socialLinks.defenseUnicorns.url}
           target={socialLinks.defenseUnicorns.target}
@@ -52,19 +30,35 @@ function MaintainedBy(): ReactElement {
             src={DuLogo}
             alt={socialLinks.defenseUnicorns.text}
             sx={{
-              width: { xs: '280px', md: '320px' },
-              height: { xs: '60px', md: '68.4px' },
+              width: { xs: '280px', md: '400px' },
+              height: { xs: '60px', md: '85.5px' },
             }}
           />
         </Link>
+        <Typography variant="h3" marginY="16px">
+          Enterprise Support
+        </Typography>
       </Box>
-      <BlobWrapper className="tk-blob-skew tk-blob-scale" sx={hideSmall}>
-        <Blob width="100%" height="100%" preserveAspectRatio="none" />
-      </BlobWrapper>
-      <BlobWrapper className="tk-blob-skew tk-blob-scale" sx={hideLarge}>
-        <BlobSm width="100%" height="100%" preserveAspectRatio="none" />
-      </BlobWrapper>
-    </MaintainerSection>
+      <Typography
+        variant="body1"
+        sx={{ maxWidth: { xs: '85%', md: '50%' } }}
+        marginY={'16px'}
+      >
+        Defense Unicorns enterprise subscriptions for package support and
+        maintenance can accelerate your delivery and further streamline your
+        development cycle.
+      </Typography>
+      <Button
+        component={GatsbyLink}
+        to="/enterprise-support"
+        color="secondary"
+        variant="contained"
+        size={'large'}
+        sx={{ my: '16px' }}
+      >
+        Request Pricing
+      </Button>
+    </LargeBlob>
   );
 }
 

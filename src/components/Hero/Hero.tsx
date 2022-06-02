@@ -1,15 +1,17 @@
+import NavLink from '../../interfaces/NavLink';
 import React, { ReactElement } from 'react';
 import { Typography } from '@mui/material';
 import FlexButton from '../FlexButton';
 import { Box } from '@mui/system';
 import HeroBlob from './HeroBlob';
-import NavLink from '../../interfaces/NavLink';
 
 export interface HeroProps {
-  navLink: NavLink;
-  header: string;
-  image: string;
-  body: string;
+  navLink?: NavLink;
+  header?: string;
+  image?: string;
+  body?: string;
+  rhsChild?: ReactElement;
+  lhsChild?: ReactElement;
 }
 
 function Hero(props: HeroProps): ReactElement {
@@ -37,32 +39,40 @@ function Hero(props: HeroProps): ReactElement {
             flexDirection: 'column',
           }}
         >
-          <Typography
-            sx={{
-              typography: { xs: 'h2', lg: 'h1' },
-            }}
-            marginBottom={'32px'}
-          >
-            {props.header}
-          </Typography>
-          <Typography
-            variant="h6"
-            fontFamily={'Roboto'}
-            color={'text.secondary'}
-            marginBottom={'32px'}
-          >
-            {props.body}
-          </Typography>
-          <FlexButton {...props.navLink} />
+          {props.header && (
+            <Typography
+              sx={{
+                typography: { xs: 'h2', lg: 'h1' },
+              }}
+              marginBottom={'32px'}
+            >
+              {props.header}
+            </Typography>
+          )}
+          {props.body && (
+            <Typography
+              variant="h6"
+              fontFamily={'Roboto'}
+              color={'text.secondary'}
+              marginBottom={'32px'}
+            >
+              {props.body}
+            </Typography>
+          )}
+          {props.lhsChild && props.lhsChild}
+          {props.navLink && <FlexButton {...props.navLink} />}
         </Box>
-        <Box
-          component="img"
-          src={props.image}
-          sx={{
-            width: { xs: '360px', md: '500px' },
-            height: { xs: '302.4px', md: '439.23px' },
-          }}
-        />
+        {props.image && (
+          <Box
+            component="img"
+            src={props.image}
+            sx={{
+              width: { xs: '360px', md: '500px' },
+              height: { xs: '302.4px', md: '439.23px' },
+            }}
+          />
+        )}
+        {props.rhsChild && props.rhsChild}
       </Box>
     </>
   );
