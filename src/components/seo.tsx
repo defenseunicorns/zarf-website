@@ -1,13 +1,6 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
+import { useStaticQuery, graphql } from 'gatsby';
 import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
 
 type Meta = React.DetailedHTMLProps<
   React.MetaHTMLAttributes<HTMLMetaElement>,
@@ -23,6 +16,7 @@ export interface SeoProps {
   image?: string;
   author?: string;
   route?: string;
+  robots?: string;
 }
 
 function Seo({
@@ -34,6 +28,7 @@ function Seo({
   image,
   author,
   route,
+  robots,
 }: SeoProps): ReactElement {
   const { site } = useStaticQuery(
     graphql`
@@ -56,6 +51,7 @@ function Seo({
   const metaImage = image || site.siteMetadata.image;
   const metaUrl = url || site.siteMetadata.url;
   const metaAuthor = author || site.siteMetadata.social?.twitter;
+  const robotsContent = robots || 'index, follow';
 
   return (
     <Helmet
@@ -76,11 +72,13 @@ function Seo({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap',
+          as: 'font',
+          href: 'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&display=swap',
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&display=swap',
+          as: 'font',
+          href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap',
         },
       ]}
       meta={[
@@ -89,7 +87,7 @@ function Seo({
         },
         {
           name: 'robots',
-          content: 'index, follow',
+          content: robotsContent,
         },
         {
           name: 'viewport',

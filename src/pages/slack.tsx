@@ -23,11 +23,11 @@ function Slack(): ReactElement {
           <Typography variant="body1" marginTop="24px">
             1. Navigate to{' '}
             <Link
-              href={heroProps.slack.navLink.url}
+              href={heroProps.slack.navLink?.url}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {heroProps.slack.navLink.url}
+              {heroProps.slack.navLink?.url}
             </Link>
           </Typography>
           <Typography variant="body1">

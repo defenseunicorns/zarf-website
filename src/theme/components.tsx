@@ -1,4 +1,4 @@
-import { Components } from '@mui/material/styles/components';
+import { Components } from '@mui/material';
 import palette from './palette';
 
 const components: Components = {
@@ -12,7 +12,14 @@ const components: Components = {
   MuiTextField: {
     styleOverrides: {
       root: {
-        borderColor: '#FFFFFF6B',
+        '& .MuiOutlinedInput-root': {
+          '& fieldset': {
+            borderColor: 'rgba(255, 255, 255, 0.42)',
+          },
+        },
+        '& :-webkit-autofill': {
+          transitionDelay: '9999999s',
+        },
       },
     },
   },
