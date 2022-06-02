@@ -7,7 +7,7 @@ import Box from '@mui/material/Box/Box';
 
 function Support(): ReactElement {
   return (
-    <PageLayout>
+    <PageLayout seoProps={{ robots: 'noindex' }}>
       <Hero {...heroProps.support} />
       <Box sx={{ my: '16px' }}></Box>
       <SupportBy tagLine="Enterprise Support Provided By:" />
