@@ -1,7 +1,10 @@
+import HowSupportHelps from '../../components/Sections/EnterpriseSupport/HowSupportHelps';
+import SupportForm from '../../components/Sections/EnterpriseSupport/SupportForm';
 import PirateShip from '../../assets/png/pirate-ship.png';
 import { HeroProps } from '../../components/Hero/Hero';
 import ZarfEdge from '../../assets/png/zarf-edge.png';
 import { socialLinks } from './navLinks';
+import React from 'react';
 
 interface HeroPropsData {
   [key: string]: HeroProps;
@@ -26,5 +29,9 @@ export const heroProps: HeroPropsData = {
       rel: 'noopener noreferrer',
     },
     image: PirateShip,
+  },
+  support: {
+    rhsChild: <SupportForm />,
+    lhsChild: <HowSupportHelps />,
   },
 };
