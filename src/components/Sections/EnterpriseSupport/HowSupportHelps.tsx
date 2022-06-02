@@ -12,17 +12,16 @@ function HowSupportHelps(): ReactElement {
     <>
       <Typography
         marginBottom={'32px'}
-        variant="h2"
         sx={{
-          fontWeight: 400,
+          typography: { xs: 'h2', md: 'h1' },
         }}
       >
         Enterprise Support
       </Typography>
-      <Typography variant="body1">
+      <Typography variant="h6">
         Zarf will always be free software, but some missions are too important
-        to only rely on a community of volunteers. For this, Defense Unicorns
-        offers custom enterprise subscriptions, which may include:
+        to only rely on a community of volunteers. Defense Unicorns offers
+        custom enterprise subscriptions, which may include:
       </Typography>
       <Box component={'ul'}>
         {bullets.map(b => (

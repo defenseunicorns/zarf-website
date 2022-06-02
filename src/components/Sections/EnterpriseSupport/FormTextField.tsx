@@ -2,8 +2,6 @@ import TextField from '@mui/material/TextField/TextField';
 import React, { ReactElement } from 'react';
 import { FieldType } from './types';
 
-const HELPER_TEXT = '*Required';
-
 function FormTextField(props: {
   fieldType: FieldType;
   queryValue: string;
@@ -28,7 +26,6 @@ function FormTextField(props: {
       required={true}
       label={props.fieldType.charAt(0).toUpperCase() + props.fieldType.slice(1)}
       value={props.queryValue}
-      helperText={HELPER_TEXT}
     />
   );
 }

@@ -72,11 +72,13 @@ function Seo({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap',
+          as: 'font',
+          href: 'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&display=swap',
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&display=swap',
+          as: 'font',
+          href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap',
         },
       ]}
       meta={[

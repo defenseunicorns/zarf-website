@@ -3,7 +3,7 @@ import DuLogo from '../../assets/png/full-du-logo.png';
 import { Box, Link, Typography, Button } from '@mui/material';
 import React, { ReactElement } from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import LargeBlob from '../LargeBlob';
+import SmallBlob from '../SmallBlob';
 interface MaintainedByProps {
   tagLine?: string;
 }
@@ -11,13 +11,8 @@ interface MaintainedByProps {
 function MaintainedBy(props: MaintainedByProps): ReactElement {
   const tagLine = props.tagLine || 'Created & Maintained by';
   return (
-    <LargeBlob>
-      <Box
-        textAlign={'center'}
-        flexDirection="column"
-        gap={'16px'}
-        display="flex"
-      >
+    <SmallBlob>
+      <Box textAlign={'center'} flexDirection="column" display="flex">
         <Typography variant="h5">{tagLine}</Typography>
         <Link
           href={socialLinks.defenseUnicorns.url}
@@ -27,6 +22,7 @@ function MaintainedBy(props: MaintainedByProps): ReactElement {
         >
           <Box
             component="img"
+            marginBottom={'24px'}
             src={DuLogo}
             alt={socialLinks.defenseUnicorns.text}
             sx={{
@@ -35,30 +31,21 @@ function MaintainedBy(props: MaintainedByProps): ReactElement {
             }}
           />
         </Link>
-        <Typography variant="h3" marginY="16px">
-          Enterprise Support
+        <Typography variant="body1">
+          For enterprise package support & pricing
         </Typography>
+        <Button
+          component={GatsbyLink}
+          to="/enterprise-support"
+          color="secondary"
+          variant="contained"
+          size={'large'}
+          sx={{ my: '16px', mx: 'auto' }}
+        >
+          Contact An Expert
+        </Button>
       </Box>
-      <Typography
-        variant="body1"
-        sx={{ maxWidth: { xs: '85%', md: '50%' } }}
-        marginY={'16px'}
-      >
-        Defense Unicorns enterprise subscriptions for package support and
-        maintenance can accelerate your delivery and further streamline your
-        development cycle.
-      </Typography>
-      <Button
-        component={GatsbyLink}
-        to="/enterprise-support"
-        color="secondary"
-        variant="contained"
-        size={'large'}
-        sx={{ my: '16px' }}
-      >
-        Request Pricing
-      </Button>
-    </LargeBlob>
+    </SmallBlob>
   );
 }
 
