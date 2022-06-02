@@ -132,9 +132,8 @@ function SupportForm(): ReactElement {
         Agree and Submit
       </Button>
       <Typography variant="caption" color="text.secondary">
-        By entering your information above and clicking the `&quot;`Agree and
-        Submit`&quot;` button, you agree that we may contact you via the email
-        address provided in this form.
+        By entering your information above and clicking the &quot;Agree and
+        Submit&quot; button, you agree that we may contact you via email.
       </Typography>
     </FormCard>
   );
