@@ -4,7 +4,7 @@ import { createTabPropsFromNavLink } from '../../../utils/navLink';
 import React, { ReactElement, useEffect, useState } from 'react';
 import { socialLinks } from '../../../assets/data/navLinks';
 import CodeContainer from './CodeContainer';
-import { getInstallCommand } from './utils';
+import { getInstallCommand, getUserOs } from './utils';
 import LargeBlob from '../../LargeBlob';
 import OsLink from './OsLink';
 import { OS } from './types';
@@ -19,6 +19,10 @@ const LinkContainer = styled(Box)`
 function InstallZarf(): ReactElement {
   const [os, setOs] = useState<OS>(OS.mac);
   const [command, setCommand] = useState<string>(getInstallCommand(os));
+
+  useEffect(() => {
+    setOs(getUserOs(navigator));
+  }, []);
 
   useEffect(() => {
     setCommand(getInstallCommand(os));

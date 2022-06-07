@@ -11,3 +11,8 @@ export function getInstallCommand(os: OS): string {
   }
   return installCommand;
 }
+
+export function getUserOs(navigator: Navigator): OS {
+  if (navigator.userAgent.includes(OS.linux)) return OS.linux;
+  return OS.mac;
+}
