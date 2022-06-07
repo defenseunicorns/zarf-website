@@ -45,4 +45,16 @@ export const socialLinks: SocialLinks = {
     target: '_blank',
     rel: 'noopener noreferrer',
   },
+  gettingStarted: {
+    url: 'https://docs.zarf.dev/docs/getting-started',
+    text: 'Getting Started',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
+  userGuide: {
+    url: 'https://docs.zarf.dev/docs/user-guide/the-zarf-cli/the-zarf-cli',
+    text: 'User Guide',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
 };
