@@ -5,7 +5,7 @@ import { hideLarge, hideSmall } from '../../../utils/display';
 import { namedLinks } from '../../../assets/data/navLinks';
 import { Box, styled, Typography } from '@mui/material';
 import onResize from '../../../hooks/onResize';
-import ButtonLink from '../../FlexButton';
+import ButtonLink from '../../ButtonLink';
 import ZarfBox from './ZarfBox';
 import Stat from './Stat';
 import React, {

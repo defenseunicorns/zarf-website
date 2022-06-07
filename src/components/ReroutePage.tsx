@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import React, { ReactElement } from 'react';
 import { styled } from '@mui/material';
-import ButtonLink from './FlexButton';
+import ButtonLink from './ButtonLink';
 import Box from '@mui/material/Box';
 
 const ReroutePageBackdrop = styled(Box)`

@@ -1,7 +1,7 @@
 import { Box, styled, Typography } from '@mui/material';
 import React, { ReactElement } from 'react';
 import NavLink from '../interfaces/NavLink';
-import ButtonLink from './FlexButton';
+import ButtonLink from './ButtonLink';
 
 export interface ExampleCardProps {
   title: string;

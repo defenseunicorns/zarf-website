@@ -1,7 +1,7 @@
 import NavLink from '../../interfaces/NavLink';
 import React, { ReactElement } from 'react';
 import { Typography } from '@mui/material';
-import ButtonLink from '../FlexButton';
+import ButtonLink from '../ButtonLink';
 import { Box } from '@mui/system';
 import HeroBlob from './HeroBlob';
 
