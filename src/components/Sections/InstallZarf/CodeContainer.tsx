@@ -1,6 +1,5 @@
 import { Box, Typography, IconButton } from '@mui/material';
 import { ContentCopy } from '@mui/icons-material';
-import { curryCopyClipboard } from './utils';
 import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
 
@@ -23,13 +22,17 @@ const CodeBox = styled(Box)`
 ` as typeof Box;
 
 function CodeContainer({ command }: { command: string }): ReactElement {
+  const copyCommandToClipboard = React.useCallback(async (): Promise<void> => {
+    await navigator.clipboard.writeText(command);
+  }, [command]);
+
   return (
     <CodeBox marginX={'16px'}>
       <Typography variant="h5" fontFamily="Roboto">
         {`$ ${command}`}
       </Typography>
       <IconButton title="copy to clipboard">
-        <ContentCopy onClick={curryCopyClipboard(navigator, command)} />
+        <ContentCopy onClick={copyCommandToClipboard} />
       </IconButton>
     </CodeBox>
   );

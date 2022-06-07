@@ -26,7 +26,11 @@ function InstallZarf(): ReactElement {
 
   return (
     <LargeBlob>
-      <Typography variant="h1" marginBottom={'24px'} paddingX={'24px'}>
+      <Typography
+        sx={{ typography: { xs: 'h2', md: 'h1' } }}
+        marginBottom={'24px'}
+        paddingX={'24px'}
+      >
         Install Zarf
       </Typography>
       <Typography

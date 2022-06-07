@@ -11,10 +11,3 @@ export function getInstallCommand(os: OS): string {
   }
   return installCommand;
 }
-
-export function curryCopyClipboard(
-  navigator: Navigator,
-  text: string,
-): () => Promise<void> {
-  return (): Promise<void> => navigator.clipboard.writeText(text);
-}
