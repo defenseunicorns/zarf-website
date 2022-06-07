@@ -1,31 +1,32 @@
 import NavLink from '../../interfaces/NavLink';
 
-export const navLinks: NavLink[] = [
-  {
+interface SocialLinks {
+  [key: string]: NavLink;
+}
+export const namedLinks: SocialLinks = {
+  product: {
     url: '/',
     text: 'Product',
   },
-  {
+  slack: {
+    url: '/slack',
+    text: 'Slack',
+  },
+  quickstart: {
+    url: '/install',
+    text: 'Install',
+  },
+  zarfExamples: {
     url: 'https://defenseunicorns.github.io/zarf/examples',
     text: 'Examples',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
-  {
+  zarfDocs: {
     url: 'https://docs.zarf.dev/docs/zarf-overview',
     text: 'Documents',
     target: '_self',
     rel: 'noopener noreferrer',
-  },
-];
-
-interface SocialLinks {
-  [key: string]: NavLink;
-}
-export const socialLinks: SocialLinks = {
-  slack: {
-    url: '/slack',
-    text: 'Slack',
   },
   github: {
     url: 'https://github.com/defenseunicorns/zarf',
@@ -58,3 +59,9 @@ export const socialLinks: SocialLinks = {
     rel: 'noopener noreferrer',
   },
 };
+
+export const navLinks: NavLink[] = [
+  namedLinks.product,
+  namedLinks.zarfExamples,
+  namedLinks.zarfDocs,
+];

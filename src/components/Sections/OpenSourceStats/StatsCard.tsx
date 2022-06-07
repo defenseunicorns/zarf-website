@@ -2,10 +2,10 @@ import { getGithubStats, GithubStats } from '../../../utils/githubApi';
 import StatsCardSmPng from '../../../assets/png/stats-card-sm.png';
 import StatsCardPng from '../../../assets/png/stats-card.png';
 import { hideLarge, hideSmall } from '../../../utils/display';
-import { socialLinks } from '../../../assets/data/navLinks';
+import { namedLinks } from '../../../assets/data/navLinks';
 import { Box, styled, Typography } from '@mui/material';
 import onResize from '../../../hooks/onResize';
-import FlexButton from '../../FlexButton';
+import ButtonLink from '../../FlexButton';
 import ZarfBox from './ZarfBox';
 import Stat from './Stat';
 import React, {
@@ -110,7 +110,7 @@ function OpenSourceStats(): ReactElement {
             important environments.{' '}
           </Typography>
           <Box sx={{ ...hideSmall, mt: '48px' }}>
-            <FlexButton {...socialLinks.startContributing}></FlexButton>
+            <ButtonLink {...namedLinks.startContributing}></ButtonLink>
           </Box>
         </Box>
         <Box
@@ -148,7 +148,7 @@ function OpenSourceStats(): ReactElement {
             />
           </Box>
           <Box sx={{ ...hideLarge, my: '48px' }}>
-            <FlexButton {...socialLinks.startContributing}></FlexButton>
+            <ButtonLink {...namedLinks.startContributing}></ButtonLink>
           </Box>
         </Box>
         <CardBackground component="img" src={StatsCardPng} sx={hideSmall} />

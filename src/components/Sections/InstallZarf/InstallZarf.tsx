@@ -2,7 +2,7 @@
 import { Typography, Divider, Box, styled, Link, Button } from '@mui/material';
 import { createTabPropsFromNavLink } from '../../../utils/navLink';
 import React, { ReactElement, useEffect, useState } from 'react';
-import { socialLinks } from '../../../assets/data/navLinks';
+import { namedLinks } from '../../../assets/data/navLinks';
 import CodeContainer from './CodeContainer';
 import { getInstallCommand, getUserOs } from './utils';
 import LargeBlob from '../../LargeBlob';
@@ -61,18 +61,18 @@ function InstallZarf(): ReactElement {
         For more more detailed install options - check out the{' '}
         <Link
           underline="hover"
-          {...createTabPropsFromNavLink(socialLinks.gettingStarted)}
+          {...createTabPropsFromNavLink(namedLinks.gettingStarted)}
         >
-          {socialLinks.gettingStarted.text.toLocaleLowerCase()}
+          {namedLinks.gettingStarted.text.toLocaleLowerCase()}
         </Link>{' '}
         docs.
       </Typography>
       <Button
-        {...createTabPropsFromNavLink(socialLinks.userGuide)}
+        {...createTabPropsFromNavLink(namedLinks.userGuide)}
         variant="contained"
         sx={{ mt: '27px' }}
       >
-        {socialLinks.userGuide.text}
+        {namedLinks.userGuide.text}
       </Button>
     </LargeBlob>
   );
