@@ -42,7 +42,7 @@ function Hero(props: HeroProps): ReactElement {
           {props.header && (
             <Typography
               sx={{
-                typography: { xs: 'h2', lg: 'h1' },
+                typography: { xs: 'h3', lg: 'h1' },
               }}
               marginBottom={'32px'}
             >

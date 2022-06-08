@@ -4,7 +4,7 @@ import { hideSmall } from '../../../utils/display';
 import onResize from '../../../hooks/onResize';
 import Box from '@mui/material/Box';
 
-const ZARF_PADDING = 40;
+// const ZARF_PADDING = 32;
 function ZarfBox(props: {
   leftAlignRef: React.MutableRefObject<HTMLDivElement | undefined>;
 }): ReactElement {
@@ -17,7 +17,7 @@ function ZarfBox(props: {
     if (laCurrent && selfRef.current) {
       const laRect = laCurrent.getBoundingClientRect();
       setZarfLeft(laRect.left - document.body.getBoundingClientRect().left);
-      setZarfTop(laCurrent.scrollTop + laRect.height + ZARF_PADDING);
+      setZarfTop(laCurrent.scrollTop + laRect.height);
     }
   };
 

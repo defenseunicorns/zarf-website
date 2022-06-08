@@ -37,10 +37,10 @@ function ExampleCard(props: ExampleCardProps): ReactElement {
         <Typography variant="h3">{props.title}</Typography>
         <Typography
           color={'text.secondary'}
+          fontFamily="Roboto"
           sx={{
             typography: { xs: 'body1', md: 'h6' },
             pt: '24px',
-            fontFamily: { md: 'Roboto' },
           }}
         >
           {props.body}

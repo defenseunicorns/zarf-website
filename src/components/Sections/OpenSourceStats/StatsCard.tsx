@@ -91,17 +91,13 @@ function OpenSourceStats(): ReactElement {
         <Box
           display="flex"
           flexDirection="column"
-          maxWidth="418px"
-          sx={{ mb: '16px', px: { xs: '32px', md: '0px' } }}
+          maxWidth="490px"
+          sx={{ my: '90px', px: { xs: '32px', md: '0px' } }}
         >
-          <Typography
-            variant="h6"
-            fontFamily="Roboto"
-            sx={{ mb: '24px', mt: { xs: '48px', md: 'unset' } }}
-          >
+          <Typography variant="h6" fontFamily="Roboto" sx={{ mb: '32px' }}>
             OPEN SOURCE PROJECT
           </Typography>
-          <Typography variant="h2" sx={{ my: '24px' }}>
+          <Typography variant="h2" marginBottom="16px">
             Join Our Mission
           </Typography>
           <Typography variant="body2" fontFamily="Roboto">
@@ -109,8 +105,11 @@ function OpenSourceStats(): ReactElement {
             environments. We aim to deliver secure software to the worlds most
             important environments.{' '}
           </Typography>
-          <Box sx={{ ...hideSmall, mt: '48px' }}>
-            <ButtonLink {...namedLinks.startContributing}></ButtonLink>
+          <Box sx={{ ...hideSmall, mt: '32px' }}>
+            <ButtonLink
+              {...namedLinks.startContributing}
+              color="secondary"
+            ></ButtonLink>
           </Box>
         </Box>
         <Box

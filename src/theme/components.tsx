@@ -29,6 +29,29 @@ const components: Components = {
         borderRadius: '24px',
       },
     },
+    variants: [
+      {
+        props: { size: 'large' },
+        style: {
+          fontSize: 15,
+          letterSpacing: 0.46,
+        },
+      },
+      {
+        props: { size: 'medium' },
+        style: {
+          fontSize: 14,
+          letterSpacing: 0.4,
+        },
+      },
+      {
+        props: { size: 'small' },
+        style: {
+          fontSize: 13,
+          letterSpacing: 0.46,
+        },
+      },
+    ],
   },
   MuiIconButton: {
     styleOverrides: {

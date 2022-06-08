@@ -12,9 +12,13 @@ export const namedLinks: SocialLinks = {
     url: '/slack',
     text: 'Slack',
   },
-  quickstart: {
+  installNow: {
     url: '/install',
-    text: 'Install',
+    text: 'Install Now',
+  },
+  enterpriseSupport: {
+    url: '/enterprise-support',
+    text: 'Contact an Expert',
   },
   zarfExamples: {
     url: 'https://defenseunicorns.github.io/zarf/examples',
@@ -35,8 +39,8 @@ export const namedLinks: SocialLinks = {
     rel: 'noopener noreferrer',
   },
   startContributing: {
-    url: 'https://github.com/defenseunicorns/zarf/blob/master/CONTRIBUTING.md',
-    text: 'start contributing',
+    url: 'https://docs.zarf.dev/docs/developer-guide/contributor-guide',
+    text: 'view contributor guide',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
