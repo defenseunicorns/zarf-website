@@ -31,7 +31,7 @@ function InstallZarf(): ReactElement {
   return (
     <LargeBlob>
       <Typography
-        sx={{ typography: { xs: 'h2', md: 'h1' } }}
+        sx={{ typography: { xs: 'h3', md: 'h2' } }}
         marginBottom={'24px'}
         paddingX={'24px'}
       >
@@ -46,33 +46,32 @@ function InstallZarf(): ReactElement {
         Select the operating system you are using then copy and paste the
         following command into your terminal.
       </Typography>
-      <LinkContainer marginBottom={'11px'}>
+      <LinkContainer marginBottom={'24px'}>
         <OsLink os={OS.mac} selectedOs={os} setSelected={setOs} />
         <Divider orientation="vertical" flexItem color="white"></Divider>
         <OsLink os={OS.linux} selectedOs={os} setSelected={setOs} />
       </LinkContainer>
       <CodeContainer command={command} />
       <Typography
-        variant="h5"
+        variant="body2"
         fontFamily={'Roboto'}
         marginTop={'24px'}
         paddingX={'24px'}
       >
-        For more more detailed install options - check out the{' '}
+        For more more detailed installation instructions - check out our{' '}
         <Link
           underline="hover"
           {...createTabPropsFromNavLink(namedLinks.gettingStarted)}
         >
-          {namedLinks.gettingStarted.text.toLocaleLowerCase()}
-        </Link>{' '}
-        docs.
+          {namedLinks.gettingStarted.text} Doc.
+        </Link>
       </Typography>
       <Button
         {...createTabPropsFromNavLink(namedLinks.userGuide)}
         variant="contained"
         sx={{ mt: '27px' }}
       >
-        {namedLinks.userGuide.text}
+        View Documentation
       </Button>
     </LargeBlob>
   );

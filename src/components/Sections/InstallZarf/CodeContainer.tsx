@@ -23,13 +23,12 @@ const CodeBox = styled(Box)`
 
 function CodeContainer({ command }: { command: string }): ReactElement {
   const copyCommandToClipboard = React.useCallback(async (): Promise<void> => {
-    console.log(navigator.userAgent);
     await navigator.clipboard.writeText(command);
   }, [command]);
 
   return (
     <CodeBox marginX={'16px'}>
-      <Typography variant="h5" fontFamily="Roboto">
+      <Typography variant="h6" fontFamily="Roboto">
         {`$ ${command}`}
       </Typography>
       <IconButton onClick={copyCommandToClipboard} title="copy to clipboard">
