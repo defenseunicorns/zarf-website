@@ -14,33 +14,34 @@ const typography: TypographyOptions = {
   fontFamily: 'Roboto',
   h1: {
     fontFamily: fonts.mPlusRoundedFont,
-    fontSize: 64,
+    fontSize: 96,
+    lineHeight: '120%',
     letterSpacing: -1.5,
-    fontWeight: fontWeights.medium,
+    fontWeight: fontWeights.regular,
   },
   h2: {
     fontFamily: fonts.mPlusRoundedFont,
-    fontSize: 48,
+    fontSize: 64,
     letterSpacing: -0.5,
-    fontWeight: fontWeights.medium,
+    fontWeight: fontWeights.regular,
   },
   h3: {
     fontFamily: fonts.mPlusRoundedFont,
-    fontSize: 36,
+    fontSize: 48,
     letterSpacing: -0.25,
-    fontWeight: fontWeights.medium,
+    fontWeight: fontWeights.regular,
   },
   h4: {
     fontFamily: fonts.mPlusRoundedFont,
-    fontSize: 24,
+    fontSize: 34,
     letterSpacing: 0,
-    fontWeight: fontWeights.medium,
+    fontWeight: fontWeights.regular,
   },
   h5: {
     fontFamily: fonts.mPlusRoundedFont,
-    fontSize: 20,
+    fontSize: 24,
     letterSpacing: 0.15,
-    fontWeight: fontWeights.medium,
+    fontWeight: fontWeights.regular,
   },
   h6: {
     fontFamily: fonts.mPlusRoundedFont,
@@ -52,7 +53,7 @@ const typography: TypographyOptions = {
     fontFamily: fonts.roboto,
     fontSize: 18,
     letterSpacing: 0.15,
-    fontWeight: fontWeights.regular,
+    fontWeight: fontWeights.medium,
   },
   subtitle2: {
     fontFamily: fonts.roboto,
@@ -71,6 +72,21 @@ const typography: TypographyOptions = {
     fontSize: 16,
     letterSpacing: 0.15,
     fontWeight: fontWeights.regular,
+  },
+  caption: {
+    fontFamily: fonts.roboto,
+    fontSize: 12,
+    letterSpacing: 0.4,
+    fontWeight: fontWeights.regular,
+  },
+  overline: {
+    fontFamily: fonts.roboto,
+    fontSize: 12,
+    letterSpacing: 1,
+  },
+  button: {
+    fontFamily: fonts.roboto,
+    fontWeight: fontWeights.medium,
   },
 };
 

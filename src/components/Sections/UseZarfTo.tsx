@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import React, { ReactElement } from 'react';
 import ZarfCardRow from '../ZarfCardRow';
 
-function HowZarfWorks(): ReactElement {
+function UseZarfTo(): ReactElement {
   return (
     <Box component="section">
       <Typography
@@ -20,4 +20,4 @@ function HowZarfWorks(): ReactElement {
   );
 }
 
-export default HowZarfWorks;
+export default UseZarfTo;
