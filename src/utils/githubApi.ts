@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Octokit } from 'octokit';
 
 export interface GithubStats {
@@ -31,13 +32,16 @@ async function getNumContributors(): Promise<number> {
 }
 
 async function getNumStars(): Promise<number> {
-  return iterableItemCount(
-    octokit.paginate.iterator(octokit.rest.activity.listStargazersForRepo, {
-      owner: 'defenseunicorns',
-      repo: 'zarf',
-      per_page: 100,
-    }),
-  );
+  return (
+    await octokit.rest.repos.get({ owner: 'defenseunicorns', repo: 'zarf' })
+  ).data.stargazers_count;
+  // return iterableItemCount(
+  //   octokit.paginate.iterator(octokit.rest.activity.listStargazersForRepo, {
+  //     owner: 'defenseunicorns',
+  //     repo: 'zarf',
+  //     per_page: 100,
+  //   }),
+  // );
 }
 
 async function getNumPullRequests(): Promise<number> {

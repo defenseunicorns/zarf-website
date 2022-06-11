@@ -1,10 +1,10 @@
 import ComingSoonBG from '../assets/png/coming-soon-bg.png';
 import ZarfBubbles from '../assets/png/zarf-bubbles.png';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material';
 import Container from '@mui/material/Container';
 import React, { ReactElement } from 'react';
-import FlexButton from './FlexButton';
+import { styled } from '@mui/material';
+import ButtonLink from './ButtonLink';
 import Box from '@mui/material/Box';
 
 const ReroutePageBackdrop = styled(Box)`
@@ -79,7 +79,7 @@ function ReroutePage(props: ReroutePageProps): ReactElement {
           >
             {props.bottomLine}
           </Typography>
-          <FlexButton url={props.buttonLink} text={props.buttonText} />
+          <ButtonLink url={props.buttonLink} text={props.buttonText} />
         </Box>
         <Box
           component="img"

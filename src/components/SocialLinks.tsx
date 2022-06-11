@@ -2,7 +2,7 @@ import { Link as GatsbyLink } from 'gatsby';
 import React, { ReactElement } from 'react';
 import Slack from '../assets/svg/slack.svg';
 import { GitHub } from '@mui/icons-material';
-import { socialLinks } from '../assets/data/navLinks';
+import { namedLinks } from '../assets/data/navLinks';
 import { PathOptional } from '../interfaces/Pathname';
 import { IconButton, SxProps, Theme } from '@mui/material';
 import SlackSelected from '../assets/svg/slack-selected.svg';
@@ -19,22 +19,22 @@ function SocialLinks({
 }: SocialLinksProps): ReactElement {
   return (
     <>
-      <GatsbyLink to={socialLinks.slack.url}>
+      <GatsbyLink to={namedLinks.slack.url}>
         <IconButton
           size="medium"
           sx={{ ...slackSx, padding: '12px' }}
-          title={socialLinks.slack.text}
+          title={namedLinks.slack.text}
         >
-          {pathname === socialLinks.slack.url ? <SlackSelected /> : <Slack />}
+          {pathname === namedLinks.slack.url ? <SlackSelected /> : <Slack />}
         </IconButton>
       </GatsbyLink>
       <IconButton
         size="medium"
         sx={{ ...githubSx, padding: '12px' }}
-        href={socialLinks.github.url}
-        title={socialLinks.github.text}
-        target={socialLinks.github.target}
-        rel={socialLinks.github.rel}
+        href={namedLinks.github.url}
+        title={namedLinks.github.text}
+        target={namedLinks.github.target}
+        rel={namedLinks.github.rel}
       >
         <GitHub></GitHub>
       </IconButton>

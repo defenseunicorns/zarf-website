@@ -1,8 +1,8 @@
-import SocialLinks from './SocialLinks';
+import { PathRequired } from '../../interfaces/Pathname';
 import { Box, styled, Typography } from '@mui/material';
+import Zarf from '../../assets/png/zarf-footer.png';
 import React, { ReactElement } from 'react';
-import Zarf from '../assets/png/zarf-footer.png';
-import { PathRequired } from '../interfaces/Pathname';
+import SocialLinks from '../SocialLinks';
 import { Link } from 'gatsby';
 
 const FooterContainer = styled(Box)`

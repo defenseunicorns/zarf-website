@@ -1,6 +1,6 @@
-import { NavLinkTabProps } from '../../interfaces/NavLink';
+import { NavLinkTabProps } from '../../../interfaces/NavLink';
+import { isLocalLink } from '../../../utils/navLink';
 import { Link as GatsbyLink } from 'gatsby';
-import { isLocalLink } from '../../utils/navLink';
 import React, { ReactElement } from 'react';
 import { TabUnstyled } from '@mui/base';
 import Tab from '@mui/material/Tab';
