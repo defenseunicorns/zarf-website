@@ -17,8 +17,8 @@ const palette: DefaultPaletteOptions = {
     light: '#ADAEFF',
   },
   background: {
-    default: '#10184C',
-    paper: '#10184C',
+    default: '#0D133D',
+    paper: '#0D133D',
   },
   text: {
     primary: '#FFFFFF',
