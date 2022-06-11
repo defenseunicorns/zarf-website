@@ -131,7 +131,7 @@ function Seo({
         },
         {
           name: `twitter:image`,
-          content: metaImage,
+          content: `https://zarf.dev${metaImage}`,
         },
         {
           name: `twitter:creator`,
