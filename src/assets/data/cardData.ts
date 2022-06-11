@@ -16,7 +16,7 @@ import CloudServer from '../../assets/png/cloud-icons/server.png';
 export const howZarfWorksCards: ZarfCardProps[] = [
   {
     topImage: WebSecurity,
-    headerFirstLine: 'Securely Package Cloud',
+    headerFirstLine: 'Securely Package',
     headerSecondLine: 'Apps & Resources',
     body: 'Provides the ability to package a chunk of the internet and then securely deliver all of the files and dependencies needed to run an application in a disconnected environment.',
   },
@@ -37,8 +37,8 @@ export const howZarfWorksCards: ZarfCardProps[] = [
 export const whyUseZarfCards: ZarfCardProps[] = [
   {
     topImage: Community,
-    headerFirstLine: 'Free and Open Source',
-    headerSecondLine: 'Solution',
+    headerFirstLine: 'Free and Open',
+    headerSecondLine: 'Source Solution',
     body: 'Source code is open and viewable to the public which increases security through transparency. Zarf is also a free tool and available for public use.',
   },
   {
@@ -51,12 +51,12 @@ export const whyUseZarfCards: ZarfCardProps[] = [
     topImage: Pieces,
     headerFirstLine: 'Automates SBOM',
     headerSecondLine: 'Creation',
-    body: 'Automatically generates an SBOM from the images listed within a package, in compliance with federal mandate. Includes a UI for SBOM viewing.',
+    body: 'Automatically generates an SBOM from the images listed within a package, in compliance with federal mandate. Includes a UI for SBOM viewing. ',
   },
   {
     topImage: CloudDocument,
-    headerFirstLine: 'Installs Packages with',
-    headerSecondLine: 'Two Commands',
+    headerFirstLine: 'Installs Packages',
+    headerSecondLine: 'with Two Commands',
     body: 'Reduces the risk of installation error and complexity of installation procedures by simplifying the installation of packages to just two steps.',
   },
   {
@@ -67,8 +67,8 @@ export const whyUseZarfCards: ZarfCardProps[] = [
   },
   {
     topImage: CloudServer,
-    headerFirstLine: 'Hosts Own Docker',
-    headerSecondLine: 'Registry & Git Server',
+    headerFirstLine: 'Host Registry',
+    headerSecondLine: '& Git Server',
     body: 'Zarf spins up K8 clusters, docker registries and git servers offline to allow for disconnected use. For connected users this provides a fail over solution.',
   },
 ].map(

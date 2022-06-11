@@ -2,7 +2,7 @@ import BlobSm from '../../../assets/svg/maintained-by-sm-blob.svg';
 import { Box, Link, styled, Typography } from '@mui/material';
 import Blob from '../../../assets/svg/maintained-by-blob.svg';
 import { hideLarge, hideSmall } from '../../../utils/display';
-import { socialLinks } from '../../../assets/data/navLinks';
+import { namedLinks } from '../../../assets/data/navLinks';
 import DuLogo from '../../../assets/png/full-du-logo.png';
 import React, { ReactElement } from 'react';
 
@@ -46,15 +46,15 @@ function SupportBy({ tagLine }: MaintainedByProps): ReactElement {
       >
         <Typography variant="h5">{tagLine}</Typography>
         <Link
-          href={socialLinks.defenseUnicorns.url}
-          target={socialLinks.defenseUnicorns.target}
-          rel={socialLinks.defenseUnicorns.rel}
-          title={socialLinks.defenseUnicorns.text}
+          href={namedLinks.defenseUnicorns.url}
+          target={namedLinks.defenseUnicorns.target}
+          rel={namedLinks.defenseUnicorns.rel}
+          title={namedLinks.defenseUnicorns.text}
         >
           <Box
             component="img"
             src={DuLogo}
-            alt={socialLinks.defenseUnicorns.text}
+            alt={namedLinks.defenseUnicorns.text}
             sx={{
               width: { xs: '280px', md: '320px' },
               height: { xs: '60px', md: '68.4px' },

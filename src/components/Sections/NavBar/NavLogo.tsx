@@ -1,8 +1,8 @@
-import { Box } from '@mui/material';
+import ZarfLogoSmall from '../../../assets/svg/zarf-logo-small.svg';
+import { hideLarge, hideSmall } from '../../../utils/display';
+import ZarfLogo from '../../../assets/svg/zarf-logo.svg';
 import React, { ReactElement } from 'react';
-import { hideLarge, hideSmall } from '../../utils/display';
-import ZarfLogo from '../../assets/svg/zarf-logo.svg';
-import ZarfLogoSmall from '../../assets/svg/zarf-logo-small.svg';
+import { Box } from '@mui/material';
 import { Link } from 'gatsby';
 
 function NavLogo(): ReactElement {
