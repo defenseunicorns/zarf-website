@@ -1,7 +1,7 @@
 import NavLink from '../../interfaces/NavLink';
 import React, { ReactElement } from 'react';
 import { Typography } from '@mui/material';
-import FlexButton from '../FlexButton';
+import ButtonLink from '../ButtonLink';
 import { Box } from '@mui/system';
 import HeroBlob from './HeroBlob';
 
@@ -42,7 +42,7 @@ function Hero(props: HeroProps): ReactElement {
           {props.header && (
             <Typography
               sx={{
-                typography: { xs: 'h2', lg: 'h1' },
+                typography: { xs: 'h3', lg: 'h1' },
               }}
               marginBottom={'32px'}
             >
@@ -60,7 +60,7 @@ function Hero(props: HeroProps): ReactElement {
             </Typography>
           )}
           {props.lhsChild && props.lhsChild}
-          {props.navLink && <FlexButton {...props.navLink} />}
+          {props.navLink && <ButtonLink {...props.navLink} />}
         </Box>
         {props.image && (
           <Box

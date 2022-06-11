@@ -1,7 +1,7 @@
 import { Box, styled, Typography } from '@mui/material';
 import React, { ReactElement } from 'react';
 import NavLink from '../interfaces/NavLink';
-import FlexButton from './FlexButton';
+import ButtonLink from './ButtonLink';
 
 export interface ExampleCardProps {
   title: string;
@@ -37,15 +37,15 @@ function ExampleCard(props: ExampleCardProps): ReactElement {
         <Typography variant="h3">{props.title}</Typography>
         <Typography
           color={'text.secondary'}
+          fontFamily="Roboto"
           sx={{
             typography: { xs: 'body1', md: 'h6' },
             pt: '24px',
-            fontFamily: { md: 'Roboto' },
           }}
         >
           {props.body}
         </Typography>
-        {props.navLink && <FlexButton {...props.navLink} color="secondary" />}
+        {props.navLink && <ButtonLink {...props.navLink} color="secondary" />}
       </Box>
       <Box component="img" src={props.image} width="360px" height="360px" />
     </ExampleCardWrapper>

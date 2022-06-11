@@ -1,5 +1,5 @@
 import OpenSourceStats from '../components/Sections/OpenSourceStats/StatsCard';
-import HowZarfWorks from '../components/Sections/HowZarfWorks';
+import UseZarfTo from '../components/Sections/UseZarfTo';
 import AirplaneMode from '../components/Sections/AirplaneMode';
 import MaintainedBy from '../components/Sections/MaintainedBy';
 import WhyUseZarf from '../components/Sections/WhyUseZarf';
@@ -13,7 +13,7 @@ function index(): ReactElement {
   return (
     <PageLayout>
       <Hero {...heroProps.home} />
-      <HowZarfWorks />
+      <UseZarfTo />
       <AirplaneMode />
       <Examples />
       <WhyUseZarf />
