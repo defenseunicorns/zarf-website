@@ -1,9 +1,9 @@
-import { isLocalLink } from '../../utils/navLink';
+import { isLocalLink } from '../../../utils/navLink';
 import { Link, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import palette from '../../../theme/palette';
 import React, { ReactElement } from 'react';
 import { Link as LocalLink } from 'gatsby';
-import palette from '../../theme/palette';
 import {
   TabUnstyled,
   TabsUnstyled,

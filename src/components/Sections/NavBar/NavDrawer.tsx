@@ -1,10 +1,10 @@
-import NavLink from '../../interfaces/NavLink';
-import CloseIcon from '@mui/icons-material/Close';
-import DrawerTab, { DrawerTabs } from './NavDrawerTabs';
-import { PathOptional } from '../../interfaces/Pathname';
-import React, { PropsWithChildren, ReactElement } from 'react';
+import { createTabPropsFromNavLink } from '../../../utils/navLink';
 import { Drawer, IconButton, DrawerProps } from '@mui/material';
-import { createTabPropsFromNavLink } from '../../utils/navLink';
+import React, { PropsWithChildren, ReactElement } from 'react';
+import { PathOptional } from '../../../interfaces/Pathname';
+import DrawerTab, { DrawerTabs } from './NavDrawerTabs';
+import NavLink from '../../../interfaces/NavLink';
+import CloseIcon from '@mui/icons-material/Close';
 
 export interface NavDrawerProps extends PathOptional {
   drawerProps?: DrawerProps;

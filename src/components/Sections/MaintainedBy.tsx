@@ -1,30 +1,31 @@
-import { socialLinks } from '../../assets/data/navLinks';
+import { namedLinks } from '../../assets/data/navLinks';
 import DuLogo from '../../assets/png/full-du-logo.png';
-import { Box, Link, Typography, Button } from '@mui/material';
+import { Box, Link, Typography } from '@mui/material';
 import React, { ReactElement } from 'react';
-import { Link as GatsbyLink } from 'gatsby';
 import SmallBlob from '../SmallBlob';
+import ButtonLink from '../ButtonLink';
 interface MaintainedByProps {
   tagLine?: string;
 }
 
 function MaintainedBy(props: MaintainedByProps): ReactElement {
-  const tagLine = props.tagLine || 'Created & Maintained by';
+  const tagLine = props.tagLine || 'Created & Maintained by:';
   return (
     <SmallBlob>
       <Box textAlign={'center'} flexDirection="column" display="flex">
         <Typography variant="h5">{tagLine}</Typography>
         <Link
-          href={socialLinks.defenseUnicorns.url}
-          target={socialLinks.defenseUnicorns.target}
-          rel={socialLinks.defenseUnicorns.rel}
-          title={socialLinks.defenseUnicorns.text}
+          href={namedLinks.defenseUnicorns.url}
+          target={namedLinks.defenseUnicorns.target}
+          rel={namedLinks.defenseUnicorns.rel}
+          title={namedLinks.defenseUnicorns.text}
         >
           <Box
             component="img"
-            marginBottom={'24px'}
+            marginTop={'16px'}
+            marginBottom={'16px'}
             src={DuLogo}
-            alt={socialLinks.defenseUnicorns.text}
+            alt={namedLinks.defenseUnicorns.text}
             sx={{
               width: { xs: '280px', md: '400px' },
               height: { xs: '60px', md: '85.5px' },
@@ -34,16 +35,9 @@ function MaintainedBy(props: MaintainedByProps): ReactElement {
         <Typography variant="body1">
           For enterprise package support & pricing
         </Typography>
-        <Button
-          component={GatsbyLink}
-          to="/enterprise-support"
-          color="secondary"
-          variant="contained"
-          size={'large'}
-          sx={{ my: '16px', mx: 'auto' }}
-        >
-          Contact An Expert
-        </Button>
+        <Box marginX={'auto'} marginTop={'16px'}>
+          <ButtonLink color="secondary" {...namedLinks.enterpriseSupport} />
+        </Box>
       </Box>
     </SmallBlob>
   );
