@@ -28,7 +28,7 @@ const LinkContainer = styled(Box)`
 
 function InstallZarf(): ReactElement {
   const [os, setOs] = useState<OS>(OS.mac);
-  const [command, setCommand] = useState<string>(getInstallCommand(os));
+  const [command, setCommand] = useState<string[]>(getInstallCommand(os));
 
   useEffect(() => {
     setOs(getUserOs(navigator));
@@ -46,7 +46,7 @@ function InstallZarf(): ReactElement {
         </Typography>
         <Typography variant="h6" fontFamily={'Roboto'}>
           Select the operating system you are using then copy and paste the
-          following command into your terminal.
+          commands below into your terminal.
         </Typography>
         <LinkContainer>
           <OsLink os={OS.mac} selectedOs={os} setSelected={setOs} />
