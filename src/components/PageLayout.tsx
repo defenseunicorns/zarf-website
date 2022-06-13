@@ -1,11 +1,11 @@
 import React, { ReactElement, PropsWithChildren } from 'react';
-import getPathname from '../hooks/getPathname';
 import ZarfNav from './Sections/NavBar/ZarfNav';
+import getPathname from '../hooks/getPathname';
+import Footer from './Sections/Footer';
 import SiteHelmet from './SiteHelmet';
 import '../assets/css/blobz.min.css';
 import { Box } from '@mui/material';
 import '../assets/css/global.css';
-import Footer from './Sections/Footer';
 import { SeoProps } from './seo';
 
 export interface PageLayoutProps {

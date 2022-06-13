@@ -60,27 +60,7 @@ function Seo({
       }}
       title={metaTitle}
       titleTemplate={route ? `%s | ${route}` : `%s`}
-      link={[
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.googleapis.com',
-        },
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.gstatic.com',
-          crossOrigin: '',
-        },
-        {
-          rel: 'stylesheet',
-          as: 'font',
-          href: 'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&display=swap',
-        },
-        {
-          rel: 'stylesheet',
-          as: 'font',
-          href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap',
-        },
-      ]}
+      link={[]}
       meta={[
         {
           charSet: 'utf-8',
@@ -131,7 +111,7 @@ function Seo({
         },
         {
           name: `twitter:image`,
-          content: metaImage,
+          content: `https://zarf.dev${metaImage}?123`,
         },
         {
           name: `twitter:creator`,
