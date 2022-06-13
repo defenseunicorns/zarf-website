@@ -78,23 +78,5 @@ module.exports = {
         exclude: [`/404`, `/enterprise-support`],
       },
     },
-    {
-      resolve: `gatsby-omni-font-loader`,
-      options: {
-        mode: 'render-blocking',
-        enableListener: true,
-        preconnect: ['https://fonts.gstatic.com'],
-        web: [
-          {
-            name: 'M PLUS Rounded 1c',
-            file: 'https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,500&display=swap',
-          },
-          {
-            name: 'Roboto',
-            file: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap',
-          },
-        ],
-      },
-    },
   ],
 };

@@ -5,3 +5,7 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
+
+body {
+  font-family: Tahoma, sans-serif;
+}
