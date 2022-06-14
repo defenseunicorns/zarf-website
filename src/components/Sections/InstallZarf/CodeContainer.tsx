@@ -13,12 +13,10 @@ const CodeBox = styled(Box)`
     #0d133d;
   border: 1px solid #7bd5f5;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   padding: 8px 13.5px 8px 14.5px;
   text-align: left;
   gap: 9.75px;
-  justify-content: space-between;
 ` as typeof Box;
 
 const MS_TO_SHOW_CHECK = 2000;
@@ -52,13 +50,46 @@ const CopyToClipboard = (props: { textToCopy: string }): ReactElement => {
   );
 };
 
-function CodeContainer({ command }: { command: string }): ReactElement {
+function CodeContainer({ command }: { command: string[] }): ReactElement {
   return (
     <CodeBox marginX={'16px'} sx={{ width: { xs: 'auto', md: '732px' } }}>
-      <Typography variant="h6" fontFamily="Roboto">
-        {`$ ${command}`}
-      </Typography>
-      <CopyToClipboard textToCopy={command} />
+      {command.map((cmd, index) => {
+        if (cmd.charAt(0) === '#') {
+          if (cmd === '#') {
+            return <br />;
+          }
+          return (
+            <Typography
+              variant="h6"
+              fontFamily="Roboto"
+              key={index}
+              sx={{ color: '#FFFFFF8F' }}
+            >
+              {cmd}
+            </Typography>
+          );
+        } else {
+          return (
+            <Typography
+              variant="h6"
+              fontFamily="Roboto"
+              key={index}
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                lineHeight: '2',
+                '&::before': {
+                  content: '"$"',
+                  color: '#FFFFFF8F',
+                },
+              }}
+            >
+              <span style={{ flexGrow: '1', paddingLeft: '8px' }}>{cmd}</span>
+              <CopyToClipboard textToCopy={cmd} />
+            </Typography>
+          );
+        }
+      })}
     </CodeBox>
   );
 }
