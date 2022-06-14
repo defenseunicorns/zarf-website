@@ -1,6 +1,4 @@
-/* eslint-disable */
-import { Typography, Divider, Box, styled, Link } from '@mui/material';
-import { createTabPropsFromNavLink } from '../../../utils/navLink';
+import { Typography, Divider, Box, styled } from '@mui/material';
 import React, { ReactElement, useEffect, useState } from 'react';
 import { namedLinks } from '../../../assets/data/navLinks';
 import { getInstallCommand, getUserOs } from './utils';
@@ -59,7 +57,7 @@ function InstallZarf(): ReactElement {
           <OsLink os={OS.linux} selectedOs={os} setSelected={setOs} />
         </LinkContainer>
         <CodeContainer command={command} />
-        <Typography variant="body2" fontFamily={'Roboto'}>
+        {/* <Typography variant="body2" fontFamily={'Roboto'}>
           For more more detailed installation instructions - check out our{' '}
           <Link
             underline="hover"
@@ -67,8 +65,11 @@ function InstallZarf(): ReactElement {
           >
             {namedLinks.gettingStarted.text} Doc.
           </Link>
-        </Typography>
-        <ButtonLink {...namedLinks.userGuide} text={'View Documentation'} />
+        </Typography> */}
+        <ButtonLink
+          {...namedLinks.gettingStarted}
+          text={'View Documentation'}
+        />
       </InstallContainer>
     </LargeBlob>
   );
