@@ -1,21 +1,23 @@
 import { OS } from './types';
 
-export function getInstallCommand(os: OS): string[] {
-  const installCommand = [];
+export function getInstallCommand(os: OS): string[] | string {
+  let installCommand: string[] | string;
   switch (os) {
-    case OS.linux:
-      installCommand.push('brew tap defenseunicorns/tap && brew install zarf');
+    case OS.brew:
+      installCommand = '$brew tap defenseunicorns/tap && brew install zarf';
       break;
-
+    case OS.linux:
     case OS.mac:
-      installCommand.push('# Install Zarf using Homebrew');
-      installCommand.push('brew tap defenseunicorns/tap && brew install zarf');
-      installCommand.push(
-        '# For Mac, we use KIND to create a Kubernetes cluster',
-      );
-      installCommand.push(
-        'brew install kind && kind delete cluster && kind create cluster',
-      );
+      installCommand = [
+        '# First, you will need a Kubernetes cluster. This example uses KIND.',
+        '$brew install kind && kind delete cluster && kind install cluster',
+        '',
+        '# Next, you will need to deploy the Zarf Init Package',
+        '$zarf init',
+        '',
+        '# You are ready to deploy any Zarf Package, try out our Retro Arcade!!',
+        '$zarf package deploy sget://defenseunicorns/zarf-hello-world:0.1.0',
+      ];
       break;
   }
   return installCommand;
