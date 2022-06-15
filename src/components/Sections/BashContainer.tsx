@@ -6,6 +6,10 @@ import CopyToClipboard from './CopyToClipboard';
 const EMPTY_LINE = '';
 const COMMAND_DELIMITER = '$';
 
+interface CommandInterface {
+  text: string;
+}
+
 const CodeBox = styled(Box)`
   border-radius: 12px;
   background: linear-gradient(
@@ -31,7 +35,7 @@ function BashContainer({
   return (
     <CodeBox sx={{ width: { xs: 'auto', md: '732px' } }}>
       {commands.map((cmd, index) => (
-        <ParseBash key={index} commandLine={cmd} />
+        <ParseBash key={index} text={cmd} />
       ))}
     </CodeBox>
   );
@@ -42,8 +46,8 @@ function BashContainer({
  * Empty lines return line breaks
  * All other lines are displayed as muted text or comments.
  */
-function ParseBash(props: { commandLine: string }): ReactElement {
-  const startChar = props.commandLine.charAt(0);
+function ParseBash(props: CommandInterface): ReactElement {
+  const startChar = props.text.charAt(0);
 
   switch (startChar) {
     case EMPTY_LINE:
@@ -55,8 +59,8 @@ function ParseBash(props: { commandLine: string }): ReactElement {
   }
 }
 
-function BashCommand({ commandLine }: { commandLine: string }): ReactElement {
-  const cmd = commandLine.slice(1);
+function BashCommand({ text }: CommandInterface): ReactElement {
+  const cmd = text.slice(1);
   return (
     <Typography
       variant="h6"
@@ -85,14 +89,14 @@ function BashCommand({ commandLine }: { commandLine: string }): ReactElement {
   );
 }
 
-function CommentLine({ commandLine }: { commandLine: string }): ReactElement {
+function CommentLine({ text }: CommandInterface): ReactElement {
   return (
     <Typography
       variant="h6"
       fontFamily="Roboto"
       sx={{ color: 'text.secondary' }}
     >
-      {commandLine}
+      {text}
     </Typography>
   );
 }
