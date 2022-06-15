@@ -2,7 +2,7 @@ import { Typography, Divider, Box, styled } from '@mui/material';
 import React, { ReactElement, useEffect, useState } from 'react';
 import { namedLinks } from '../../../assets/data/navLinks';
 import { getInstallCommand, getUserOs } from './utils';
-import BashContainer from '../BashContainer';
+import BashContainer from '../../BashContainer';
 import ButtonLink from '../../ButtonLink';
 import OsLink from './OsLink';
 import { OS } from './types';

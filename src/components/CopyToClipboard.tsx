@@ -1,6 +1,6 @@
-import { IconButton } from '@mui/material';
-import { Check, ContentCopy } from '@mui/icons-material';
 import React, { ReactElement, useEffect, useState } from 'react';
+import { Check, ContentCopy } from '@mui/icons-material';
+import { IconButton } from '@mui/material';
 
 const MS_TO_SHOW_CHECK = 2000;
 

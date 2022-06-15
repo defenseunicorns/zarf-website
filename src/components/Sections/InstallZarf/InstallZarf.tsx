@@ -1,11 +1,11 @@
-import { OS } from './types';
-import LargeBlob from '../../LargeBlob';
-import BashContainer from '../BashContainer';
+import { createTabPropsFromNavLink } from '../../../utils/navLink';
+import { Typography, Box, styled, Link } from '@mui/material';
+import { namedLinks } from '../../../assets/data/navLinks';
+import BashContainer from '../../BashContainer';
 import { getInstallCommand } from './utils';
 import React, { ReactElement } from 'react';
-import { namedLinks } from '../../../assets/data/navLinks';
-import { Typography, Box, styled, Link } from '@mui/material';
-import { createTabPropsFromNavLink } from '../../../utils/navLink';
+import LargeBlob from '../../LargeBlob';
+import { OS } from './types';
 
 const InstallContainer = styled(Box)`
   display: flex;

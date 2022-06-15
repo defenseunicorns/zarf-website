@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
-import React, { ReactElement } from 'react';
 import { Box, Typography } from '@mui/material';
 import CopyToClipboard from './CopyToClipboard';
+import React, { ReactElement } from 'react';
+import styled from '@emotion/styled';
 
 const EMPTY_LINE = '';
 const COMMAND_DELIMITER = '$';
