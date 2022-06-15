@@ -43,10 +43,16 @@ function TryItNow(): ReactElement {
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' } }}>
         Try It Now
       </Typography>
-      <Typography variant="h6" fontFamily={'Roboto'} color="text.secondary">
-        You are ready to deploy code in AirGap. Copy the following commands to
-        get started zarfing!
+      <Typography
+        variant="h6"
+        fontFamily={'Roboto'}
+        color="text.secondary"
+        whiteSpace="pre-wrap"
+      >
+        You are ready to deploy code in AirGap.{'\n'}Copy the following commands
+        to get started zarfing!
       </Typography>
+
       <LinkContainer>
         <OsLink os={OS.mac} selectedOs={os} setSelected={setOs} />
         <Divider
