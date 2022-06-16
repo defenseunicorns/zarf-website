@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { Typography, Divider, Box, styled, Link } from '@mui/material';
 import { createTabPropsFromNavLink } from '../../../utils/navLink';
 import React, { ReactElement, useEffect, useState } from 'react';

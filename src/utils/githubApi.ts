@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { Octokit } from 'octokit';
 
 export interface GithubStats {
@@ -84,7 +83,10 @@ async function graphStarsAndPrs(): Promise<number[]> {
 async function getStarsAndPrs(): Promise<number[]> {
   return TOKEN !== undefined
     ? graphStarsAndPrs()
-    : (async () => [await getNumStars(), await getNumPullRequests()])();
+    : (async (): Promise<number[]> => [
+        await getNumStars(),
+        await getNumPullRequests(),
+      ])();
 }
 
 // Returns populated GithubStats object for use in StatsCard
