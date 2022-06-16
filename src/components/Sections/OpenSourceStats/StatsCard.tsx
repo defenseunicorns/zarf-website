@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { getGithubStats, GithubStats } from '../../../utils/githubApi';
 import StatsCardSmPng from '../../../assets/png/stats-card-sm.png';
 import StatsCardPng from '../../../assets/png/stats-card.png';
