@@ -6,7 +6,7 @@ export interface GithubStats {
   contributors: number;
 }
 
-const TOKEN = process.env.GH_TOKEN;
+const TOKEN = process.env.GATSBY_GH_TOKEN;
 
 const octokit = new Octokit({
   auth: TOKEN,
