@@ -1,9 +1,9 @@
 [context.deploy-preview]
   command = "npm run build:staging"
   SITE_URL = "https://deploy-preview.zarf.dev"
-  GH_TOKEN = ''
+  GATSBY_GH_TOKEN = ''
 
 [context.branch-deploy]
   command = "npm run build:staging"
   SITE_URL = "https://develop.zarf.dev"
-  GH_TOKEN = ''
+  GATSBY_GH_TOKEN = ''
