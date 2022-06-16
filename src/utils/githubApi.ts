@@ -81,7 +81,7 @@ async function graphStarsAndPrs(): Promise<number[]> {
 // Runs the optimal graphql request if gh auth token exists
 // Falls back to the rest call without a token.
 async function getStarsAndPrs(): Promise<number[]> {
-  return TOKEN !== undefined
+  return TOKEN
     ? graphStarsAndPrs()
     : (async (): Promise<number[]> => [
         await getNumStars(),
