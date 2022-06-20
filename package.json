@@ -26,6 +26,8 @@
     "@emotion/react": "^11.8.2",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.8.1",
+    "@fontsource/m-plus-rounded-1c": "^4.5.8",
+    "@fontsource/roboto": "^4.5.7",
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.5.0",
     "gatsby": "4.15.2",

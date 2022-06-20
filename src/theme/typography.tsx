@@ -11,19 +11,19 @@ const fonts = {
 };
 
 const typography: TypographyOptions = {
-  fontFamily: 'Roboto',
+  fontFamily: ['Tahoma', fonts.roboto, fonts.mPlusRoundedFont].join(','),
   h1: {
     fontFamily: fonts.mPlusRoundedFont,
-    fontSize: 96,
-    lineHeight: '120%',
-    letterSpacing: -1.5,
-    fontWeight: fontWeights.regular,
+    // fontSize: 96,
+    // lineHeight: '120%',
+    // letterSpacing: -1.5,
+    // fontWeight: fontWeights.regular,
   },
   h2: {
     fontFamily: fonts.mPlusRoundedFont,
-    fontSize: 64,
-    letterSpacing: -0.5,
-    fontWeight: fontWeights.regular,
+    // fontSize: 64,
+    // letterSpacing: -0.5,
+    // fontWeight: fontWeights.regular,
   },
   h3: {
     fontFamily: fonts.mPlusRoundedFont,

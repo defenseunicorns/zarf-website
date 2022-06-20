@@ -17,7 +17,6 @@ export interface HeroProps {
 function Hero(props: HeroProps): ReactElement {
   return (
     <>
-      <HeroBlob />
       <Box
         className="wrap"
         sx={{
@@ -70,10 +69,12 @@ function Hero(props: HeroProps): ReactElement {
               width: { xs: '360px', md: '500px' },
               height: { xs: '302.4px', md: '439.23px' },
             }}
+            loading="lazy"
           />
         )}
         {props.rhsChild && props.rhsChild}
       </Box>
+      <HeroBlob />
     </>
   );
 }
