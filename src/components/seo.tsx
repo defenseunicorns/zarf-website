@@ -1,6 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
+import { isLocalLink } from '../utils/navLink';
 
 type Meta = React.DetailedHTMLProps<
   React.MetaHTMLAttributes<HTMLMetaElement>,
@@ -45,6 +46,7 @@ function Seo({
       }
     `,
   );
+
   const additionalMeta = meta || [];
   const metaDescription = description || site.siteMetadata.description;
   const metaTitle = title || site.siteMetadata.title;
@@ -52,6 +54,7 @@ function Seo({
   const metaUrl = url || site.siteMetadata.url;
   const metaAuthor = author || site.siteMetadata.social?.twitter;
   const robotsContent = robots || 'index, follow';
+  const twitterImage = isLocalLink(metaImage) ? metaUrl + metaImage : metaImage;
 
   return (
     <Helmet
@@ -111,7 +114,7 @@ function Seo({
         },
         {
           name: `twitter:image`,
-          content: `https://zarf.dev${metaImage}?123`,
+          content: twitterImage,
         },
         {
           name: `twitter:creator`,

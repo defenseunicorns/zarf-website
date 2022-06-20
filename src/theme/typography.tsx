@@ -11,7 +11,7 @@ const fonts = {
 };
 
 const typography: TypographyOptions = {
-  fontFamily: [fonts.roboto, fonts.mPlusRoundedFont].join(','),
+  fontFamily: ['Tahoma', fonts.roboto, fonts.mPlusRoundedFont].join(','),
   h1: {
     fontFamily: fonts.mPlusRoundedFont,
     // fontSize: 96,

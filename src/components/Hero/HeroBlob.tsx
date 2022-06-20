@@ -89,6 +89,7 @@ function HeroBlob(): ReactElement {
               height: '100%',
               width: '100%',
             }}
+            loading="lazy"
           />
         )}
       </BlobContainer>

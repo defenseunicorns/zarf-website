@@ -47,7 +47,13 @@ function ExampleCard(props: ExampleCardProps): ReactElement {
         </Typography>
         {props.navLink && <ButtonLink {...props.navLink} color="secondary" />}
       </Box>
-      <Box component="img" src={props.image} width="360px" height="360px" />
+      <Box
+        component="img"
+        src={props.image}
+        width="360px"
+        height="360px"
+        loading="lazy"
+      />
     </ExampleCardWrapper>
   );
 }
