@@ -2,10 +2,10 @@
   command = "npm run build:staging"
   SITE_URL = "https://deploy-preview.zarf.dev"
   GATSBY_GH_TOKEN = ''
-  TAG_MANAGER = "GTM-WMTZ3ZC"
+  TAG_MANAGER = "GTM-N74GD57"
 
 [context.branch-deploy]
   command = "npm run build:staging"
   SITE_URL = "https://develop.zarf.dev"
   GATSBY_GH_TOKEN = ''
-  TAG_MANAGER = "GTM-WMTZ3ZC"
+  TAG_MANAGER = "GTM-N74GD57"
