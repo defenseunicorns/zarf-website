@@ -1,7 +1,7 @@
 /** @type {import('gatsby').GatsbyConfig} */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
-const { SITE_URL, PATH_PREFIX } = require('./env.js');
+const { SITE_URL, PATH_PREFIX, TAG_MANAGER } = require('./env.js');
 
 // Get paths of Gatsby's required rules, which as of writing is located at:
 // https://github.com/gatsbyjs/gatsby/tree/fbfe3f63dec23d279a27b54b4057dd611dce74bb/packages/
@@ -76,6 +76,13 @@ module.exports = {
       options: {
         createLinkInHead: true,
         exclude: [`/404`, `/enterprise-support`],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: TAG_MANAGER,
+        includeInDevelopment: false,
       },
     },
   ],

@@ -4,4 +4,5 @@ require('dotenv').config();
 module.exports = {
   SITE_URL: process.env.SITE_URL || 'localhost:8000',
   PATH_PREFIX: process.env.PATH_PREFIX || '/',
+  TAG_MANAGER: process.env.TAG_MANAGER || '',
 };
