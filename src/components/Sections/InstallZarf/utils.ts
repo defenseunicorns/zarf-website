@@ -14,9 +14,6 @@ export function getInstallCommand(os: OS): string[] | string {
         '',
         '# Next, you will need to deploy the Zarf Init Package',
         '$zarf init',
-        '',
-        '# You are ready to deploy any Zarf Package, try out our Retro Arcade!!',
-        '$zarf package deploy sget://defenseunicorns/zarf-hello-world:0.1.0',
       ];
       break;
   }
