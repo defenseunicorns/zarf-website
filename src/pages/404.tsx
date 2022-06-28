@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useState } from 'react';
-import getPathname from '../hooks/getPathname';
+import getLocationPath from '../hooks/getLocationPath';
 import ReroutePageBackdrop, {
   ReroutePageProps,
 } from '../components/ReroutePage';
@@ -18,7 +18,7 @@ const defaultRerouteProps: ReroutePageProps = {
 function NotFoundPage(): ReactElement {
   const [rerouteProps, setRerouteProps] =
     useState<ReroutePageProps>(defaultRerouteProps);
-  const pathname = getPathname();
+  const [pathname] = getLocationPath();
 
   useEffect(() => {
     setRerouteProps(
