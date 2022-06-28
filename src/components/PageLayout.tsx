@@ -16,7 +16,7 @@ function PageLayout(props: PropsWithChildren<PageLayoutProps>): ReactElement {
   const pathname = getPathname();
   return (
     <>
-      <SiteHelmet {...props.seoProps} route={pathname.replace('/', '')} />
+      <SiteHelmet {...props.seoProps} route={pathname.replaceAll('/', '')} />
       <ZarfNav pathname={pathname} />
       <Box
         component="main"
