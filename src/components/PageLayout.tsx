@@ -1,6 +1,6 @@
 import React, { ReactElement, PropsWithChildren } from 'react';
 import ZarfNav from './Sections/NavBar/ZarfNav';
-import getPathname from '../hooks/getPathname';
+import getLocationPath from '../hooks/getLocationPath';
 import Footer from './Sections/Footer';
 import SiteHelmet from './SiteHelmet';
 import '../assets/css/blobz.min.css';
@@ -13,11 +13,12 @@ export interface PageLayoutProps {
 }
 
 function PageLayout(props: PropsWithChildren<PageLayoutProps>): ReactElement {
-  const pathname = getPathname();
+  const [pathname, pathUrl] = getLocationPath();
+
   return (
     <>
-      <SiteHelmet {...props.seoProps} route={pathname.replace('/', '')} />
-      <ZarfNav pathname={pathname} />
+      <SiteHelmet {...props.seoProps} route={pathname} />
+      <ZarfNav pathname={pathUrl} />
       <Box
         component="main"
         sx={{
@@ -28,7 +29,7 @@ function PageLayout(props: PropsWithChildren<PageLayoutProps>): ReactElement {
         }}
       >
         {props.children}
-        <Footer pathname={pathname} />
+        <Footer pathname={pathUrl} />
       </Box>
     </>
   );
