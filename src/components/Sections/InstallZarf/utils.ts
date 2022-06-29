@@ -10,7 +10,7 @@ export function getInstallCommand(os: OS): string[] | string {
     case OS.mac:
       installCommand = [
         '# First, you will need a Kubernetes cluster. This example uses KIND.',
-        '$brew install kind && kind delete cluster && kind install cluster',
+        '$brew install kind && kind delete cluster && kind create cluster',
         '',
         '# Next, you will need to deploy the Zarf Init Package',
         '$zarf init',
