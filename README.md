@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/defenseunicorns/zarf-website">
-    <img alt="Gatsby" src="./src/assets/svg/zarf-dark-outline.svg" width="150" />
+    <img alt="Gatsby" src="./src/assets/svg/zarf-logo.svg" width="150" />
   </a>
 </p>
 <h1 align="center">
@@ -11,6 +11,7 @@
 
 ## 👀 Looking for Zarf?
 
+- [Zarf Website](https://zarf.dev)
 - [Zarf Repo](https://github.com/defenseunicorns/Zarf)
 
 ## 📚 Resources
