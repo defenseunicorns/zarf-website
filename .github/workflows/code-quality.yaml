@@ -10,8 +10,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-      - name: CI
-        run: npm ci
       - name: Type Check
         run: npm run typecheck
       - name: Lint
