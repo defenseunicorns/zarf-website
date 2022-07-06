@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 16
       - name: Install
-      - run: npm install 
+        run: npm install
       - name: Type Check
         run: npm run typecheck
       - name: Lint
