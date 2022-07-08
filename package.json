@@ -73,8 +73,12 @@
     "ansi-regex": "5.0.1",
     "browserslist": "4.16.5",
     "async": "3.2.3",
-    "moment": "2.29.3",
     "cross-fetch": "3.1.5",
-    "jpeg-js": "0.4.4"
+    "jpeg-js": "0.4.4",
+    "busboy": "1.6.0",
+    "got": "11.8.5",
+    "moment": "2.29.4",
+    "parse-path": "5.0.0",
+    "multer": "1.4.5-lts.1"
   }
 }
