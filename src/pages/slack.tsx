@@ -27,7 +27,7 @@ function Slack(): ReactElement {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {heroProps.slack.navLink?.url}
+              https://slack.k8s.io
             </Link>
           </Typography>
           <Typography variant="body1">
@@ -36,7 +36,7 @@ function Slack(): ReactElement {
           <Typography variant="body1">
             3. Find us on the following channels{' '}
             <Link
-              href="https://kubernetes.slack.com/archives/C03B6BJAUJ3"
+              href={heroProps.slack.navLink?.url}
               target="_blank"
               rel="noopener noreferrer"
             >
