@@ -9,7 +9,7 @@ export interface HeroProps {
   navLink?: NavLink;
   header?: string;
   image?: string;
-  body?: string;
+  body?: string | ReactElement;
   rhsChild?: ReactElement;
   lhsChild?: ReactElement;
 }
