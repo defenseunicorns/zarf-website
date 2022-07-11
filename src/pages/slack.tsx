@@ -23,7 +23,7 @@ function Slack(): ReactElement {
           <Typography variant="body1" marginTop="24px">
             1. Navigate to{' '}
             <Link
-              href={'https://slack.k8s.io'}
+              href={heroProps.slack.navLink?.url}
               target="_blank"
               rel="noopener noreferrer"
             >
