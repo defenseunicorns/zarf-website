@@ -13,7 +13,7 @@ export const heroProps: HeroPropsData = {
   home: {
     header: 'DevSecOps for Airgap',
     body: 'A free open source tool that enables continuous software delivery on disconnected networks.',
-    navLink: { ...namedLinks.installNow },
+    navLink: { ...namedLinks.viewOnGithub },
     image: ZarfEdge,
   },
   slack: {

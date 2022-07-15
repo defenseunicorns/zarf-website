@@ -68,6 +68,12 @@ export const namedLinks: SocialLinks = {
     url: 'https://brew.sh/',
     rel: 'noopener noreferrer',
   },
+  viewOnGithub: {
+    text: 'View On Github',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    url: 'https://github.com/defenseunicorns/zarf',
+  },
 };
 
 export const navLinks: NavLink[] = [
